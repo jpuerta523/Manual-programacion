@@ -54,9 +54,15 @@
             </div><br>
 
             <h3>Seguimiento a un archivo particular</h3>
-            <p>Si se buscar hacer seguimiento en Git de un archivo en especifico se utiliza el comando "git add archivo.extencion" donde archivo.extencion es el nombre del archivo y su correspondiente extensión, en el listado de estatus el archivo aparace con una "A" en color verde o area de ensayo. </p>
+            <p>Si se buscar hacer seguimiento en Git de un archivo en especifico ubicados en una carpeta se utiliza el comando "git add archivo.extencion", en el listado de estatus el archivo aparace con una "A" en color verde o area de ensayo.  </p>
             <div class="ejemplo">
                 <p>$ git add index.html</p>
+            </div><br>
+
+            <h3>Seguimiento a todos los archivos</h3>
+            <p>Si se buscar hacer seguimiento en Git a todos los archivo de un proyecto especifico se utiliza el comando "git add ." donde archivo.extencion es el nombre del archivo y su correspondiente extensión, en el listado de estatus todos los archivos aparacen con una "A" en color verde o area de ensayo.  </p>
+            <div class="ejemplo">
+                <p>$ git add .</p>
             </div><br>
 
             <h3>Enviar al repositorio</h3>
@@ -70,6 +76,12 @@
             <div class="ejemplo">
                 <p>$ git add index.html
                     $ git commit -m "Se agrega mas contenido a la página"</p>
+            </div><br>
+
+            <h3>Enviar al repositorio y guardar cambios</h3>
+            <p>Para enviar y guardar todos los archivos que se encuentren en seguimiento al repositorio se usa el comando "git commit -am "descripción 2", ya estos archivos no son visibles en el listado de estado</p>
+            <div class="ejemplo">
+                <p>$ git commit -am "Se agregan otros archivos"</p>
             </div><br>
 
             <h3>Revisar repositorios</h3>
