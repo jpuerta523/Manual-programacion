@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="estilo.css"/>
+        <link rel="stylesheet" href="normalize.css">
+        <title>
+            Diccionario Programación: GIT
+        </title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a id="nav_el"; href="index.html">Página Principal</a></li>
+                    <li><a id="nav_el"; href="index-html.html">HTML</a></li>
+                    <li><a id="nav_el"; href="index-css.html">CSS</a></li>
+                    <li><a id="nav_el"; href="index-javascript.html">JavaScript</a></li>
+                    <li><a id="nav_el"; href="index-bootstrap.html">Bootstrap</a></li>
+                    <li><a id="nav_el"; href="index-git.html">GIT</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Diccionario Programación: GIT</h1>
+            <p>GIT es un programa de desarrollo abierto que permite controlar las versiones de
+                control de los proyectos.</p>
+
+            <h2>Instalación</h2>
+
+            <p>Para instalara GIT en tu computadora puedes acceder al </a href="https://git-scm.com/"> 
+                sitio oficial de GIT</a> y escoje la opción de descarga según tu sistema operativo.
+                para windows se descarga GIT Bash que es la consola con la que se trabaja a continuación. </p>                
+        
+            <h2>Configuración de la terminal</h2>  
+
+            <h3>configuracion global GIT</h3>
+            <p>permite definir un nombre de usuario y correro con "git config --global usermane "nombre"</p>
+
+            <h3>Abrir carpeta proyecto</h3>
+            <p>al abrir la carpeta que contiene el proyecto, es posible si git esta instalado abrir directamente en esa ubicación, para ello dando click derecho se busca la opcion "git Bash here", esto abre la carpeta en la terminal Bash </p>
+
+            <h3>Inicializar repositorio</h3>
+            <p>Para inicializar el repositorio de nuestro archivo, solo es necesario usar el comando "git init"</p>
+            <div class="ejemplo">
+                <p>$ git init</p>
+            </div><br>
+            
+            <h3>Validar archivos en GitBash</h3>
+            <p>para verificar que archivos estan cargados en GIT, en la terminal se utiliza el comando "git status -s" que como resultado da un listado con todos los archivos, inicialmente todos los archivos van con un par de interrogaciones (??) en color rojo indicando que los archivos son visibles para GIT pero no les esta realizando ningun seguimiento o acción.</p>
+            <div class="ejemplo">
+                <p>$ git status -s</p>
+            </div><br>
+
+            <h3>Seguimiento a un archivo particular</h3>
+            <p>Si se buscar hacer seguimiento en Git de un archivo en especifico se utiliza el comando "git add archivo.extencion" donde archivo.extencion es el nombre del archivo y su correspondiente extensión, en el listado de estatus el archivo aparace con una "A" en color verde o area de ensayo. </p>
+            <div class="ejemplo">
+                <p>$ git add index.html</p>
+            </div><br>
+
+            <h3>Enviar al repositorio</h3>
+            <p>Para enviar todos los archivos que se encuentren en seguimiento al repositorio se usa el comando "git commit -m "descripción", ya estos archivos no son visibles en el listado de estado</p>
+            <div class="ejemplo">
+                <p>$ git commit -m "descripción"</p>
+            </div><br>
+
+            <h3>Guardar cambios en un archivo</h3>
+            <p>Si posterior al envio al repositorio, un archivo es modificado y se guarda los cambios, este en la lista de estado aparece de nuevo con una letra "M" en color rojo indicando que el archivo fue modificado, posteriormente se debe enviar a la zona de seguimiento con el comando "git add archivo.extencion" quedando en la lista de estado con la "M" en verde y finalmente se envia al repositorio con el comando "git commit -m "descripción"</p>
+            <div class="ejemplo">
+                <p>$ git add index.html
+                    $ git commit -m "Se agrega mas contenido a la página"</p>
+            </div><br>
+
+            <h3>Revisar repositorios</h3>
+            <p>Para revisar cuantos repositorios o versiones se han guardado con exito se utiliza el comado "git log --oneline" desplegando el listado con sus correspondientes comentarios</p>
+            <div class="ejemplo">
+                <p>$ git log --oneline"</p>
+            </div><br>
+
+            <h3>Restaurar un archivo a una version anterior</h3>
+            <p>para restaurar un archivo a una versión previa guardada en un repositorio es necesario utilizar el comando "git reset -hard codigo" donde codigo es una combinacion alfanumerica unica para cada archivo asignado en la lista de estado</p>
+            <div class="ejemplo">
+                <p>$ git reset --hard 76a6140"</p>
+            </div><br>
+            
+            <h2>Comandos</h2>
+
+            <p>pwd
+            
+            ls
+
+            cd
+
+            cd..
+
+            mkdir
+
+            git init
+
+            ls -a
+
+            cd .git
+
+            code .
+
+            git status
+
+            git add
+
+            git commit -m "descripción"
+
+            rm
+
+            git remove
+
+            git restore
+
+            mv 
+
+            .gitignore
+
+            git log
+
+            git branch
+
+            git checkout -b
+
+            cat
+
+            git hub
+
+            git remote add origin
+        
+        </p>
+
+            </main>
+        <aside>
+
+        </aside>
+        <footer>
+            actualizado agosto 2022 - derechos reservados
+        </footer>
+
+    </body>
+</html>

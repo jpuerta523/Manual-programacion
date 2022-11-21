@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="estilo.css"/>
+        <link rel="stylesheet" href="normalize.css">
+        <title>
+            Diccionario Programación: JavaScript
+        </title>
+    </head>
+
+    <body>
+        <header>
+
+            <nav>
+                <ul id="link_nav">
+                    <li class="elementosMenu"><a class="nav_el"; href="index.html">Página Principal</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-html.html">HTML</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-css.html">CSS</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-javascript.html">JavaScript</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-bootstrap.html">Bootstrap</a></li> 
+                    <li class="elementosMenu"><a class="nav_el"; href="index-git.html">GIT</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-react.html">React</a></li>
+                </ul>
+            </nav>
+
+            <aside>
+                <img src="jslogo.png" class="logoAside">
+                <a class="nav_el" href="#basico">Manejo Básico JS</a>
+                <a class="nav_el" href="#variablesJs">Variables</a>
+                <a class="nav_el" href="#operadoresAritmeticos">Operadores Aritmetico</a>
+                <a class="nav_el" href="#operadorString">Operadores Caracteres</a>
+                <a class="nav_el" href="#arreglos">Arreglos</a>
+                <a class="nav_el" href="#funciones">Funciones</a>
+                <a class="nav_el" href="#opBoleanos">Operadores Bolenaos</a>
+                <a class="nav_el" href="#objetos">Objetos</a>
+                <a class="nav_el" href="#ciclos">Ciclos</a>
+                <a class="nav_el" href="#fnMath">Funciones .Math</a>
+                <a class="nav_el" href="#prFuncional">Programación Funcional</a>
+                <a class="nav_el" href="#regEx">Expresiones Regulares</a>
+                <a class="nav_el" href="#depuracion">Depuración</a>
+                <a class="nav_el" href="#dom">Manejo del DOM</a>
+            </aside>
+
+        </header>
+
+        <main>
+            <h1>Diccionario Programación: JavaScript </h1>
+            <img src="jslogo.png" class="logo">
+            <p>JavaScript o JS es un lenguaje de programación debil, orientado a objetosy de tipado debil que se usa comunmente en el desarrollo Web y frontEnd.</p>
+            <br><hr>
+
+            <h2 id="basico">Manejo Básico JS</h2>
+            <p>JavaScript permite modificar y realizar acciones en un HTML y sus reglas CSS</p><br>
+
+            <h3>Enlazar JavaScript con HTML</h3>
+            <p>&lt;script src=" ">...&lt;/script>: permite enlazar un archivo JS al interior de una estructura HTML, por regla general se ubica la etiqueta script al final del body para que se carge primero todo el contenido de la página y luego se pueda modificar con el JS, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    <i>en el archivo HTML</i>
+                    ....<br>
+                    &lt;body><br>
+                    .....<br>
+                    &lt;script src="nombreArchivo.js"> &lt;/script><br>
+                    &lt;/body><br>
+                </p>
+            </div><br>
+            
+            <h3>Ventanas Emergentes</h3>
+            <p>Permite obtener o mostrar información al usuario, existen 3 tipos de ventanas</p>
+            <ul>
+                <li>
+                    alert(): muestra una ventana con información al usuario, solo posee un botón para salir de la ventana emergente.
+                    <div class="ejemplo">
+                        <i>en el archivo JS:</i><br>
+                        alert("información Importante");
+                    </div><br>
+                 </li>
+                 <li>
+                    <p>confirm(): Similar a alert con la diderencia que este posee 2 botones: uno para aceptar y otro para cancelar</p>
+                    <div class="ejemplo">
+                        <i>en el archivo JS:</i><br>
+                        confrim("seguro que quieres salir de la página?");
+                    </div><br>
+                 </li>
+                 <li>
+                    <p>prompt(): genera una ventana emergente con un cuadro de texto para que el usurio ingrese información</p>
+                    <div class="ejemplo">
+                        <i>en el archivo JS:</i><br>
+                        let nombre = prompt("Ingrese el nombre del usuario:");
+                    </div><br>
+                 </li>
+            </ul><br>
+
+            <h3>Consola</h3>
+            <p>Permite verificar en la consola del navegador el resultado total o parcial de los resultado obtenidos en el codigo JS, existen varios metodos</p>
+            <ul>
+                <li>console.log(): Muesta en la consola lo que se encuentre al interior de los parentesis, ya se una cadena de texto, el valor de una variable o el tipo de error si este existe.
+                    <div class="ejemplo">
+                        <p>
+                            <i>en el archivo JS:</i><br>
+                            console.log("Cadena de texto en consola");
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <p>console.table(): muestra la información en la consola en formato tabla, especialmente util si la información mostrada es un arreglo </p>
+                    <div class="ejemplo">
+                        <p>
+                            <i>en el archivo JS</i><br>
+                            let arreglo = ["a", "b", "c", "d" ];<br>
+                            <i>en el archivo JS:</i><br>
+                            console.log("Cadena de texto en consola");
+                        </p>
+                    </div>
+                </li><br>
+
+                <li>
+                    <p>console.error(): muestra un mensaje en consola como un error:</p>
+                    <div class="ejemplo">
+                        <i>en el archivo JS:</i><br>
+                        console.log("Error: Cadena de texto en consola");
+                    </div>
+                </li><br>
+
+                <li>
+                    <p>console.warn(): muestra un mensaje en consola como una advertencia:</p>
+                    <div class="ejemplo">
+                        <i>en el archivo JS:</i><br>
+                        console.warn("Advertencia: Cadena de texto en consola");
+                    </div>
+                </li>
+            </ul><br>
+            <hr>
+
+            <h2>Comentarios</h2>
+            <p>Los comentarios son mensajes que se dejan en el código del programa JS y que no es interpretado, sirve como pista para interpretar el código, exiten 2 tipos de comentatrio:</p>
+            <div class="ejemplo"><p>// comentario de una linea</p>
+            <p>// o comentario de una linea</p><hr>
+            <p>/*comentario de <br> varias <br>lineas */</p>
+        </div><br><hr>
+
+            
+
+            <h2 id="variablesJs">Variables</h2><br>
+            <h3>valores</h3>
+            <p>Js admite los siguientes tipos de valores:<br>
+                undefined: no existe un valor asignado a la variables<br> 
+                null: el valor es nulo.<br>
+                boolean: valores boleanos de true o false.<br>
+                string: cadenas de caracteres, todo el contenido debe estar adentro de comillas por ejemplo: "string".<br>
+                number: valores numericos.<br>
+                float: Valor numerico decimal.<br>
+                objects: representa un objeto que agrupa un conjunto de propiedades.<br>
+            </p><br>
+
+            <h3>Definir e inicializar Variables:</h3>
+            las variables pueden pueden ser declaradas e inicializar en una o varias lineas, ejemplo
+            <div class="ejemplo">
+                <p>var a; /*se define la variable a*/<br>
+                a=0; /* se define el valor de la variable a como igual a 0</p><hr>
+                <p>var a = 0; /*se define e inicializa la variable en una sola linea</p>
+            </div><br><hr>
+
+            <h2 id="operadoresAritmeticos">Operadores aritmeticos</h2><br>
+            En JS estan definidas las operaciones aritmeticas basicas: 
+
+            <h3>Suma</h3>
+            <p>se puede realizar la operación suma de varios valores con el operador +</p>
+            <div class="ejemplo">
+                <p>let a=5;<br>
+                    let b=3;<br>
+                    let suma = a + b;<br>
+                    console.log(suma);<br><hr>
+                    <i>resultado en consola:</i><br>
+                    5</p>
+            </div><br>
+
+            <h3>Resta</h3>
+            <p>se puede realizar la operación resta de varios valores con el operador -</p>
+            <div class="ejemplo">
+                <p>let a=5;<br>
+                    let b=3;<br>
+                    let resta = a - b;<br>
+                    console.log(resta);<br><hr>
+                    <i>resultado en consola:</i><br>
+                    2</p>
+            </div><br>
+
+            <h3>Multiplicación</h3>
+            <p>se puede realizar la operación para obtener el producto de 2 valores con el operador *</p>
+            <div class="ejemplo">
+                <p>let a=5;<br>
+                    let b=3;<br>
+                    let producto = a * b;<br>
+                    console.log(producto);<br><hr>
+                    <i>resultado en consola:</i><br>
+                    15</p>
+            </div><br>
+
+            <h3>División</h3>
+            <p>se puede realizar la operación para obtener el cociente de 2 valores con el operador /</p>
+            <div class="ejemplo">
+                <p>let a=9;<br>
+                    let b=3;<br>
+                    let cociente = a * b;<br>
+                    console.log(cociente);<br><hr>
+                    <i>resultado en consola:</i><br>
+                    3</p>
+            </div><br>
+
+            <h3>Resto</h3>
+            <p>resto de división es el valor que sobra del cociente de 2 valores, el operador es % ejemplo:</p>
+            <div class="ejemplo">
+                <p>let a = 5;</p>
+                <p>let b = 4;</p>
+                <p>resto = a % b</p>
+                <p>console.log(resto)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>1</p>
+            </div><br>
+
+            <h3>Incrementar valor 1 unidad</h3>
+            <p>Para incrementar una unidad el valor de una variable de forma abrevida se utiliza el operardor ++, ejemplo:</p>
+            <div class="ejemplo">
+                <p>let a = 5;</p>
+                <p> a++;</p>
+                <p>console.log(resto)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>6</p>
+            </div><br>
+
+            <h3>Decrementar valor en 1 unidad</h3>
+            <p>Para dencrementar una unidad el valor de una variable de forma abrevida se utiliza el operardor --, ejemplo:</p>
+            <div class="ejemplo">
+                <p>let a = 5;</p>
+                <p> a--;</p>
+                <p>console.log(resto)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>4</p>
+            </div><br>
+
+            <h3>Incrementar valor fijo</h3>
+            <p>Para incrementar una cantidad fija el valor de una variable de forma abrevida se utiliza el operardor +=, ejemplo:</p>
+            <div class="ejemplo">
+                <p>let a = 5;</p>
+                <p> a += 5;</p>
+                <p>console.log(resto)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>10</p>
+            </div><br>
+            
+            <h3>Decrementar valor fijo</h3>
+            <p>Para incrementar una cantidad fija el valor de una variable de forma abrevida se utiliza el operardor -=, ejemplo:</p>
+            <div class="ejemplo">
+                <p>let a = 10;</p>
+                <p> a -= 5;</p>
+                <p>console.log(resto)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>5</p>
+            </div><br>   
+
+            <h3>Multiplicar por valor fijo</h3>
+            <p>Para multiplicar por una cantidad fija el valor de una variable de forma abrevida se utiliza el operardor x=, ejemplo:</p>
+            <div class="ejemplo">
+                <p>let a = 10;</p>
+                <p> a *= 5;</p>
+                <p>console.log(resto)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>50</p>
+            </div><br>  
+            
+            <h3>División por valor fijo</h3>
+            <p>Para dividir por una cantidad fija el valor de una variable de forma abrevida se utiliza el operardor /=, ejemplo:</p>
+            <div class="ejemplo">
+                <p>let a = 10;</p>
+                <p> a /= 5;</p>
+                <p>console.log(resto)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>2</p>
+            </div><br><hr>
+            
+            <h2 id="operadorString">Operadores cadenas de caracteres</h2><br>
+
+            <h3>Escape de comillas</h3>
+            <p>para incluir comillas ("") en el interior de un string o cadena de caracteres se debe usar la barra invertida antes de cada comillas, ejemplo: </p>
+            <div class="ejemplo">
+                <p>let cadena = "Cadena de caracteres /"con comillas/"";</p>
+                <p>console.log(resto)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>Cadena de caracteres "con comillas"</p>
+            </div><br>
+            <p>tambien es posible incluir comillas en una cadena de caracteres alternado entre comillas dobles y simples, ejemplo:</p>
+            <div class="ejemplo">
+                <p>let cadena = "Cadena de caracteres 'con comillas'";</p>
+                <p>console.log(resto)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>Cadena de caracteres 'con comillas'</p>
+            </div><br>
+
+            <h3>Secuencia de escape</h3>
+            <p>Se usan secuencias de escape para asignar acciones o caracteres especiales en las cadenas de caracteres, los mas comunes son:</p>
+            <p>\" escape de comillas dobles</p>
+            <p>\\ barra invertida</p>
+            <p>\t tabulación</p>
+            <p>\n nueva linea</p>
+            <p>\b retroceso</p>
+            <p>\f salto de página</p>
+
+            <h3>Concatenar cadena: +</h3>
+            <p>Se puede unir en una sola cadena de caracteres 2 o mas cadenas con el operador +, ejemplo:</p>
+            <div class="ejemplo">
+                <p>let a = "juan";</p>
+                <p>let b = "pablo";</p>
+                <p>let nombre = a + " " + b;</p>
+                <p>console.log(nombre)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>juan pablo</p>
+            </div><br>
+
+            <h3>Concatenar Cadenas: .concat()</h3>
+            <p>.concat(): Tambien se pueden unir cadenas mediante el uso del metodo .concat(), antes punto va la primera cadena y adentro del parentesis van el resto, ejemplo</p>
+            <div class="ejemplo">
+                <p>let a = "juan";</p>
+                <p>let b = "pablo";</p>
+                <p>let c = "puerta"</p>
+                <p>let nombre = a.concat(" ", b, " ", c);</p>
+                <p>console.log(nombre)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>juan pablo puerta</p>
+            </div><br>
+
+            <h3>Longitud de cadena</h3>
+            <p>Para determinar la cantidad de caracteres en una cadena se llama la variable seguido sin espacios por la función .length, ejemplo</p>
+            <div class="ejemplo">
+                <p>let a = "juan pablo";</p>
+                <p>console.log(a.length)</p><hr>
+                <i>resultado en consola:</i><br>
+                <p>10</p>
+            </div><br>
+
+            <h3>Notación de corchetes</h3>
+            <p>La notación de corchetes se usa para poder acceder a las diferentes posiciones de los caracteres que componen una cadena para ello se llama la variable y luego sin espacios se usan un par de corchetes[] y adentro de los corches se da la posicion numerica requerida, las posiciones de la cadena estan numeradas empenzado en 0 para la primera posicion, ejemplos:</p>
+            <div class="ejemplo">
+                <i>para la primera posición:</i>
+                <p>let a = JavaScript;</p>
+                <p>console.log(a[0]);</p>
+                <i>resultado en consola:</i><br>
+                <p>J</p><br><hr>
+                <i>para la posición n:</i>
+                <p>let a = JavaScript;</p>
+                <p>console.log(a[4]);</p>
+                <i>resultado en consola:</i><br>
+                <p>S</p><br><hr>
+
+                <i>para la ultima posición:</i>
+                <p>let a = JavaScript;</p>
+                <p>console.log(a[a.length - 1]);</p>
+                <i>resultado en consola:</i><br>
+                <p>t</p><br><hr>
+
+                <i>para posiciones de derecha a izquierda:</i>
+                <p>let a = JavaScript;</p>
+                <p>let n = 6</p>
+                <p>console.log(a[a.length - n]);</p>
+                <i>resultado en consola:</i><br>
+                <p>S</p><br>
+            </div><br>
+            
+            <h3>Plantilla de caracteres o backticks</h3>
+            <p>` `: permite crear plantillas de caracteres de forma  mas simple, permitiendo el uso de comillas doble y simple en el texto y permiten ingresar variables a la caneda de caracteres usando la expresion ${} </p>
+            <div class="ejemplo">
+                <p>let a = 6;<br>
+                    console.log(`El valor de la variable "a" es ${a}`);<br>
+                    <i>resultado en consola:</i><br>
+                    El valor de la variable "a" es 6<br>
+                </p>
+            </div><br>
+            
+            <h3>Eliminar espacios al inicio y al final.</h3>
+            <p>string.trim(): Elimina los espacios presentes al inicio y el final en una cadena de texto; ejemplo:</p>
+            <div class="ejemplo">
+                <p>let cadena = "  texto 1    ";<br>
+                console.log(cadena.trim());<br>
+                <i>resultado en cosnola:</i><br>
+                texto 1
+            </p></div><br>
+
+            <h3>Convertir a mayusculas</h3>
+            <p>sting.toUpperCase(): convierte cada uno de los caracteres de una cadena de texto a mayusculas, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let cadena = "Hola Mundo"; <br>
+                    console.log(cadena.toUpperCase());<br>
+                    <i>resultado en consola:</i><br>
+                    HOLA MUNDO
+                </p>
+            </div><br>
+
+            <h3>Convertir a minusculas</h3>
+            <p>sting.toLowerCase(): convierte cada uno de los caracteres de una cadena de texto a minusculas, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let cadena = "HoLa MuNdo"; <br>
+                    console.log(cadena.tolowerCase());<br>
+                    <i>resultado en consola:</i><br>
+                    hola mundo
+                </p>
+            </div><br>
+
+            <h3>comprobar existencia de un elemento</h3>
+            <p>.indexOf(): permite comprobar si un elemento existe al interior de una cadena devolviendo el nuemro de la posición si este esta presente y -1 si no existe, ademas en el parentesis desdpues de la coma se puede poner una posicion de inicio  ejemplo:</p>
+            <div class="ejemplo">
+                <p>let cadena = "Esta es una cadena de texto";<br>
+                    cadena.indexOf('es');<br>
+                    <i>resultado en consola</i><br>
+                    2<hr>
+                    let cadena = "Esta es una cadena de texto";<br>
+                    cadena.indexOf('e,3');<br>
+                    <i>resultado en consola</i><br>
+                    5
+                </p>
+            </div><br>
+
+            <h3>comprobar existencia de un elemento, conteo regresivo</h3>
+            <p>.lastIndexOf(): permite comprobar si un elemento existe al interior de una cadena devolviendo el numero de la última posición si este esta presente y -1 si no existe, ademas en el parentesis desdpues de la coma se puede poner una posicion de inicio  ejemplo:</p>
+            <div class="ejemplo">
+                <p>let cadena = "Esta es una cadena de texto";<br>
+                    cadena.indexOf('es');<br>
+                    <i>resultado en consola</i><br>
+                    25
+                </p>
+            </div><br>
+
+            <h3>Recortar cadena: substring</h3>
+            <p>.substring(): perimte recortar un trozo de una cadena, antes del punto va la cadena a recortar y al interior del parentesis va el indice de la primera posicion y el indice final separados por una coma. ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let cadena = "Esta es una cadena de texto";<br>
+                    cadena.substring(0, 5);<br>
+                    <i>resultado en consola</i><br>
+                    Esta
+                </p>
+            </div>
+
+            <h3>Recortar cadena:substr</h3>
+            <p>.substr()): perimte recortar un trozo de una cadena, antes del punto va la cadena a recortar y al interior del parentesis va el indice de la primera posicion y la cantidad de caracteres que se desea copiar separdos por una coma. ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let cadena = "Esta es una cadena de texto";<br>
+                    cadena.substr(22, 5);<br>
+                    <i>resultado en consola</i><br>
+                    texto
+                </p>
+            </div>
+
+            <h3>Recortar cadena:slice</h3>
+            <p>.substr()):Similar al metodo subStr pero con la difenecia que permite contar de forma regresiva con indices negativos, antes del punto va la cadena a recortar y al interior del parentesis va el indice de la primera posicion y la cantidad de caracteres que se desea copiar separdos por una coma. ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let cadena = "Esta es una cadena de texto";<br>
+                    cadena.slice(');<br>
+                    <i>resultado en consola</i><br>
+                    texto
+                </p>
+            </div>
+
+            <h3>Reemplazar en cadena</h3>
+            <p>cadena.replace("texto1", "texto2"): permite reemplzar un conjunto de caracteres al interior de una cadena por otro, al interior del parentesis el primer valor es el texto original y separado por una coma el texto que va a reemplazar, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let cadena = "HTML CSS PHP"<br>
+                    cadena.replace(PHP, JavaScript);<br>
+                    <i>resultado en consola</i><br>
+                    HTML CSS JavaScript
+                </p>
+            </div><br>
+
+            <h3>Coincidencias de cadena</h3>
+            <p>cadena.include(texto): Devuelve un valor booleano para la pregunta de si una cadena de texto tiene un conjunto de caracteres especifico, la cadena va adelante del punto y al interior del parentesis el texto evaluado, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let cadena = "HTML CSS PHP"<br>
+                    cadena.includes(PHP);<br>
+                    <i>resultado en consola</i><br>
+                    true
+                </p>
+            </div><br>
+
+            <h3>Iniciar con</h3>
+            <p>cadena.startWith(texto): Devuelve un valor booleano para la pregunta de si una cadena de texto empieza con un conjunto de caracteres especifico, la cadena va adelante del punto y al interior del parentesis el texto evaluado, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let cadena = "HTML CSS PHP"<br>
+                    cadena.startwith(HTML);<br>
+                    <i>resultado en consola</i><br>
+                    true
+                </p>
+            </div><br>
+
+            <h3>Finalizar con</h3>
+            <p>cadena.ends(texto): Devuelve un valor booleano para la pregunta de si una cadena de texto finaliza con un conjunto de caracteres especifico, la cadena va adelante del punto y al interior del parentesis el texto evaluado, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let cadena = "HTML CSS PHP"<br>
+                    cadena.endstwith(HTML);<br>
+                    <i>resultado en consola</i><br>
+                    false
+                </p>
+            </div><br>
+
+            <h3>Repetir cadena</h3>
+            <p>cadena.repeat(texto): permite repetir varias veces una cadena de texto, antes del punto va la cadena a repetir y al interior del parentesis va la cantidad de veces, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let risa ="Ja";<br>
+                    risa.repeat(5);<br>
+                    <i>resultado en consola:</i><br>
+                    JaJaJaJaJa
+                </p>
+            </div><br>
+
+            <hr>
+
+            <h2 id="arreglos">Arreglos (arrays)</h2>
+
+            <h3>Arreglos simples</h3>
+            <p>los arreglos son una agrupación de datos que permite alojar varios valores en una misma estructura. se define igual que una variable y los datos van al interior de un corchete []  y los datos separador por una coma, ejemplo:</p>
+            <div class="ejemplo">
+                <p>let arreglo=["juan", "pablo", 36, "Medellín"];</p>
+            </div><br>
+
+            <h3>Arreglos anidados</h3>
+            <p>Un arreglo anidado es una agrupación de arreglos separados por una coma, ejemplo:.</p>
+            <div class="ejemplo">
+                <p>let arreglo=[["bmw", "325i", 1992,], ["vw", "golf", 2005], ["suzuki","swift", 2019]];</p>
+            </div><br>
+
+            <h3>Longitud de un arreglo:</h3>
+            <p>arr.length: Permite saber cuantos elementos posee un arreglo, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    <p>let arreglo = ["bmw", "325i", 1992] ; <br>
+                        console.log(arreglo.length);
+                        <i>resultado en consola:</i> 
+                        3
+                </p>
+            </div><br>
+
+            <h3>Acceder elementos</h3>
+            <p> Es posible acceder a los elementos al interior de un arreglo para posteriormente poder manipularlos, para ello se utiliza la misma sintaxis con corchetes [] utilizadas para llamar los caracteres en una cadena de texto enpenzando en el indice 0 para el primer elemento, ejemplo:</p>
+            <div class="ejemplo">
+                <i>para la primera posición:</i>
+                <p>let arreglo=["juan", "pablo", 36, "Medellín"];</p>
+                <p>let a = arreglo[0];</p>
+                <p>console.log(a);</p>
+                <i>resultado en consola:</i><br>
+                <p>"juan"</p><br><hr>
+
+                <i>para la posición n:</i>
+                <p>let a = arreglo[2];</p>
+                <p>console.log(a);</p>
+                <i>resultado en consola:</i><br>
+                <p>36</p><br>
+            </div><br>
+
+            <h3>Modificar Arreglos </h3>
+            <p>Es posible cambiar un valor que este al interior de un arreglo, simplemente se accede al arreglo con notación de corchetes [] y se le asigna el nuevo valor con un =, si es un arreglo anidado se usan doble notación de corchete donde el primero ubica la posición en el arreglo padre y el segundo en el arreglo anidado, si la posicion modificada no existe en el arreglo original, esta se crea y las posiciones anteriores y superiores a los indices origineales se crean como elementos vacios. ejemplo:</p>
+            <div class="ejemplo">
+                <i>para la primera posición:</i>
+                <p>let arreglo=[1, 2, 3, 4 ];</p>
+                <p>arreglo[0] = 0 ;</p>
+                <p>console.log(arreglo); </p>
+                <i>resultado en consola:</i><br>
+                <p>[0, 2, 3, 4 ]</p><hr>
+                    <p>let arreglo=[1, 2, 3, 4 ];</p>
+                    arreglo[5] = 10;<br>
+                    console.log(arreglo); <br>
+                    <i>resultado en consola:</i><br>
+                    [0, 2, 3, 4,,10 ]<br>                
+                </p><br><hr>
+                <i>para un arreglo anidado segundo arreglo y tercer elemento:</i>
+                <p>let arreglo=[[1, 2, 3], [4, 5, 6], [7, 8, 9]];</p>
+                <p>a =arreglo[1][2] ;</p>
+                <p>console.log(a);</p>
+                <i>resultado en consola:</i><br>
+                <p>6</p><br><hr>
+            </div><br>
+
+            <h3>Agregar elemento</h3>
+            <p>push(): con el metodo push() se agrega un elemento que se ingresa al interor del parentesis al final del arreglo, si son varios elementos se separan por una coma. ejemplo:</p>
+            <div class="ejemplo">
+                <p>let arreglo=[1, 2, 3, 4 ];</p>
+                <p>arreglo.push(5,6);</p>
+                <p>console.log(arreglo);</p>
+                <i>resultado en consola:</i><br>
+                <p>[0, 2, 3, 4, 5, 6]</p><br>
+            </div><br>
+
+            <h3>eliminar ultimo elemento</h3>
+            <p>pop(): permite eliminar el ultimo elemento de la variable y asignarlo a una nueva en caso de ser requerido, ejemplo: </p>
+            <div class="ejemplo">
+                <p>let arreglo=[1, 2, 3, 4 ];</p>
+                <p>let remove = arreglo.pop();</p>
+                <p>console.log(arreglo);</p>
+                <p>console.log(remove);</p>
+                <i>resultado en consola:</i><br>
+                <p>[0, 2, 3]</p><br>
+                <p>4</p>
+            </div><br>
+
+            <h3>eliminar primer elemento</h3>
+            <p>shift(): permite eliminar el primer elemento de la variable y asignarlo a una nueva en caso de ser requerido, ejemplo: </p>
+            <div class="ejemplo">
+                <p>let arreglo=[1, 2, 3, 4 ];</p>
+                <p>let remove = arreglo.shift();</p>
+                <p>console.log(arreglo);</p>
+                <p>console.log(remove);</p>
+                <i>resultado en consola:</i><br>
+                <p>[2, 3, 4]</p><br>
+                <p>1</p>
+            </div><br>
+
+            <h3>agregar primer elemento</h3>
+            <p>unshift(): permite agregar un valor en la primera posición de un arreglo de la variable con el operador ubshift() y en el interior del parentesis se declara el valor a agregar, ejemplo: </p>
+            <div class="ejemplo">
+                <p>let arreglo=[1, 2, 3, 4 ];</p>
+                <p>arreglo.unshift(-1,0);</p>
+                <p>console.log(arreglo);</p>
+                <i>resultado en consola:</i><br>
+                <p>[-1, 0, 1, 2, 3, 4]</p><br>
+            </div><br>
+
+            <h3>Agregar o eliminar varios elementos consecutivos</h3>
+            <p>arreglo.splice(indice, cantidad a elinimar, elemento1, elemento 2, ...): permite agregar o eliminar varios elementos consecutivos de un arreglo devolviendo un nuevo arreglo, el primer parametro es la posicion donde empieza a modificar, el segundo indica la cantidad de elementos a modificar y a continuación siguen los elementos a modificar, si no se ponen los elementos simplemente elimina las posiciones, ejemplo:</p>
+            <div class="ejemplo">
+                <p>const arr = [2, 4, 5, 1, 7, 5, 2, 1];<br>
+                    arr.splice(1, 4, "a", "b", "x");<br>
+                    console.log(arr);
+                    <i>resultado en consola</i><br>
+                    [ 2, 'a', 'b', 'x', 5, 2, 1 ]</p>
+            </div><br>
+
+            <h3>Agregar varios elementos consecutivos</h3>
+            <p>splice(): similar al uso anterior pero despues del segundo parametro se introduce cada valor a reemplazar separado por una coma, ejemplo:</p>
+            <div class="ejemplo">
+                <p>function htmlColorNames(arr) {<br>
+                  arr.splice(0,2,'DarkSalmon','BlanchedAlmond')<br>
+                    return arr;<br>
+                  }<br>
+                    <i>resultado en consola</i><br>
+                    [ 'DarkSalmon','BlanchedAlmond', 'LavenderBlush','PaleTurquoise', 'FireBrick' ]</p>
+            </div><br>
+            
+            <h3>Copiar Elementos de un arreglo</h3>
+            <p>slice(): permite copiar algunos elementos selecionados de un arreglo, generando uno nuevo y dejando el original sin modificaciones, tiene 2 arguemntos el primero indica la posición donde inicia la copia y el ultimo donde finaliza. ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    function forecast(arr) {<br>
+                        let newArr = arr.slice(2,4)<br>
+                          return newArr;<br>
+                        }<br>
+                        console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', <br>'thunderstorms']));
+                </p>
+            </div><br>
+
+            <h3>comprobar existencia de un elemento</h3>
+            <p>.indexOf(): permite comprobar si un elemento existe al interior de un arreglo devolviendo el nuemro de la posición si este esta presente y -1 si no existe, tambien aplica para cadenas de texto. ejemplo:</p>
+            <div class="ejemplo">
+                <p>let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];<br>
+                    fruits.indexOf('oranges');<br>
+                    <i>resultado en consola</i><br>
+                    2
+                </p>
+            </div><br>
+
+            <h3>Encontar elemento</h3>
+            <p>arr.find(function()...): permite encontar el primer elemento al interior de un arreglo que cumple con una determinada condición retornado el valor, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let arr = [8, 9, 15, 21];<br>
+                    let a = arr.find(function(edad){<br>
+                        return edad > 18;<br>
+                    })<br>
+                    console.log(a)<br>
+                    <i>resultado en consola:</i><br>
+                    21
+                </p>
+            </div><br>
+
+            <h3>Encontar indice elemento</h3>
+            <p>arr.findIndex(function()...): permite encontar el primer elemento al interior de un arreglo que cumple con una determinada condición retornado el indice del valor que cumple la condicón, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let arr = [8, 9, 15, 21];<br>
+                    let a = arr.findIndex(function(edad){<br>
+                        return edad > 18;<br>
+                    })<br>
+                    console.log(a)<br>
+                    <i>resultado en consola:</i><br>
+                    3
+                </p>
+            </div><br>
+
+            <h3>Unir varios arreglo</h3>
+            <p>arr1.concat(arr2,arr3,...):El metodo concat devuelve un nuevo arreglo originado por la unión de 2 o mas arreglos, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let a = [1, 2, 3, 4];<br>
+                    let b = ["a", "b", "c"];<br>
+                    let c = [true, false];<br>
+                    let d= a.concat(b,c);<br>
+                    console.log(d);<br>
+                    <i>resultado en consola:</i><br>
+                    [ 1, 2, 3, 4, 'a', 'b', 'c', true, false ]
+                </p>
+            </div><br>
+
+            <h3>Ordenar elementos</h3>
+            <p>arr.sort(): ordena los elementos de un arreglo en forma alfabetica, ejemplo</p>
+            <div class="ejemplo">
+                <p>
+                    let arr1 = ["casa", "avión", "barco", "carro"];<br>
+                    console.log(arr1.sort());<br>
+                    <i>resultado en consola</i><br>
+                    [ 'avión', 'barco', 'carro', 'casa' ]<hr>
+                    let arr2 = [502, 8, 95, 2, 0];<br>
+                    console.log(arr2.sort((a,b) => a-b));<br>
+                    [ 0, 2, 8, 95, 502 ]
+                </p>
+            </div><br>
+
+            <h3>Comprobar si es arreglo</h3>
+            <p>Array.isArray(arr): devuelve un valor booleano a la pregunta de si una variable corresponde a un arreglo, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let arr = [8, 9, 15, 21];<br>
+                    console.log(Array.isArray(arr));<br>
+                    <i>resultado en consola:</i><br>
+                    true
+                </p>
+            </div><br>
+
+            <h3>Modificar elementos de un arreglo .map</h3>
+            <p>arr.map(function(var1..){... }): Devuelve un nuevo arreglo diferente al original donde cada elemento del nuevo arreglo es el resultado de operacion definida en la funcion aplicada a cada elemento del array original, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    const a = [1, 2, 3, 4, 5];<br>
+                    let ax2 = a.map(function(num){<br>
+                        return num * 2;<br>
+                    });<br>
+                    console.log(ax2);<br>
+                    <i>resultado en consola</i><br>
+                    [ 2, 4, 6, 8, 10 ]<br>
+                </p>
+            </div><br>
+
+            <h3>Modificar elementos de un arreglo .for Each</h3>
+            <p>arr.forEach(function(var1..){... }): Similar al metodo .map pero con la diferencia que no devuelve un nuevo arreglo, el cual que definirse por separado. Cada elemento del nuevo arreglo es el resultado de operacion definida en la funcion aplicada a cada elemento del array original, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    const a = [1, 2, 3, 4, 5];<br>
+                    let nuevoArr =[];<br>
+                    a.forEach(function(num){<br>
+                        return nuevoArr.push(num * 2);<br>
+                    });<br>
+                    console.log(nuevoArr);<br>
+                    <i>resultado en consola</i><br>
+                    [ 2, 4, 6, 8, 10 ]<br>
+                </p>
+            </div><br>
+
+            <h3>Selecionar elementos un arreglo .filter</h3>
+            <p>arr.filter(function(var1..){... }): Devuelve un nuevo arreglo diferente al original donde cada elemento del nuevo arreglo cumple con la condición de la función evaluado desde el arreglo original. ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    const a = [1, 2, 3, 4, 5];<br>
+                    let b = a.filter(function(num){<br>
+                        return num > 2;<br>
+                    });<br>
+                    console.log(b);<br>
+                    <i>resultado en consola</i><br>
+                    [ 3, 4, 5 ]<br>
+                </p>
+            </div><br>
+
+            <h3>Comprabar si algun elemento cumple una condición .some</h3>
+            <p>arr.some(funcion(var)){...}: devuelve un valor booleano a la pregunta de si algun elemento de un arreglo cumple con la condición definida al interior de la función, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let a = [2, 5, 8, 12, 15];<br>
+                    let b = a.some(function(num){<br>
+                        return a == 13;<br>
+                    })<br>
+                    console.log(b);<br>
+                    <i>resultado en consola</i><br>
+                    false
+                </p>
+            </div><br>
+
+            <h3>Comprabar si todos los elemento cumple una condición .some</h3>
+            <p>arr.every(funcion(var)){...}: devuelve un valor booleano a la pregunta de si todos los elemento de un arreglo cumple con la condición definida al interior de la función, para un arreglo vacio el metodo .every devuleve true por defecto. ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let a = [2, 5, 8, 12, 15];<br>
+                    let b = a.some(function(num){<br>
+                        return a > 1;<br>
+                    })<br>
+                    console.log(b);<br>
+                    <i>resultado en consola</i><br>
+                    true
+                </p>
+            </div><br>
+
+            <h3>reducir un arreglo a un solo elemento .reduce</h3>
+            <p>arr.reduce(function(var1, var2){... }): reduce un arreglo hasta obtener un único elemento aplicando las operaciones definidas en la función. ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    const a = [1, 2, 3, 4, 5];<br>
+                    let b = a.reduce(function(a, b){<br>
+                        return a + b;<br>
+                    });<br>
+                    console.log(b);<br>
+                    <i>resultado en consola</i><br>
+                    15<br>
+                </p>
+            </div><br>
+
+            <h3>Desestruracción de arreglos</h3>            
+            <p>Es posible hacer que cada elemento de un arreglo se comporte como una varible, ejemplo:</p>
+            <div class="ejemplo">
+                <p>let a;<br>
+                    let b;<br>
+                    let c;<br>
+                    [a, b, , , c]=[1, 2 ,4 , 5, 6];<br>
+                    console.log(a, b, c);<br>
+                    <i>resultado en consola</i><br>
+                    1 2 6<br>
+                </p></div><br>
+
+            <h3>Asignar valor con Desestruracción</h3>
+            <p>Es posible cambiar el valor de un elemento de un arreglo mediante el proceso de desestruturación, si se desea cambiar el valor de una posición intemedia sin afetar otros valores es necesario utizar tantas comas como posiciones no modificadas, ejemplo: </p>   
+            <div class="ejemplo">
+                <p>
+                    const [a, b,,, c] = [1, 2, 3, 4, 5, 6];<br>
+                    console.log(a, b, c);<br>
+                    <i>resultado en consola</i><br>
+                    1, 2, 5<br>
+                </p>
+            </div><br>
+            
+            <h3>Convertir una cadena en un arreglo</h3>
+            <p>split(): permite convertir una cadena en un arreglo, admite 2 valores, el primero defiene el separador (usualemte un " ") y el segundo determina el limite de la conversion con el nuimero de divisores que suprime, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    var miCadena = "Hola Mundo. Cómo estás hoy?";<br>
+                    var divisiones = miCadena.split(" ", 3);<br>
+                    print(divisiones);<br>
+                    <i>resultado en consola</i><br>
+                    [Hola,Mundo.,Cómo]
+                </p>
+            </div>
+
+            <h3>convertir un arreglo en una cadena</h3>
+            <p>arr.join("separador"): permite crear una nueva cadena de caracteres a partir de un arreglo, los elementos son separados entre si por el elemento definido al inteior de los parentesis, ejemplo</p>
+            <div class="ejemplo">
+                <p>
+                    let arr = ["a", "b, "c", "d"];<br>
+                    let cadena = arr.join("-");<br>
+                    console.log(cadena);<br>
+                    <i>resultado en consola</i><br>
+                    a-b-c-d
+                </p>
+            </div>
+            
+            <hr>
+
+            <h2 id="funciones">funciones</h2>
+
+            <h3>Funciones Básicas</h3>
+            <p>Es una herramienta que permite reutilizar codigo, donde se reciben unos parametros de entrada para aplicarles unas operaciones y obtener unos valores de salida. si se desea dejar un valor por defecto en un parametro de la función simplemente despues de definirla al interior del parentesis se pone el simbolo de iguial seguido del valor por defecto  ejemplo:</p>
+            <div class="ejemplo">
+                <i>función simple sin parametros</i>
+                <p></p>function miFuncion(){<br>
+                    console.log("hola mundo");<br>
+                }<br>
+                miFuncion();<br>
+                miFuncion();<br>
+                <i>resultado en consola:</i>
+                hola mundo<br>
+                hola mundo<br><hr>
+                <i>función con 2 parametros:</i>
+                <p>function sumar(a, b=1){   // se asigna 1 como valor por defecto a el parametro b<br>
+                    let suma = a + b;<br>
+                    console.log("el resultado de " + a + " + " + "b" + " es: "+ suma)<br>
+                    }<br>
+                    sumar(5, 3);<br>
+                    <i>resultado en consola:</i>
+                    el resultado de 5 + 3 es: 8
+                </p>
+            </div><br>
+
+            <h3>return</h3>
+            <p>return: es una palabra reservada que permite que el valor una variable local que esta al interior de una función se convierta en global y pueda ser utilizada por el resto del codigo, ejemplo:</p>
+            <div class="ejemplo"><p>function sumar(a, b){<br>
+                return a + b;<br>
+                }<br>
+                let resultado = sumar(5, 3);</p>
+             </div><br>
+             
+             <h3>Funciones Flecha</h3>
+             <p>=>: Permite definir una función de manera compacta y anonima, es decir una función en funcion del nombre del resultado, ejemplo: </p>
+             <div class="ejemplo">
+                <p>const sumar = (a, b) =>{<br>
+                    let num = 6;<br>   
+                    return a + b+ num;<br>
+                }<br>
+                console.log(sumar(1, 1))<br>
+                <i>resultado en consola:</i><br>
+                8</p>
+             </div><br>
+             
+             <h3>Operador rest</h3>
+             <p>(...nombreArreglo): permite a una funcion trabajar con un número variable de argumentos, ejemplo:</p>
+             <div class="ejemplo">
+                <p>function miFuncion(...variables){<br>
+                    console.log(variables.length);<br>
+                }<br>
+                miFuncion(1, 2, 3, 4, 5);<br>
+                <i>resultado en consola:</i><br>
+                5</p>
+             </div><br>
+
+             <h3>Funciones IIFE</h3>
+             <p>(function(parmatros1,..){codigo}(valor1..)): Es una función anonima y autoejecutable, normalmente se enecuentra al interior de los frameworks con el objetivo de evitar conflictos con los nombres de variables, ejemplo:</p>
+             <div class="ejemplo">
+                <p>
+                    (function(lado){<br>
+                        console.log(lado*lado)<br>
+                    })(10)<br>
+                    <i>resultado en la consola:</i><br>
+                    100<br>
+                </p>
+             </div><br>
+
+             <h3>Comprobar existencia de una función</h3>
+             <p>try{ funcion() } catch {mensaje error}: Permite comprobar si una función existe, en caso afirmativo ejecuta la función sin problema y si no existe permite definir un mensaje de error y continuar la ejecución del resto del código</p>
+             <div class="ejemplo">
+                <p>
+                    function hola(){<br>
+                        console.log("hola mundo")<br>
+                    }<br>
+                    try{<br>
+                        hola()<br>
+                    }catch{<br>
+                        console.error(función no definida)<br>
+                    }<br>
+                </p>
+             </div><br>
+
+             <h3>operador spread</h3>
+             <p>(...nombreArreglo): en el caso que los argumentos de una función esten contenidos en un arreglo, el operador spread permite desagruparlos y usarlos por la funcion en el momento de la llamada de la función a las variables, ejemplo: </p>
+             <div class="ejemplo">
+                <p>const arr = [1, 2, 3];<br>
+                    function sumar(x,y,z){<br>
+                        return x+y+z;<br>
+                    }<br>
+                    console.log(sumar(...arr))<br>
+                    <i>resultado en consola:</i><br>
+                    6<br>
+                </p>
+             </div><br><hr>
+
+             <h2 id="opBoleanos">Operadores Boleanos</h2>
+             <p>Los operadores boleanos permiten elegir entre 2 valores especificos opuestos, true para verdad y false para falso</p><br>
+
+             <h3>Igualdad</h3>
+             <p>==: permite comparar dos valores para obtener una respuesta bolenana de true o false, no se debe utilizar para comparar arreglos, ejemplo:</p>
+             <div class="ejemplo">
+                <p>console.log(5 == 5);<br>
+                <i>resultado en consola:</i><br>
+                true<br><hr></p>
+                <p>console.log(5 == 6);<br>
+                <i>resultado en consola:</i><br>
+                false</p>       
+             </div><br>
+
+             <h3>Igualdad estricta</h3>
+             <p>===: permite comparar dos valores y su tipo de dato para obtener una respuesta boolenana de true o false, no se debe utilizar para comparar arreglos, ejemplo:</p>
+             <div class="ejemplo">
+                <p>console.log(5 === 5);<br>
+                <i>resultado en consola:</i><br>
+                true<br><hr></p>
+                <p>console.log(5 === "5");<br>
+                <i>resultado en consola:</i><br>
+                false</p>       
+             </div><br>
+
+             <h3>Desigualdad</h3>
+             <p>!=: contraio a igualdad que permite identificar si dos valores son diferentes para obtener una respuesta bolenana de true o false, no se debe utilizar para comparar arreglos, ejemplo:</p>
+             <div class="ejemplo">
+                <p>console.log(5 != 5);<br>
+                <i>resultado en consola:</i><br>
+                false<br><hr></p>
+                <p>console.log(5 != 6);<br>
+                <i>resultado en consola:</i><br>
+                true</p>       
+             </div><br>
+
+             <h3>Desigualdad Estricta</h3>
+             <p>!==: contraio a igualdad que permite identificar si dos valores y sus tipos de datos son diferentes para obtener una respuesta bolenana de true o false, no se debe utilizar para comparar arreglos, ejemplo:</p>
+             <div class="ejemplo">
+                <p>console.log(5 !== 5);<br>
+                <i>resultado en consola:</i><br>
+                false<br><hr></p>
+                <p>console.log(5 !== "5");<br>
+                <i>resultado en consola:</i><br>
+                true</p>       
+             </div><br>
+
+             <h3>Mayor</h3>
+             <p>>: compara el valor numerico o alfabetico para deteminar si es mayor para obtener una respuesta bolenana de true o false, ejemplo:</p>
+             <div class="ejemplo">
+                <p>console.log(5 > 4);<br>
+                <i>resultado en consola:</i><br>
+                true<br><hr></p>
+                <p>console.log(5 > 6);<br>
+                <i>resultado en consola:</i><br>
+                false<hr></p>
+                <p>console.log("A" > "B");<br>
+                    <i>resultado en consola:</i><br>
+                    false</p>
+                </div>     
+                    
+            <h3>Mayor Igual</h3>
+             <p>>: compara el si valor numerico o alfabetico para deteminar si es mayor o igual para obtener una respuesta bolenana de true o false, ejemplo:</p>
+             <div class="ejemplo">
+                <p>console.log(5 >= 5);<br>
+                <i>resultado en consola:</i><br>
+                true<br><hr></p>
+                <p>console.log(5 >= 6);<br>
+                <i>resultado en consola:</i><br>
+                false</p>       
+             </div><br>
+
+             <h3>Menor</h3>
+             <p>&lt;: compara el valor numerico o alfabetico para deteminar si es menor para obtener una respuesta bolenana de true o false, ejemplo:</p>
+             <div class="ejemplo">
+                <p>console.log(5 &lt; 4);<br>
+                <i>resultado en consola:</i><br>
+                false<br><hr></p>
+                <p>console.log(5 &lt; 6);<br>
+                <i>resultado en consola:</i><br>
+                true<hr></p>
+                <p>console.log("A" &lt; "B");<br>
+                    <i>resultado en consola:</i><br>
+                    true</p>
+                </div>
+                
+                <h3>menor Igual</h3>
+                <p>&lt;=: compara el si valor numerico o alfabetico para deteminar si es menor o igual para obtener una respuesta bolenana de true o false, ejemplo:</p>
+                <div class="ejemplo">
+                   <p>console.log(5 &lt;= 5);<br>
+                   <i>resultado en consola:</i><br>
+                   true<br><hr></p>
+                   <p>console.log(5 &lt;= 6);<br>
+                   <i>resultado en consola:</i><br>
+                   true</p>       
+                </div><br>
+                
+                <h3>Operador AND</h3>
+                <p>&&: Permite usar el operador logico "y" donde es verdadero si los 2 valores de entrada son verdadero, en cualquier otro caso es falso, ejemplos:</p>
+                <div class="ejemplo">
+                    <p>let a = 5;<br>
+                        console.log((a > 3) && (a &lt; 10));<br>
+                        <i>resultado en consola:</i><br>
+                        true</p><hr>
+                    <p>let a = 5;<br>
+                        console.log((a > 6) && (a &lt; 10));<br>
+                        <i>resultado en consola:</i><br>
+                    false</p>
+                </div><br>
+
+                <h3>Operador OR</h3>
+                <p>||: Permite usar el operador logico "o" donde es verdadero si al menos uno de entrada son verdadero, en cualquier otro caso es falso, ejemplos:</p>
+                <div class="ejemplo">
+                    <p>let a = 5;<br>
+                        console.log((a > 3) && (a = 10));<br>
+                        <i>resultado en consola:</i><br>
+                        true</p><hr>
+                    <p>let a = 5;<br>
+                        console.log((a > 6) && (a = 10));<br>
+                        <i>resultado en consola:</i><br>
+                    false</p>
+                </div><br>
+
+                <h3>Operador negación o Not</h3>
+                <p>!: Devuelve el valor opuesto boolenao que tenga la expersion, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>let a = 5;<br>
+                        console.log(!(a > 6));<br>
+                        <i>resultado en consola:</i><br>
+                    true</p>
+                </div><br>
+
+                <h3>Condicional if</h3>
+                <p>if(): Permite ejecutar una codigo especifico si la condición al interior del parentesis es verdadera, ejemplo: </p>
+                <div class="ejemplo">
+                    <p>let a = 5;<br>
+                        if (a > 3){<br>
+                            console.log("Se cumple la condición");<br>
+                        }<br>
+                        <i>resultado en consola:</i><br>
+                        Se cumple la condición</p>
+                    </p>
+                </div><br>
+
+                <h3>Clausula else</h3>
+                <p>else: Permite ejecutar un codigo especifico si la condición al interior del condicional if  no se cumple, ejemplo: </p>
+                <div class="ejemplo">
+                    <p>let a = 5;<br>
+                        if (a > 8){<br>
+                            console.log("Se cumple la condición");<br>
+                        }else{<br>
+                            console.log("La condición es falsa")<br>
+                        <i>resultado en consola:</i><br>
+                        La condición es falsa</p>
+                    </p>
+                </div>
+
+                <h3>Clausula else if</h3>
+                <p>else: Permite evaluar varios condicionales if y ejecutar el primero que sea verdadero, ejemplo: </p>
+                <div class="ejemplo">
+                    <p>let a = 5;<br>
+                        if (a > 8){<br>
+                            console.log("el numero es mayor 8");<br>
+                        } else if (a == 8){<br>
+                            console.log("el numero es igual a 8")<br>
+                        } else {<br>
+                            console.log("el numero es menor que 8")<br>
+                        }<br>
+                        <i>resultado en consola:</i><br>
+                        el numero es menor que 8</p>
+                    </p>
+                </div>
+
+                <h3>continuar o para</h3>
+                <p>Continue, break: permite realizar un salto (continue) o parar (break) un condicional, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        for (let i = 1; i &lt;= 30; i++ ){<br>
+                            if(i % 2 == 0 ){<br>
+                                console.log(`${i} - par`);<br>
+                                continue<br>
+                            }<br>
+                            if (i==15) break<br>
+                            console.log(i);<br>
+                        }<br>
+                    </p>
+                </div><br>
+
+                <h3>Recorrer un arreglo</h3>
+                <p>for ... of: permite recorrer todos los elementos de un arreglo con una sintaxis mas consisa y limpia, ejemplo: </p>
+                <div class="ejemplo">
+                    <p>
+                        let arr = ["a", "b", "c", "d", "e"]<br>
+                        for (let letra of arr.entries()){<br>
+                            console.log(letra.join(": "))<br>
+                        };<br>
+                        0: a<br>
+                        1: b<br>
+                        2: c<br>
+                        3: d<br>
+                        4: e<br>
+                    </p>
+                </div><br>
+
+                <h3>switch</h3>
+                <p>Es otar forma de operar condicionales donde los valores de las condiones son exactos y el numero de casos a evaluar es finito, la palabra reservada case hace referencia a cada posible condional y default es cuando no se cumple ninguna condición y equivale al esle en los condicionales if. su principal ventaja ante un ciclo if es que presenta un codigo mas limpio y facil de leer, recomendado para cuando hay varias opciones. ejemplo: </p>
+                <div class="ejemplo">
+                    <p>function producto(opcion){<br>
+                        var respuesta;<br>
+                        switch(opcion){<br>
+                            case "producto 1":<br>
+                            respuesta = "$5";<br>
+                            break;<br>
+                            case "producto 2":<br>
+                            respuesta = "$8";<br>
+                            break;<br>
+                            case "producto 3":<br>
+                            case "producto 5:
+                            case "producto 6":
+                            respuesta = "$10";<br>
+                            break;<br>
+                            default:<br>
+                            respuesta = "producto no codificado";<br>
+                            break;<br>
+                        }<br>
+                        return respuesta;<br>
+                    }<br>
+                    console.log(producto("producto 12));</p>
+                    <i>resultado en la consola</i>
+                    <p>$8</p>
+                    </p>
+                </div><br>
+
+                <h3>Return booleano</h3>
+                <p>return: Es posible usar usar el return al interior de una función para obtener una evaluación booleana de una condición, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>function mayorQue(a,b){<br>
+                        return a > b;<br>
+                    }<br>
+                    <i>resultado en consola:</i><br>
+                    true
+                    </p>
+                </div>
+
+                <h2 id="objetos">Objetos</h2><br>
+
+                <h3>Objeto básico</h3>
+                <p>Un objeto es un conjunto de propiedades unicas, ejemplo:</p>
+                <div class="ejemplo">
+                    <p> let myOldCar = {<br>
+                        "brand": "BMW",<br>
+                        "model": "325i",<br>
+                        "year": 1992,<br>
+                        "color": "black",<br>
+                        "displacement cc": "2500"<br>
+                    }</p><br>
+                </div>
+
+                <h3>Propiedades: notación por punto </h3>
+                <p>para acceder a las propiedades se utiliza la notacion por punto donde el nombre del objeto va seguido de el de la propiedad deseada separados entre si por un punto sin espacios, es la mas recomendada de usar ejemplo:</p>
+                <div class="ejemplo">
+                    <p>console.log(myOldCar.model);<br>
+                        <i>en consola:</i><br>
+                        325i</p>
+                </div><br>
+
+                <h3>Propiedades: notación por corchetes </h3>
+                <p>Notacion equivalente a la de punto, especialmente util cuando el nombre de la propiedad tiene espacios o es una variable, para acceder a las propiedades utilizando la notacion por corchetes el nombre del objeto va seguido de el de la propiedad deseada al interior de un corchete, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>console.log(myOldCar["displacement cc"]);<br>
+                        <i>en consola:</i><br>
+                        2500</p>
+                </div><br>
+
+                <h3>Actualizar propiedades</h3>
+                <p>Es posible cambiar el valor de las propiedades de los objetos, solo es necesario llamar la propiedad utilizando notación de punto o corchetes y luego asignar el nuevo valor con el operador =. ejemplo:</p>
+                <div class="ejemplo">
+                   <p>myOldCarr[displacement cc] = 2498<br>
+                    <i>en consola</i>
+                    2498</p> 
+                </div>
+
+                <h3>Agregar propiedad</h3>
+                <p>Es posible agregar una nueva propiedad a un objeto existente, simplemente se usa la notacion de punto o corchete con el nombre de la nueva propiedad seguido del operador = y el nuevo valor, ejemplo:</p>
+                <div class="ejemplo"><p>myOldCar.numPuertas = 4;<br>
+                    <i>resultado en consola:</i>
+                    <p>
+                        console.log(myOldCar);
+                        let myOldCar = {<br>
+                        "brand": "BMW",<br>
+                        "model": "325i",<br>
+                        "year": 1992,<br>
+                        "color": "black",<br>
+                        "displacement cc": "2498"<br>
+                        "numPuertas: 4;
+                    </p>
+                    </div><br>
+
+                <h3>Eliminar propiedad</h3>
+                <p>Para eliminar una propiedad en un objeto se usa la palabra reservada delete seguido de la propiedad en notacion de punto o corchete, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>delete myOldCar.numPuertas;<br>
+                    <i>resultado en consola:</i><br>
+                    console.log(myOldCar);<br>
+                    let myOldCar = {<br>
+                        "brand": "BMW",<br>
+                        "model": "325i",<br>
+                        "year": 1992,<br>
+                        "color": "black",<br>
+                        "displacement cc": "2498"</p>
+                </div><br>
+
+                <h3>Verificar propiedades</h3>
+                <p>Para verficar si un objeto tiene una propiedad se llama el objeto seguido de .hasOwnProperty() y al interior del parentesis va el nombre de la propiedad a buscar, ejemplo: </p>
+                <div class="ejemplo">
+                    <p>console.log(myOldCar.hasOwnProperty("model"));<br>
+                       console.log(myOldCar.hasOwnProperty("origin"));<br>
+                       <i>en consola:</i><br>
+                       true<br>
+                       false<br>
+                    </p>
+                </div><br>
+
+                <h3>Copiar objeto</h3>
+                <p>object.assign({}, objName): genera una copia exacta de un objeto existente pero que a la vez es independiente y puede ser modificada sin afectar el original. ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let obj={
+                            num:1,
+                            color: "verde",
+                        }
+                        let newObj = object.assign({},obj);
+                    </p>
+                </div><br>
+
+                <h3>Obtener arrays po cada propiedad - valor</h3>
+                <p>Object.entries(obj): crea un nuevo arreglo que contiene arreglos con la propiedad y su valor obtenidos para todo el contenido de un objeto, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let myOldCar = {<br>
+                            "brand": "BMW",<br>
+                            "model": "325i",<br>
+                            "year": 1992,<br>
+                            "color": "black",<br>
+                            "displacement cc": "2500"<br>
+                        };
+                        let propiedades = Object.entries(myOldCar);<br>
+                        console.log(propiedades);<br>
+                        <i>resultado en consola</i> <br>
+                        [ [ 'brand', 'BMW' ],<br>
+                            [ 'model', '325i' ],<br>
+                            [ 'year', 1992 ],<br>
+                            [ 'color', 'black' ],<br>
+                            [ 'displacement cc', '2500' ] ]
+                    </p>
+                </div><br>
+
+                <h3>Obtener propiedades</h3>
+                <p>Object.keys(obj): devuelve un arreglo nuevo que contiene todos las propiedades de un objeto, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let myOldCar = {<br>
+                            "brand": "BMW",<br>
+                            "model": "325i",<br>
+                            "year": 1992,<br>
+                            "color": "black",<br>
+                            "displacement cc": "2500"<br>
+                        };
+                        let propiedades = Object.keys(myOldCar);<br>
+                        console.log(propiedades);<br>
+                        <i>resultado en consola</i>
+                        [ 'brand', 'model', 'year', 'color', 'displacement cc' ]<br>
+                    </p>
+                </div><br>
+
+                <h3>Obtener valores de las propiedades</h3>
+                <p>Object.values(obj): devuelve un arreglo nuevo que contiene todos los valores que corresponden a las propiedades de un objeto, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let myOldCar = {<br>
+                            "brand": "BMW",<br>
+                            "model": "325i",<br>
+                            "year": 1992,<br>
+                            "color": "black",<br>
+                            "displacement cc": "2500"<br>
+                        };
+                        let propiedades = Object.values(myOldCar);<br>
+                        console.log(propiedades);<br>
+                        <i>resultado en consola</i>
+                        [ 'BMW', '325i', 1992, 'black', '2500' ]<br>
+                    </p>
+                </div><br>
+
+                <h3>Objetos inmutable</h3>
+                <p>Object.freeze: Hace que un objeto no pueda ser modificado de ninguna forma, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        Object.freeze(myOldCar);<br>
+                        delete myOldCar.model
+                        <i>resultado en consola</i><br>
+                        typeError
+                    </p>
+                </div><br>
+
+                <h3>Desestruracción de objetos</h3>
+                <p>Para un objeto es posible hacer que sus propiedades se comporten como variables y renonbralas para su posterior uso de manera facil, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>let myOldCar = {<br>
+                        "brand": "BMW",<br>
+                        "model": "325i",<br>
+                        "year": 1992,<br>
+                        "color": "black",<br>
+                        "displacement cc": 2500<br>
+                        "placa": {<br>
+                            "letras":"BBO";<br>
+                            "numeros" :468;<br>
+                            "ciudad": "Bogota";<br>
+                        }<br>
+                        };<br>
+                        const{brand, model:modelo, placa:{letras, numeros: num}} = myOldCar;<br>
+                        console.log(modelo)<br>
+                        console.log(num);<br>
+                        <i>resultado en consla:</i><br>
+                        325i<br>
+                        468<br>
+                    </p>
+                </div><br>
+                
+                <h3>Definir objetos con funciòn flecha</h3>
+                <p>Es posible definir de forma concisa un objeto cuyas propiedades son variables mediante una funciòn flecha, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let crearAuto = (brand, model, year, color, displacement) => ({brand, model, year, color, displacement});<br>
+                        console.log(crearAuto("vw", "golf", "2005", "red", 2000cc))<br>
+                        <i>resultado en consola:</i><br>
+                        { brand: 'vw',<br>
+                        model: 'golf',<br>
+                        year: 2005,<br>
+                        color: 'red',<br>
+                        displacement: 2000 }
+                    </p>
+                </div> <br>   
+
+                <h3>metodo</h3>
+                <p>Un metodo es cuando una propiedad de un objeto esta definida con una funciòn, ejemplo:</p>
+                <div class="ejemplo">
+                        <p>
+                            const persona = {<br>
+                                nombre: "pablo",<br>
+                                presentarse (){<br>
+                                    return `Hola mi nombre es${this.nombre}.`;<br>
+                                }<br>
+                            };<br>
+                            console.log(persona.presentarse());<br>
+                        </p>
+                </div><br>
+                
+                <h3>clases</h3>
+                <p>Clases o constructores: Permite crear una plantilla que genera objetos con una función, se usa objeto.prototype.propiedad para definir propiedes comunes a todos los objetos generados y this.propiedad para las propiedades especificas. ejemplo: </p>
+                <div class="ejemplo">
+                    <p>
+                        class AutoCasa{<br>
+                            constructor(marca, modelo, color){<br>
+                                this.marca = marca;<br>
+                                this.modelo = modelo;<br>
+                                this.color = color;<br>
+                            }<br>
+                        }<br>
+                        let myOldCar = new AutoCasa("bmw", "325i", "black");<br>
+                        let dadCar = new AutoCasa("vw", "golf", "red")<br>
+                        console.log(myOldCar);<br>
+                        console.log(dadCar);  <br>
+                        <i>resultado en consola</i><br>
+                        { marca: 'bmw', modelo: '325i', color: 'black' }<br>
+                        { marca: 'vw', modelo: 'golf', color: 'red' } 
+                        <hr>
+                        function Dog(name) {
+                            this.name = name;
+                          }
+                          
+                          Dog.prototype = {
+                            // Cambia solo el código debajo de esta línea
+                            numLegs: 2,
+                            eat: function(){
+                              console.log("everything");
+                            },
+                            describe: function(){
+                              console.log("my name is "+ this.name)
+                            }
+                          };
+                    </p>
+                </div><br>
+
+                <h3>verificar existencia de propiedad</h3>
+                <p>.hasOwnProperty(): devuelve un valor booleano si el objeto tiene presente la propiedad indicada al interior del parentesis, ejemplo </p>
+                <div class="ejemplo">
+                    <p>
+                        function Bird(name) {<br>
+                            this.name = name;<br>
+                            this.numLegs = 2;<br>
+                          }<br>
+                          let canary = new Bird("Tweety");<br>
+                          let ownProps = [];<br>
+                          // Cambia solo el código debajo de esta línea<br>
+                          for (let property in canary){<br>
+                            if(canary.hasOwnProperty(property)){<br>
+                              ownProps.push(property);<br>
+                            }<br>
+                          }<br>
+                    </p>
+                </div><br>
+
+                <h3>Generar arreglo con nombre de las propiedades</h3>
+                <p>Object.keys(): genera un arreglo con todos los nombres que definen cada una de las clases que componen un objeto, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let users = {<br>
+                            Alan: {<br>
+                              age: 27,<br>
+                              online: false<br>
+                            },<br>
+                            Jeff: {<br>
+                              age: 32,<br>
+                              online: true<br>
+                            },<br>
+                          };<br>
+                          function getArrayOfUsers(obj) {<br>
+                          return Object.keys(obj);<br>
+                          }
+                    </p>
+                </div><br><hr>
+
+                <h2 id="ciclos">Ciclos</h2>
+                <p>Es una estructura de algoritmo que ejecuta una acción durante un numero detereminado veces de iteraciones o ciclos</p><br>
+
+                <h3>While o mientras</h3>
+                <p>while: ejecuta un ciclo hasta que se cumple una condición definida por el usuario, primero se define una variables contador, luego se define el ciclo con la palabra reservada while y seguido entre parentesis () va la condición que ejecuta el codigo hasta que se cumple, en una nueva linea sigue la operación a realizar en el codigo y finalmente se actualiza el valor del contador, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>let i=0;<br>
+                    while(i &lt;= 3){<br>
+                    console.log("ciclo # " + (i+1) );<br>
+                     i++;<br>
+                    }<br>
+                    <i>resultado en consola:</i><br>                        
+                    ciclo # 1<br>
+                    ciclo # 2<br>
+                    ciclo # 3<br>
+                    ciclo # 4<br>                  
+                    </p>
+                </div><br>
+
+                <h3>Condicional ternario</h3>
+                <p>es un metodo para definir condicionales de manera abreviada donde se pone la condicion seguida del singo de pregunta ?, acuntinuacion sigue la respuesta si es verdadero y luego la respuesta falsa equivalente al else separa por 2 puntos:, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>function minimo(x ,y>{<br>
+                        console.log(x > y ? y : x);<br>
+                    }<br>
+                   <hr>
+                    Ejemplo con varias condiciones<br>
+                    function checkSign(num) {<br>
+                        return (num > 0) ? "positive"<br>
+                        :(num == 0) ? "zero"<br>
+                        :"negative"<br>
+                      }<br><hr>
+                      let edad = prompt(cuantos años tienes?)<br>
+                      let mayorEdad = edad > 18 ? "eres mayor de edad" : "eres menor de edad"<br>
+                      alert(mayorEdad)
+                    </p>
+                </div><br>
+
+                <h3>For o para</h3>
+                <p>for(var inicial; condición; incremento){código}: similar al ciclo while, primero se usa la palabra reservada for seguida de parentesis (), al interior de estos se ubica primero el valor inicial de la variable del contador seguido de la condición que mientras sea verdadera hara que se ejecute el ciclo y finaliza con la actualización del valor del contador, los 3 terminos van separdo con ";" , ejemplo:</p>
+                <div class="ejemplo">
+                    <p>for (let i = 1; i &lt;= 3; i++){<br>
+                        console.log("ciclo # " + (i) )<br>
+                        }<br>
+                        <i>resultado en consola:</i><br>                        
+                    ciclo # 1<br>
+                    ciclo # 2<br>
+                    ciclo # 3<br> 
+                    </p>
+                </div><br>
+
+                <h3>for ... in</h3>
+                <p> siguiente bucle for...in itera sobre todas las propiedades enumerables  de un objeto que no son símbolos y registra los resultados en una cadena con los nombres de propiedad y sus valores.</p>
+                <div class="ejemplo">
+                    <p>var obj = {a: 1, b: 2, c: 3};<br>
+                        for (const prop in obj) {<br>
+                          console.log(`obj.${prop} = ${obj[prop]}`);<br>
+                        }<br>
+                        // Produce:<br>
+                        // "obj.a = 1"<br>
+                        // "obj.b = 2"<br>
+                        // "obj.c = 3"</p>
+                </div>
+
+                <h3>Do..while</h3>
+                <p>Los ciclos do while son similares al los while simple, la principal diferencia es que se ejecuta el codigo al menos una vez, ya que primero se define la acción con la palabra reservada do y luego se define el condicional con while. ejemplo: </p>
+                <div class="ejemplo">
+                    <p>let x= 15;<br>
+                    do{<br>
+                        console.log(x);<br>
+                        x++;<br>
+                    }while (x &lt; 10);<br>
+                    <i>Resultado en consola</i><br>
+                    15<br>
+                        </p>
+                </div><br><hr>
+
+                <h2 id="fnMath">Funciones Math</h2>
+                <p>Las funciones Math permiten usar una libreria de operadores matematicos complejos.</p>
+
+                <h3>Número aleatorio</h3>
+                <p>Random: permite generar un numero aleatorio entre 0 y 1 sin incluir el 1, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>let x = Math.random();<br>
+                    console.log(x);<br>
+                    <i>resultado en consola:</i><br>
+                    0.9702205074610835</p>    
+                </div><br>
+
+                <h3>Redondeo a entero</h3>
+                <p>floor: Permite redondear un valor cualquiera al número entero menor, es decir elimina la parte decimal, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>let x = 19.693217803842245; <br>
+                    let y = Math.floor(x);<br>
+                    console.log(Y);<br>
+                    <i>resultado en la consola:</i><br>
+                    19</p>
+                </div><br>
+
+                <h3>Convertir de caracter a número entero</h3>
+                <p>parseInt(): comvierte un numero al interior de una cadena de caracteres en un número entero, tambien permite convertir expresiones en otras bases númericas a decimal ejemplo:</p>
+                <div class="ejemplo">
+                    <p>let x = "6.9";<br>
+                        console.log(parseInt(x));<br>
+                        <i>resultado en la consola:</i><br>
+                        6</p><hr>
+                    <p>
+                        console.log ("fff",16);<br>
+                        <i>resultado en la consola:</i><br>
+                        4095</p><hr>
+                    </p>
+                </div><br>
+                
+                <h3>convrtir caracteres a numero decimal</h3>
+                <p>
+                    parseFloat(): convierte un numero al interior de una cadena de caracteres en un número decimal, ejemplo:
+                    <div class="ejemplo">
+                        let pi = "3.1416";<br>
+                        console.log(parsefloat(x));<br>
+                        <i>resultado en la consola:</i><br>
+                        3.1416
+                    </div>
+                </p><br>
+
+                <h3>convertir de numero a cadena</h3>
+                <p>valor.toString(): convierte un numero en una cadena de caracteres:</p>
+                <div class="ejemplo">
+                    <p>
+                        let a = 5645;<br>
+                        console.log(a.toString());<br>
+                        <i>resultado en consola:</i><br>
+                        "5645"
+                    </p>
+                </div><br>
+
+                <h3>Definir cantidad de decimales</h3>
+                <p>variable.toFixed(#): Define la cantidad de decimales mostrados redondeado el ultimo, antes del punto va la variable y al interior de los parentesis se define el la cantidad de decimales, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let pi = "3.1416";<br>
+                        console.log(pi.toFixed(2));<br>
+                        <i>resultado en la consola:</i><br>
+                        3.14
+
+                    </p>
+                </div><br>
+
+            <h3>PI</h3>
+                <p>Math.PI: devuelve el valor de pi, ejemplo:</p>
+                <div class="ejemplo">
+                    let valorPi = Math.PI;<br>
+                    <i>resultado en consola</i><br>
+                    3.1416
+                </div><br>
+
+
+                <h3>Redondeo a entero</h3>
+                <p>Math.round(#): Redondea un dato a su número entero mas proximo, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let x = 10.4<br>
+                        console.log(Math.round(x))<br>
+                        <i>resultado en consola</i><br>
+                        10
+                    </p>
+                </div><br>
+
+                <h3>Redondeo a entero superior</h3>
+                <p>Math.ceil(#): Redondea un dato al numero entero superior mas proximo, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let x = 10.4<br>
+                        console.log(Math.ceil(x))<br>
+                        <i>resultado en consola</i><br>
+                        11
+                    </p>
+                </div><br>
+
+                <h3>Redondeo a entero inferior</h3>
+                <p>Math.floor(#): Redondea un dato al numero entero superior mas proximo, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let x = 10.4<br>
+                        console.log(Math.floor(x))<br>
+                        <i>resultado en consola</i><br>
+                        10
+                    </p>
+                </div><br>
+
+                <h3>Raiz cuadrada</h3>
+                <p>Math.sqrt(#): obtiene la raiz cuadrada de un número, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let x = 9<br>
+                        console.log(Math.sqrt(x))<br>
+                        <i>resultado en consola</i><br>
+                        3
+                    </p>
+                </div><br>
+
+                <h3>absoluto</h3>
+                <p>Math.abs(#): obtiene el valor absoluto de un número, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let x = -9<br>
+                        console.log(Math.abs(x))<br>
+                        <i>resultado en consola</i><br>
+                        9
+                    </p>
+                </div><br>
+
+                <h3>potenciación</h3>
+                <p>Math.pow(valor, base): obtiene la potencia de un nuero elevado a una base, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let x = 5<br>
+                        console.log(Math.pow(x,3))<br>
+                        <i>resultado en consola</i><br>
+                        125
+                    </p>
+                </div><br>
+
+                <h3>Elemento minimo</h3>
+                <p>Math.min(#): obtiene el elemento de minimo valor en un conjunto de datos, para usarlo en un array se necestia un spread, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let x = [5, 8 , 12 ,5, -1 ];<br>
+                        console.log(Math.min(...x));<br>
+                        <i>resultado en consola</i><br>
+                        -1
+                    </p>
+                </div><br>
+
+                <h3>Elemento maximo</h3>
+                <p>Math.max(#): obtiene el elemento de maximo valor en un conjunto de datos, para usarlo en un array se necestia un spread, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>
+                        let x = [5, 8 , 12 ,5, -1 ];<br>
+                        console.log(Math.max(...x));<br>
+                        <i>resultado en consola</i><br>
+                        12
+                    </p>
+                </div><br>
+
+                <hr>
+
+            <h2 id="prFuncional">Programacion Funcional</h2>
+            <p>Es un enfoque de la programacion donde se crean programas funcionales pequeños que se agrupan para formar otros de mayor compeljidad</p><br>
+
+            <h3>Exportar bloque de código</h3>
+            <p>export: Permite compartir un bloque de codigo o función con otros archivo JS, ejemplo:</p> 
+            <div class="ejemplo">
+                <p>
+                    const uppercaseString = (string) => {<br>
+                        return string.toUpperCase();<br>
+                      }<br>
+                      <br>
+                      const lowercaseString = (string) => {<br>
+                        return string.toLowerCase()<br>
+                      }<br>
+                      <br>
+                      export{uppercaseString, lowercaseString };<br>
+                </p>
+            </div><br>
+            
+            <h3>Importar un bloque de código</h3>
+            <p>import (...)  from: permite importar un bloque de codigo al archivo de trabajo, ejemplo:</p>
+            <div class="ejemplo">
+                <p>import {uppercaseString, lowercaseString} from "./string_functions.js";<br>
+                    uppercaseString("hello");<br>
+                    lowercaseString("WORLD!");</p>
+            </div><br>
+
+            <h3>importar un archivo JS completo</h3>
+            <p>import * (...) as: permite importar todo el contenido de un archivo JS para ser usado en otro craendo un objeto con todas las funciones, ejemplo:</p>
+            <div class="ejemplo">
+                import * as stringFunctions from "./string_functions.js"<br>
+                stringFunctions.uppercaseString("hello");<br>
+                stringFunctions.lowercaseString("WORLD!");<br>
+            </div><br>
+
+            <h3>promesa</h3>
+            <p>promise: es un constructor de funciones que permite definir 2 estados de la promesa: resolve y reject</p>
+            <div class="ejemplo">
+                <p>
+                    const makeServerRequest = new Promise((resolve, reject) => {<br>
+                        // responseFromServer es establecido a false para representar una <br>respuesta no satisfactoria del servidor<br>
+                        let responseFromServer = false;<br>
+                      
+                        if(responseFromServer) {<br>
+                          resolve("We got the data");<br>
+                        } else {  <br>
+                          reject("Data not received");<br>
+                        }<br>
+                      });<br>
+                      
+                      makeServerRequest.then(result => {<br>
+                        console.log(result);<br>
+                      });<br>
+                      makeServerRequest.catch(error => {<br>
+                        console.log(error);<br>
+                      });<br>
+                </p>
+            </div>
+
+            <h2 id="regEx">Expresiones regulares</h2>
+            <p>Las expresiones regulares son patrones usados para manipular cadenas de texto de manera optimizada.</p>
+
+            <h3>Test: coincidadir partes de strings</h3>
+            <p>.test(): permite buscar coincidencias de caracteres en una cadena devolviendo valores boolenaos, si se requiere buscar varias cadenas se incluye el opreador OR: | ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let myString = "Hello, World!";<br>
+                    let myRegex = /Hello|bye/;<br>
+                    let result = myRegex.test(myString);<br>
+                </p>
+            </div><br>
+
+            <h3>Ignorar mayusculas y minusculas</h3>
+            <p>/.../i: Permite hacer coincidir cadenas de texto sin importar combinación de mayusculas y minusculas a su interior su sintaxis es tener la cadena de caracteres ente 2 barras inclinadas seguida de la letra i. ejemplo: </p>
+            <div class="ejemplo">
+                <p>
+                    let myString = "IgnorarAbc";<br>
+                    let fccRegex = /ignorarabc/i; <br>
+                    let result = fccRegex.test(myString);
+                </p>
+            </div>
+
+            <h3>Extraer coincidencias</h3>
+            <p>.match: permite extraer la coincidencia de una cadena de caracteres</p>
+            <div class="ejemplo">
+                <p>
+                    let extractStr = "Extract the word 'coding' from this string.";<br>
+                    let codingRegex = /coding/; <br>
+                    let result = extractStr.match(codingRegex); 
+                </p>
+            </div><br>
+
+            <h3>Encuentra varias coincidencias</h3>
+            <p>/.../g: Encuentra todas la coincidencias en la cadena y las devuelve en un objeto, se puede combinar con otras banderas como la de ignorar mayusculas.</p>
+            <div class="ejemplo">
+                <p>
+                    let twinkleStar = "Twinkle, twinkle, little star";<br>
+                    let starRegex = /Twinkle/gi; // Cambia esta línea<br>
+                    let result = twinkleStar.match(starRegex);
+                </p>
+            </div>
+
+            <h3>Coincidir cualquier cadena</h3>
+            <p>Es posible hacer coincidr cadenas solo con una parte definida y el resto de las opciones se obtienen con el comodin . ,ejemplo: </p>
+            <div class="ejemplo">
+                <p>
+                    let exampleStr = "Let's have fun with regular expressions!";<br>
+                    let unRegex = /.un/; <br>
+                    let result = unRegex.test(exampleStr); 
+                </p>
+            </div><br>
+
+            <h3>conjunto de caracteres</h3>
+            <p>Se se buca hacer coincidr un conjunto de caracteres, estos se deben incluir en unos corchetes[], si lo que se busca es un rango de carateres ordenado alfabeticamente van las dos letras al interior del corchete y separadas por un guion ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";<br>
+                    let vowelRegex = /[aeiou]/gi;<br>
+                    let result = quoteSample.match(vowelRegex);<br><hr>
+                    let quoteSample = "Blueberry 3.141592653s are delicious.";<br>
+                    let myRegex = /[h-s2-6]/gi; <br>
+                    let result = quoteSample.match(myRegex);               
+                </p>
+            </div><br>
+
+            <h3>caracteres negados</h3>
+            <p>/[^...]: crea el conjunto de caracteres negados, es decir el caso contrario alos ejemplos anteriores, ejemplo:</p>
+            <div class="ejemplo">
+                 let quoteSample = "3 blind mice.";<br>
+                let myRegex = /[^aeiou0-9]/gi; <br>
+                let result = quoteSample.match(myRegex);
+            </div><br>
+
+            <h3>Espacios en blanco</h3>
+            <p>\s: busca los espacios en blanco, para el caso contario, se busca utilizando la S en mayuscula, ejemplo:</p>
+            <div class="ejemplo">
+                let sample = "Whitespace is important in separating words";<br>
+                let countWhiteSpace = /\s/g; <br>
+                let result = sample.match(countWhiteSpace);
+            </div><br>
+
+            <h3>numero de coincidencias</h3>
+            <p>\s: Puedes especificar el número inferior y superior de patrones utilizando especificadores de cantidad. Para los especificadores de cantidad utilizamos llaves ({ y }). Pon dos números entre las llaves - para el número inferior y superior de patrones, si se quiere solo el numero superior o inferior se elimina el otro valor sin dejar espacio. ejemplo:</p>
+            <div class="ejemplo">
+                let ohStr = "Ohhh no";<br>
+                let ohRegex = /Oh{3,6} no/g;<br>
+                let result = ohRegex.test(ohStr);
+            </div><br>
+
+        <h2 id="depuracion">Depuración</h2>  
+        <h3>comprobar valores</h3>
+        <p>console.log(variable): permite validar el valor de una variable en un determiado momento del codigo y presentarlo en la consola, para borrar los resultados almacendos en la consola se utiliza console.clear, ejemplo</p>
+            <div class="ejemplo">
+                <p>let a = 5;
+                    console.log(a);
+                    console.clear;
+                </p>
+            </div><br>
+
+        <h3>tipo de variable</h3>
+        <p>typeof: permite identificar el tipo de dato que es un variable, ejemplo:</p>
+        <div class="ejemplo">
+            <p>
+                let a = 5;<br>
+                console.log(typeof a);<br>
+                number<br><hr><br>
+                typeof("abc");<br>
+                string
+            </p>
+        </div><br><hr>
+
+        <h2 id="dom">Manejo DOM</h2>
+        <h3>objeto document</h3>
+        <p>En la consola es posible revisar las propiedades del documento, ejemplo:</p>
+        <div class="ejemplo">
+            <ul>
+                <li>document.all: entrega en arreglo todas las etiquetas HTML presentes en el documento </li>
+                <li>document.doctype: devuelve el tipo de documento</li>
+                <li>doucment.head: devuelve todas las etiquetas ubicadas en el head del documento. </li>
+                <li>document.body: devuelve todas las etiquetas ubicadas en el body del documento.</li>
+                <li>document.form: devuelve todas las etiquetas de formulario ubicadas del documento.</li>
+                <li>document.images: devuelve todas las etiquetas de imagenes ubicadas del documento.</li>
+                <li>document:scripts: devuelve todas las etiquetas de scripts ubicadas del documento.</li>
+                <li>document.styleSheets: devuelve todas las etiquetas de archivos de estilo CCS ubicadas del documento.</li>
+            </ul>
+        </div><br>
+
+        <h3>Acceder a elementos HTML por tipo de etiqueta</h3>
+        <p>document.getElementByTagName("etiqueta"): permite acceder en JS a todos los elementos de una determinada etiqueta presentes en el documento HTML, en el caso ejemplo el metodo devuelve en arreglo ejemplo:</p>
+        <div class="ejemplo">
+            let enlaces = Array.from(document.getElementsByTagName("a"));<br>
+            console.log(enlaces)<br>
+        </div><br>
+
+        <h3>Acceder a elementos HTML por clase</h3>
+        <p>document.getElementByClassName("nombreClase"): permite acceder en JS a todos los elementos con una determinada clase que estan presentes en el documento HTML, en el caso ejemplo el metodo devuelve en arreglo ejemplo:</p>
+        <div class="ejemplo">
+            let nombreClase = Array.from(document.getElementsByClassName("className"));<br>
+            console.log(nombreClase)<br>
+        </div><br>
+
+        <h3>Acceder a un solo elemento HTML por ID</h3>
+        <p>document.getElementById("id"): permite acceder en JS a un unico los elemento con una determinado id que estan presentes en el documento HTML, en el caso ejemplo el metodo devuelve en arreglo ejemplo:</p>
+        <div class="ejemplo">
+            let $nombreId = Array.from(document.getElementById("nombreId"));<br>
+            console.log($nombreIds)<br>
+        </div><br>
+
+        <h3>Acceder a elementos por selector CSS</h3>
+        <p>document.querySelector("SelectorCSS"): Permite acceder a uno o varios elementos de un documento HTML mediante los selectores CSS, si se requiere varios elementos elementos se usa document.queryselectorAll("selector"), aplican tipos de etiquetas, clases, id y psudoclases. ejemplo:</p>
+        <div class="ejemplo">
+            <p>
+                <i>Para una seleción por Id </i><br>
+                let enlacePortafolio = document.querySelector("#portafolio");<br>
+                console.log(enlacePortafolio);<hr>
+                <i>Para una seleción de varios elementos por psudoclase </i><br>
+                let enlacePortafolio = document.querySelectorAll("nav__link:nth-child:odd");<br>
+                console.log(enlacePortafolio);
+            </p>
+        </div><br>
+
+        <h3>crear un elemento vacio HTML</h3>
+        <p>document.createElement("nombreEtiqueta"): permite crear un elemento HTML desde el codigo JS, ejemplo:</p>
+        <div class="ejemplo">
+            <p>
+                const nuevoTitulo = document,createElement("h1");<br>
+                console.log("nuevoTitulo")<br>
+            </p>
+        </div><br>
+
+        <h3>Asignar atributo a un elemento HTML</h3>
+        <p>elemento.setAttribute("atributo","valor"): Permite asignar un solo atributo a la vez a un elemento HTML desde el codigo JS, ejemplo</p>
+        <div class="ejemplo">
+            <p>
+                const nuevoTitulo = document.createElement("h1");<br>
+                nuevoTitulo.setAttribute("id","titulo principal")<br>
+                nuevoTitulo.setAttribute("class","titulo")<br>
+                console.log("nuevoTitulo")
+            </p>
+        </div><br>
+
+        <h3>remover atributo a un elemento HTML</h3>
+        <p>elemento.removeAttribute("atributo","valor"): Permite remover un solo atributo a la vez a un elemento HTML desde el codigo JS, ejemplo</p>
+        <div class="ejemplo">
+            <p>
+                const nuevoTitulo = document.createElement("h1");<br>
+                nuevoTitulo.removeAttribute("id")<br>
+                console.log("nuevoTitulo")
+            </p>
+        </div><br>
+
+        <h3>obtener valor de un atributo en cadena</h3>
+        <p>elemento.getAttribute("atributo"): Permite obtener en formato string el valor de un atributo, ejemplo</p>
+        <div class="ejemplo">
+            <p>
+    
+                let tituloId = nuevoTitulo.getAttribute("id")<br>
+                console.log("tituloId")<br>
+                <i>resultado en consola</i><br>
+                titulo principal
+            </p>
+        </div><br>
+
+        <h3>validar exitencia de un atributo</h3>
+        <p>elemento.hasAttribute("atributo"): Permite obtener un valor booleano a la pregunta de si un elemento HTML tiene presente un atributo, ejemplo</p>
+        <div class="ejemplo">
+            <p></p>
+                console.log(nuevoTitulo.hastAttribute("id"))<br>
+                <i>resultado en consola</i><br>
+                true
+            </p>
+        </div><br>
+
+        <h3>Agregar texto a un elemento HTML</h3>
+        <p>elemento.innerText = "texto" o elemento.textContent = "texto": ambos metodos permite introducir texto a un elemento HTML, ejemplo: </p>
+        <div class="ejemplo">
+            <p>
+                const nuevoTitulo = document.createElement("h1");<br>
+                nuevoTitulo.innerText = "Título Principal de la página"<hr>
+                const nuevoTitulo = document.createElement("h1");<br>
+                nuevoTitulo.textContent = "Título Principal de la página"
+            </p>
+        </div><br>
+
+        <h3>Agregar codigo HTML</h3>
+        <p>elemento.innerHTML = "texto": permite introducir texto con codigo HTML, ejemplo: </p>
+        <div class="ejemplo">
+            <p>
+                const nuevoTitulo = document.createElement("h1");<br>
+                nuevoTitulo.innerHTML = "Título &lt;strong>Principal&lt;/trong> de la página"
+            </p>
+        </div><br>
+
+        <h3>Agregar elemento al DOM</h3>
+        <p>para agregar los elementos creados en el DOM, primero se debe crear un contenedor &lt;div> en el documento HTML que permita ubircarlo, posteriormente se crea el elemento en JS y luego se procede a crearlo como un elemento hijo del contenedor creado anteriomente en el HTML</p>
+        <div class="ejemplo">
+            <p>
+                <i>en el archivo index.html</i><br>
+                &lt;!doctype html><br>
+                ....<br>
+                &lt;body><br>
+                ....<br>
+                &lt;div id="contenedor">
+                ....<br>
+                &lt;/body>
+                ....<br>
+                &lt;/html><br>
+            </p>
+        </div>
+        <p>Dependiendo de la ubicación al interior del contenedor definido en html con respecto a los otros elementos hijos de dicho contenedor se usa uno de los siguientes métodos para crear el elemento.</p>
+        <ul>
+            <li>
+                <p>prepend(nombreElemento): primer hijo</p>
+                <div class="ejemplo">
+                    const nuevoTitulo = document.create("h1");<br>
+                    nuevoTitulo.innerText("hola mundo");<br>
+                    const $contenedor = document.getElementbyId("contenedor");<br>
+                    $contenedor.prepend(nuevoTitulo);<br>
+                </div>
+            </li>
+            <li>
+                <p>append(nombreElemento): último hijo</p>
+                <div class="ejemplo">
+                    <p> 
+                        ...<br>
+                        $contenedor.prepend(nuevoTitulo);
+                    </p>
+                </div>
+            </li>
+            <li>
+                <p>insertBefore(nombreElemento, elemento referencia): despues de un hijo en especifico</p>
+                <div class="ejemplo">
+                    <i>en el archivo index.html</i><br>
+                    &lt;div id="contenedor"><br>
+                    &lt;p id = "p1">Parrafo 1 &lt;/p><br>
+                    &lt;p id = "p2">Parrafo 2 &lt;/p><br>
+                    <i>en el archivo JS</i>><br>
+                    const nuevoTitulo = document.create("h1");<br>
+                    nuevoTitulo.innerText("hola mundo");<br>
+                    const $p1 = document.getElementById("p1");<br>
+                    const $p2 = document.getElementById("p2");<br>
+                    $contenedor = insertBefore(nuevoTitulo, $p2);<hr>
+                    <i>en el navegador</i><br>
+                    parrafo 1<br>
+                    hola mundo<br>
+                    parrafo 2<br>
+
+                    </div>
+                    <p></p>
+                </div>
+            </li>
+            <li>
+                <p>before(nombreElemento): antes de un elemento hermano</p>
+                <div class="ejemplo">
+                    const nuevoTitulo = document.create("h1");<br>
+                    nuevoTitulo.innerText("hola mundo");<br>
+                    <p>$contenedor.before(nuevoTitulo)</p>
+                </div>
+            </li>
+            <li>
+                <p>after(nombreElemento): despues de un elemento hermano</p>
+                <div class="ejemplo">
+                    const nuevoTitulo = document.create("h1");<br>
+                    nuevoTitulo.innerText("hola mundo");<br>
+                    <p>$contenedor.aftere(nuevoTitulo)</p>
+                </div>
+            </li>
+        </ul><br>
+
+        <h3>preevenir comportamiento por defecto de un elemento </h3>
+        <p>e.preventDefault(): en una escucha de evento hace que un elemento HTML con realize la accion predeterminda que se supone que realiza, por ejemplo en un ancla o enlace no permite que el enlace carge la pagina destino.</p>
+        <div class="ejemplo">
+                <p>
+                    <i>en el documento HTML</i><br>
+                    ...<br>
+                    &lt;a href="https://www.google.com/">enlace a google&lt;/a><br>
+                    ...<br>
+                    <i>en el archivo script.js</i><br>
+                    const $ancla = document.querySelector("a");<br>
+                    $ancla.addEventListener("click", (e)=> {<br>
+                    e.preventDefault();<br>
+                    });
+                </p>
+        </div><br>
+
+        <h3>Eventos del ratón</h3>
+        <p>$elemento.addEventListener("eventoDelRaton"): Permite que se ejecute un código especifico cuando el mouse interactua con el elemento en el navegador, pueden ser 4 diferentes acciones:</p>
+
+        <ul>
+            <li>$elemento.addEventListener("click", función): evento asociado a un click</li>
+            <li>$elemento.addEventListener("dblclick", función): evento asociado a un doble click</li>
+            <li>$elemento.addEventListener("contextmenu", función): evento asociado a un click derecho</li>
+            <li>$elemento.addEventListener("mousedown"): evento asociado a un click sostenido, se recomuenda  usar el metodo .preventDefault para evitar el despliege del menu</li>
+        </ul>
+        <div class="ejemplo">
+            <p>
+                <i>Se crea un boton en el archivo index.html</i><br>
+                &lt;!doctype html><br>
+                ....<br>
+                &lt;body><br>
+                ....<br>
+                &lt;button id="evento">hazme click&lt;button><br>
+                ....<br>
+                &lt;/body>
+                ....<br>
+                &lt;/html><br>
+                <i>en el archivo sript.jsa</i><br>
+                const $boton = document.get.elementById(evento);<br>
+                //evento click<br>
+                $boton.addEventListener("click",()=>{<br>
+                    alert("realizaste un click sobre el botón")<br>
+                });<br>
+                //evento doble click<br>
+                $boton.addEventListener("dblclick",()=>{<br>
+                    alert("realizaste un doble click sobre el botón")<br>
+                });<br>
+                $boton.addEventListener("mousedown",()=>{<br>
+                    alert("tienes presionado el click sobre el botón")<br>
+                });<br>
+                $boton.addEventListener("contextmenu",(e)=>{<br>
+                    e.preventDefault()<br>
+                    alert("realizaste un click izquierdo sobre el botón")<br>
+                });
+            </p>
+        </div><br>
+
+        <h3>Eventos del teclado</h3>
+        $elemento.addEventListener("eventoDelTeclado"): Permite que se ejecute un código especifico cuando se presiona una tecla, pueden ser diferentes acciones:</p>
+        <ul>
+            <li>$elemento.addEventListener("keydown", función): evento asociado a presionar una tecla</li>
+            <li>$elemento.addEventListener("keyup", función): evento asociado a soltar la tecla</li>
+            <li>$elemento.addEventListener("keypress", función): evento asociado a mantener presionada una tecla</li>
+        </ul>
+        <div class="ejemplo">
+            <p>
+                <i>Se crea un boton en el archivo index.html</i><br>
+                &lt;!doctype html><br>
+                ....<br>
+                &lt;body><br>
+                ....<br>
+                &lt;input type = Text>
+                ....<br>
+                &lt;/body>
+                ....<br>
+                &lt;/html><br>
+                <i>en el archivo sript.jsa</i><br>
+                const $campoTexto = document.querySelector("[type="text"]");<br><div class="ejemplo">
+                    <p>
+                        <i>Se crea un boton en el archivo index.html</i><br>
+                        &lt;!doctype html><br>
+                        ....<br>
+                        &lt;body><br>
+                        ....<br>
+                        &lt;button id="evento">hazme click&lt;button><br>
+                        ....<br>
+                        &lt;/body>
+                        ....<br>
+                        &lt;/html><br>
+                        <i>en el archivo sript.jsa</i><br>
+                        const $boton = document.get.elementById(evento);<br>
+                        //evento click<br>
+                        $boton.addEventListener("click",()=>{<br>
+                            alert("realizaste un click sobre el botón")<br>
+                        });<br>
+                        //evento doble click<br>
+                        $boton.addEventListener("dblclick",()=>{<br>
+                            alert("realizaste un doble click sobre el botón")<br>
+                        });<br>
+                        $boton.addEventListener("mousedown",()=>{<br>
+                            alert("tienes presionado el click sobre el botón")<br>
+                        });<br>
+                        $boton.addEventListener("contextmenu",(e)=>{<br>
+                            e.preventDefault()<br>
+                            alert("realizaste un click izquierdo sobre el botón")<br>
+                        });
+                    </p>
+                </div><br>
+                //evento presionar tecla<br>
+                $boton.addEventListener("keydown",()=>{<br>
+                    alert("presionaste una tecla")<br>
+                });<br>
+                $boton.addEventListener("keyup",()=>{<br>
+                    alert("Acabas de soltar una tecla")<br>
+                });<br>
+                $boton.addEventListener("keypress",(e)=>{<br>
+                    e.preventDefault()<br>
+                    alert("tienes una tecla presionada")<br>
+                });
+            </p>
+        </div><br>
+
+        <h3>Eventos de formulario</h3>
+        $elemento.addEventListener("eventoDeFormulario"): Permite que se ejecute un código especifico para acciones en el formulario:</p>
+        <ul>
+            <li>$elemento.addEventListener("submit", función): evento asociado a presionar una el boton submit o enviar en el formulario</li>
+            <li>$elemento.addEventListener("focus", función): evento asociado al activar los elementos como inputs o textbox</li>
+            <li>$elemento.addEventListener("changr", función): evento asociado a cambios de voalor en elementos como inputs o selects</li>
+        </ul><br>
+
+
+        <h3>Eventos del navegador</h3>
+        window.addEventListener("eventoNavegador"): Permite que se ejecute un código especifico para acciones realizadas por el navegador:</p>
+        <ul>
+            <li>window.addEventListener("scroll", función): evento asociado al desplzarse con el scroll en el navegador</li>
+            <li>window.addEventListener("resize", función): evento asociado al acambiar de tamaño el navegador</li>
+        </ul><br>
+
+        <h3>Recorrer el DOM</h3>
+        <p>Algunas veces se requiere conocer los elementos que estan enparentados con un elemento especifico ya sea a nivel de hermanos, padres o hijos. ejemplo: </p>
+        <ul>
+            <li>let a = $elemento.previousElementSibling: devuelve el hermano ubicado inmediantamente antes del elemento</li>
+            <li>let a = $elemento.nextElementSibling: devuelve el hermano ubicado inmediantamente despues del elemento</li>
+            <li>let a = $elemento.parentElement: devuelve al padre o contenedor del elemento</li>
+            <li>let a = $elemento.parentElement.parentElement: devuelve al abuelo o contenedor del contenedor del elemento</li>
+            <li>let a = $elemento.Child: devuelve un HTML colection o listado con los hijos del elemento</li>
+            <li>let a = $elemento.lastElementChild: devuelve al último hijo del elemento</li>
+            <li>let a = $elemento.firstElementChild: devuelve al primer hijo del elemento</li>
+            <li>let a = $elemento.childElementCount: devuelve el dato de la cantidad de elementos hijos que contiene.</li>
+        </ul><br>
+
+        <h3>Agregar estilo a un elemento HTML desde JS</h3>
+        <p>elemento.style.propiedadCSS = "valor": desde el codigo Js es posible adicionar reglas CSS para modificar el estilo de un determinado elemento, si la propiedad en CSS es una palabra compuesta por varias separada por un guion en JS la propiedad se escribe igual pero con camelCase. ejemplo:</p>
+        <div class="ejemplo">
+            <p>
+                const nuevoTitulo = document.createElement("h1");<br>
+                nuevoTitulo.style.borderLeft = "4px solid brown"
+            </p>
+        </div>
+
+        <h3>Modificar clases CSS en JS</h3>
+        <p>$elemento.classList: permite modificar las clases CSS de un elemento desde el archivo JS, ejemplo</p>
+        <ul>
+            <li>
+                $elemento.classList.add("claseCCS"): permite adicionar las reglas CSS definidas para una clase especifica definida en el archivos sytle.css. 
+            </li>
+            <li>
+                $elemento.classList.remove("claseCCS"): permite eliminar las reglas CSS definidas para una clase especifica definida en el archivos sytle.css. 
+            </li>
+            <li>
+                $elemento.classList.toogle("claseCCS"): funciona como un interruptor con las reglas CSS definidas para una clase especifica definida en el archivos sytle.css, es decir que como resultado de algun evento la regla se aplica o se apaga. 
+            </li>
+            <li>
+                $elemento.classList.contains("claseCCS"): da una respuesta booleana a la pregunta de si una reglas CSS presente en el archivo sytle.css. 
+            </li>
+        </ul>
+
+<p>faltantes: json.stringify()</p>
+        </main>
+        <footer>
+            actualizado octubre 2022 - derechos reservados
+        </footer>
+
+    </body>
+</html>

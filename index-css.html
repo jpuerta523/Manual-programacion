@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="estilo.css"/>
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+        <title>
+            Diccionario Programación: CSS
+        </title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li class="elementosMenu"><a class="nav_el"; href="index.html">Página Principal</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-html.html">HTML</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-css.html">CSS</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-javascript.html">JavaScript</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-bootstrap.html">Bootstrap</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-git.html">GIT</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-react.html">React</a></li>
+                </ul>
+            </nav>
+            <aside>
+                <img src="csslogo.png" class="logoAside">
+                <a class="nav_el" href="#css">Inicio CSS</a>
+                <a class="nav_el" href="#reglas">Definir reglas</a>
+                <a class="nav_el" href="#selectores">Selectores</a>    
+                <a class="nav_el" href="#fuentes">Fuentes</a> 
+                <a class="nav_el" href="#elementos">Elementos</a> 
+                <a class="nav_el" href="#media">Diseño responsivo</a>   
+            </aside>
+        </header>
+        <main> 
+            <h1 id="css">Diccionario Programación: CSS</h1>
+            <img src="csslogo.png" class="logo">
+            <p>CSS o Cascading style sheet es un lenguaje que aporta el estilo a un sitio web modificando los atributos a un archivo HTML existente</p>
+            <br><hr>
+
+            <h2 id="reglas">Definir reglas CSS</h2><br>
+            <h3>Estilo en linea:</h3>
+            <p>Asigna atributos de estilo directamente en el elemento en el archivo HTML, ejemplo:</p>
+            <div class="ejemplo">
+                <p>&lt;p style="color: blue"&gt;Texto de prueba &lt;p></p>
+                <p class="blue">Texto de prueba</p>
+            </div><br>
+
+            <h3>Elemento style:</h3>
+            <p>Los estilos de los elementos de la página web se definen al interior de una etiqueta style ubicada al interior de la etiqueta del head, ejemplo:</p>
+            <div class="ejemplo">
+                <p>...&lt;head></p>
+                <p>&lt;style></p>
+                <p>h4{</p>
+                <p>color: green;</p>
+                <p>}</p>
+                <br>
+                <p>p{</p>
+                    <p>color: blue;</p>
+                    <p>}</p>
+                    <p>&lt;/style></p>
+                <p>&lt;/head></p>
+                <p>&lt;body>...</p>
+                <h4 class="green">&lt;h4>Titulo de prueba&lt;h4></h4>
+                <p class="blue">&lt;p>Texto de prueba&lt;/p></p>
+                <p>&lt;/body>...</p>
+            </div><br>
+            
+            <h3>Archivo CSS</h3>
+            <p>Se recomienda por facilidades de lectura, mantenimiento y desarrollo ubicar todos los estilos de una página web al interior de un archivo CSS y luego vincularlo al archivo HTML que contiene la estructura del sitio, ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>h4{</p>
+                    <p>color: green;</p>
+                    <p>}</p>
+                    <br>
+                    <p>p{</p>
+                        <p>color: blue;</p>
+                        <p>}</p>
+                <hr>
+                <i>en el archivo index.html</i>
+                <p>...&lt;head></p>
+                &lt;link rel="stylesheet" href="estilo.css"/>
+                <p>&lt;/head>...</p>
+                <p>&lt;body>...</p>
+                <h4 class="green">&lt;h4>Titulo de prueba&lt;h4></h4>
+                <p class="blue">&lt;p>Texto de prueba&lt;/p></p>
+                <p>&lt;/body>...</p>         
+            </div><br><hr>
+
+            <h2 id="selectores">Selectores</h2>
+
+            <h3>Selector Universal</h3>
+            <p>con el selector * se aplica las reglas CSS a todos los elementos del sitio que responden a dicha regla a no ser que esta propiedad se defina a un elemento con otro tipo de selector, ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>*{</p>
+                <p>color: blue;</p>
+                <p>}</p>
+                <hr>
+                <i>en el archivo index.html</i>
+                <p class="blue">&lt;h2>Titulo de prueba&lt;/h2></p>
+                <p class="blue">&lt;p>Texto de prueba&lt;/p></p>
+            </div><br>
+
+            <h3>Elementos</h3>
+            <p>Aplica las reglas CSS a todos los elementos que son del mismo tipo, ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>p{</p>
+                <p>color: blue;</p>
+                <p>}</p>
+                <hr>
+                <i>en el archivo index.html</i>
+                <p class="blue">&lt;p>Texto de prueba&lt;/p></p>
+            </div><br>
+
+            <h3>Clases</h3>
+                <p>.elemento: Aplica las reglas CSS a todos los elementos que tienen el mismo atributro de clase, ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>.clase1{</p>
+                <p>color: blue;</p>
+                <p>}</p>
+                <hr>
+                <i>en el archivo index.html</i>
+                <p class="blue">&lt;p class="clase1">Texto de prueba&lt;/p></p>
+            </div><br>
+
+            <h3>Elementos hijos</h3>
+            <p>elemento:nth-child(valor): permite aplicar reglas CSS a elementos hijos de un contenedor donde elemento es el contenedor y valor su ubicación,ejemplo:</p>
+            <div class="ejemplo">
+                <i>en una tabla para selecionar las filas impares</i>
+                <p>tr:nth-child(even){</p>
+                <p>background-color: #fff</p>
+                <p>}</p>
+            </div>
+
+            <h3>Id</h3>
+            <p>#elemento: Aplica las reglas CSS a un elemento úncio definido por un ID de HTML, ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>#nombre1{</p>
+                <p>color: blue;</p>
+                <p>}</p>
+                <hr>
+                <i>en el archivo index.html</i>
+                <p class="blue">&lt;p id=nombre1">Texto de prueba&lt;/p></p>
+            </div><br></p>
+            <br>
+
+            <h3>Varios elementos</h3>
+            <p>Es posible agregar una regla CSS que aplique a varios elementos, simplemente se separan los elementos por una coma, ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>h2,</p>
+                <p>p{</p>
+                <p>color: blue;</p>
+                <p>}</p>
+                <hr>
+                <i>en el archivo index.html</i>
+                <p class="blue">&lt;h2>Titulo de prueba&lt;/h2></p>
+                <p class="blue">&lt;p>Texto de prueba&lt;/p></p>
+            </div><br>
+            
+            <h3>Selectores por atributo</h3>
+            <p>Es posible agregar una regla CSS que aplique a un grupo de elementos que tienen un atributo en común, para ello se define el selector como el elemento y entre [] el atributo igual, ejemplo: </p>
+           <div class="ejemplo">
+            <i>en el archivo style.css</i>
+                <p>input[type="checkbox"]</p>
+                <p>p{</p>
+                <p>margin: 5px;</p>
+                <p>}</p></div>
+
+            <h3>selectores de hijos</h3>    
+            <p>Para un elemento contenedor es posible definir una regla CSS que afecten solo a los elementos hijos de un tipo definido como elemento o clase, solo es necesario nombrar primero al elemento contenedor y luego separado por un espacio definir los elementos a los que se le aplicara la regla, ejemplo</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                    <p>div p{</p>
+                    <p>margin: 5px;</p>
+                    <p>}</p></div><br>
+                <hr>
+
+            <h2 id="fuentes">Propiedades de las fuentes</h2><br>
+
+            <h3>Alineación de texto</h3>
+            <p>text-align: alinea el texto con respecto a su elemento contenedor, permite valores de center, right, left y justify, ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>p{<br>
+                text-align: center<br>
+                }<br><hr>
+                <i>en el archivo index.html</i>
+                <p>&lt;p class="center">Texto de prueba&lt;/p></p>
+                <i>en pantalla</i>
+                <p class="center">Texto de prueba</p>
+            </div><br>
+        
+            <h3>Color</h3>
+            <p>color: Aplica el color seleccionado a un texto, ejemplo:</p>
+            <div class="ejemplo">
+            <i>en el archivo style.css</i>
+                <p>p{</p>
+                <p>color: blue;</p>
+                <p>}</p>
+                <hr>
+                <i>en el archivo index.html</i>
+                <p class="blue">&lt;p>Texto de prueba&lt;/p></p>
+            </div><br>
+
+            <h3>Decoración de texto</h3>
+            <p>text-decoration: aplica un efecto decorativo con una raya en el texto, admite valores de none, underline, line-throught, overline, ejemplo:</p>
+            <div class="ejemplo" >
+                <i>en el archivo style.css</i>
+                <p>p{<br>
+                text-decoration: overline<br>
+                }<br><hr>
+                <i>en el archivo index.html</i>
+                <p>&lt;p class="overline">Texto de prueba&lt;/p></p>
+                <i>en pantalla</i>
+                <p class="overline">Texto de prueba</p>
+            </div><br>
+
+            <h3>Listas ul</h3>
+            <p>las listas tambien tienen propiedades que pueden se modificada a traves de las reglas CCS</p>
+            <p>list-style-type: modifica el estilo de los puntos que aparecen al inicio, permite valores como none(ningun elemento), disc, cirle, georgian, ect</p>
+            <p>list-style-position: cambia la ubicación de los puntos con respecto al texto, permite valore como inside, outside e inset</p>
+
+            <h3>Estado del enlace</h3>
+            Se puede definir propiedades del enlace en los 4 estados que se definen a continuación, es importante respetar siempre el orden:  
+
+            <p>link: define las propiedades del enlace cuando este aun no ha sido visitado</p>
+            <p>visited: define las propiedades del enlace cuando el enlace ya fue visitado.</p>
+            <p>hover: define las propiedades del enlace cuando el cursor esta sobre el enlace.</p>
+            <p>active: define las propiedades del enlace en el momento que se esta dando click </p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>.enlace:link{<br>
+                    color:rgb(50, 25, 195);<br>
+                    font-weight: 700;<br>
+                }<br>
+                <br>
+                .enlace:visited{<br>
+                    color: rgb(4, 75, 4);<br>
+                }<br>
+                <br>
+                .enlace:hover{<br>
+                    color:rgb(221, 228, 12);<br>
+                    font-weight: 700;<br>
+                }<br>
+                <br>
+                .enlace:active{<br>
+                    color: rgb(191, 21, 106);<br>
+                }</p><hr>
+                <i>En pantalla</i>
+                <a class="enlace" href="https://www.google.com/" target="_blank">enlace a google</a>
+            </div><br>
+           
+            <h3>Tipo de fuente</h3>
+            <p>font-family: Define el estilo de caracteres de un texto según unas familias predefinidas, en caso de que el navegador no reconozca la fuente se pueden poner varias como respaldo separadas por una espacio y una coma. tambien se pueden importar una fuente desde <a href="https://fonts.google.com/" target="_blank">google fonts</a>, ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>p{</p>
+                <p>font-family: Impact, "times new roman";</p>
+                <p>}</p><hr>
+                <i>en el archivo index.html</i>
+                <p class="fuente">&lt;p>Texto de prueba&lt;/p></p>
+            </div><br>
+            <div class="ejemplo">
+                <i>usando google fonts:</i>
+                <i>en el archivo style.css</i>
+                <p>p{</p>
+                <p>font-family: 'Ms Madi', cursive;</p>
+                <p>}</p><hr>
+                <i>en el archivo index.html</i>
+                <p>...&lt;head></p>
+                <p>...&lt;--link suministrados por google fonts--></p>
+                <p>&lt;link rel="preconnect" href="https://fonts.googleapis.com"><br>
+                &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><br>
+                &lt;link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet"></p>
+                <p>...&lt;body></p>
+                <p class="googleFont">&lt;p>Texto de prueba&lt;/p></p>
+                <p>&lt;/body>...</p>
+            </div><br>
+
+            <h3>Sombras</h3>
+            <p>text-shadow: Permite definir un sombreado al texto en funcion de 4 parametros: desplazamiento a la derecha, desplazamiento hacia abajo, blur o difuminación y color, ejemplo]:</p>
+            <div class="ejemplo" >
+                <i>en el archivo style.css</i>
+            <p>p{<br>
+            text-shadow: center<br>
+            }<br><hr>
+            <i>en el archivo index.html</i>
+            <p>&lt;p class="shadow">Texto de prueba&lt;/p></p>
+            <i>en pantalla</i>
+            <p class="shadow">Texto de prueba</p>
+        </div><br>
+
+            <h3>Tamaño de la fuente</h3>
+            <p>font-size: Permite definir el tamaño del caracteres de texto ubicados al interior de las etiquetas:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>p{</p>
+                <p>font-size: 25px;></p>
+                <p>}</p><hr>
+                <i>en el archivo index.html</i>
+                <p class="tamaño">&lt;p>Texto de prueba&lt;/p></p>        
+            </div><br><hr>
+
+            <h2 id="elementos">Propiedades de elementos</h2><br>
+
+            <h3>Color</h3>
+            <p>HEX: código hexadecimal con valores desde 0-9 y a-f iniciando con # y lo seguido de los dos primeros numeros que correspondem a la cantidad de rojo, el segundo a verde y el tercero a azul, ejemplo:#0000ff(azul) </p>
+            <p>HEX abreviado: similar a HEX pero solo con un digito de valor para cada color, ejemplo:#0f0 (verde></p>
+            <p>RGB: o red-green-blue cada donde color puede tener un valor entre 0 y 255 y separados entre si por una coma, ejemplo: rgb(255,0,0) (Rojo) </p>
+            <p>RGBA: similar a RGB pero añade un cuarto valor alpha que define la transparencia del elemento al que se aplica el color, el valor a de 0 que es totalmente transparente a 1 que es opaco. ejemplo: rgba(120,120,0,0.5)</p><br>
+            
+            <h3>Fondos</h3>
+            <p>background: define las propiedades que se muestran como fondo de un elemento ya sea mostrando una imagen, modificando su color y opacidad, ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>.contenedor{</p>
+                <p> width: 100px;<br>
+                    height: 50px;<br>
+                    background: rgb(230, 33, 33);</p>
+                <p>}</p><hr>
+                <i>en el archivo index.html</i>
+                <p>&lt;div class=contenedorEjemplo></p>
+                <p>&lt;p>width: 100px&lt;/p></p>
+                    &lt;p>heigth: 50px&lt;/p></p>
+                    <p>&lt;/div></p><hr>
+                    <i>Resultado en pantalla</i>    
+                <div class="contenedorEjemplo1">
+                    <p>Elemento de prueba</p>    
+                </div>
+                <p>background-image:asigna una imagen como fondo de un elemento.</p>
+                <p>background-size: modifica el tamaño de la imagen de fondo y puede tener los valores de auto (tamaño original), cover (se ajsuta proporcionamente al contenedor ocupando todo el espacio adaptandose al cambio de tamaño), contain(se adapta al contenedor duplica la imagen si es necesario) o directamente dando las dimensiones.</p>
+                <p>background-repeat: define como repite las imagenes con valores como no-repeat, repeat-x (solo repite en eje x) repeat-y (solo repite en eje y)</p>
+                <p>background-position:</p>
+                <div class="ejemplo">
+                    <p>div{
+                        background-image: url("dirrección archivo");
+                        background-size: cover
+                    </p>
+                </div>    
+            </div><br>
+
+            <h2>Bordes</h2>
+            <p>Para los elementos es posible definir un estilo de borde en función de 3 propiedades. border-width para el ancho, border-color y border-style. ejemplo: </p>
+            <div class="ejemplo">               
+                <i>en el archivo style.css</i>
+                <p>.contenedorBorde{
+                width: 100px;<br>
+                height: 100px;<br>
+                color:#fff;<br>
+                font-weight: 700;<br>
+                background-color: rgb(230, 33, 33);<br>
+                border-color: #11f;<br>
+                border-width: 10px;<br>
+                border-style: solid dashed dotted double;<br>
+                }</p><hr>
+                <i>en el archivo index.html</i>
+                <p>&lt;div class=contenedorBorde></p>
+                <p>&lt;p>width: 100px&lt;/p></p>
+                    &lt;p>heigth: 100px&lt;/p></p>
+                    <p>&lt;/div></p><hr>
+                    <i>Resultado en pantalla</i>    
+                <div class="contenedorBorde">
+                    <p>Elemento de prueba</p>    
+                </div>    
+            </div><br>
+
+            <h2>Borde Redondeado</h2>
+            <p>border-radius: Aplica un efecto redondeado a un elemento, ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>.contenedorRedondeado{</p>
+                    width: 100px;<br>
+                    height: 100px;<br>
+                    color:#fff;<br>
+                    font-weight: 700;<br>
+                    background-color: rgb(230, 33, 33);<br>
+                    border-radius:5px 20px 10% 50%;
+                <p>}</p><hr>
+                <i>en el archivo index.html</i>
+                <p>&lt;div class=contenedorEjemplo></p>
+                <p>&lt;p>width: 100px&lt;/p></p>
+                    &lt;p>heigth: 100px&lt;/p></p>
+                    <p>&lt;/div></p><hr>
+                    <i>Resultado en pantalla</i>    
+                <div class="contenedorRedondeado">
+                    <p>Elemento de prueba</p>    
+                </div>    
+            </div><br>
+
+            <h3>Cursores</h3>
+            <p>cursor: permite cambiar el puntero del mouse cuando este se ubica encima de un objeto especifico en el sitio, existen diversos punteros disponibles entre los que destacan: copy, crosshair, resize, wait y zoom.</p>
+            <div class="ejemplo">
+                <div class="contenedorEjemplo1 puntero">
+                    <p>pon el mouse encima</p>    
+                </div>
+            </div><br>
+
+            <h3>display</h3>
+            <p>display: Permite modificar la ubicación de los elementos, tiene valores de block(ocupa todo el ancho del navegador forzando un salto de linea), inline(solo ocupa el ancho del elemento y permite varios elementos en una misma linea), none(oculta los elementos)</p><br>
+
+            <h3>float</h3>
+
+            <h3>Margenes</h3>
+            <p>margin: Es la distancia que hay entre el borde de un elemento y los bordes de su contenedor. para centar un elemento se define un width y luego un margin:0 auto</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>.contenedorP1{<br>
+                    background: rgb(230, 33, 33);<br>
+                    width: 195px;<br>
+                    height: 40px;<br>
+                }<br>
+                .contenedorP2{<br>
+                    padding: 5px 15px 30px 40px;<br>
+                    color: #fff;<br>
+                }</p><hr>
+                <i>en el archivo index.html</i>
+                <p>&lt;div class="contenedorP1"><br>
+                    &lt;p class="contenedorP2">Elemento de prueba&lt;/p><br>
+                    &lt;/div></p><hr>
+                    <i>Resultado en pantalla:</i>    
+                    <div class="contenedorP1">
+                        <p class="contenedorP2">Elemento de prueba</p>
+                </div>    
+            </div>
+
+            <h3>Padding</h3>
+            <p>Padding: es la distancia interna entre el contenido de un elemento y su borde, ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>.contenedorP3{<br>
+                    background: rgb(230, 33, 33);<br>
+                    width: 100px;<br>
+                    height: 100px;<br>
+                    color: #fff;<br>
+                    margin: 10px 20px 30px 50px;</p>  
+                }
+                }</p><hr>
+                <i>en el archivo index.html</i>
+                <p>&lt;div class="contenedorP3"><br>
+                    &lt;p>Elemento de prueba&lt;/p><br>
+                    &lt;/div></p><hr>
+                    <i>Resultado en pantalla:</i>    
+                    <div class="contenedorP3">
+                        <p>Elemento de prueba</p>                        
+                    </div>    
+            </div><br>
+
+            <h3>Posición</h3>
+            <p>position: define la posisición del elemento, fixed deja fijo el elemento en un punto del sitio</p>
+
+            <h3>Overflow</h3>
+            <p>overflow: permite definir como se muestra el contenido de un elemento cuendo este supera el tamaño de su contenedor, tiene valores de visible(el contenido se muestra por fuera del contenedor), hidden(no se  muestra por fuera del contenedor) y scroll(habilta una barra de desplazamiento) </p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>.contenedorS{<br>
+                    background: rgb(230, 33, 33);<br>
+                    width: 100px;<br>
+                    height: 100px;<br>
+                    }</p><hr>
+                    <i>en el archivo index.html</i>
+                    <p>&lt;div class="contenedorScroll"><br>
+                    &lt;p>Texto de prueba&lt;/p><br>
+                    &lt;/div></p><hr>
+                    <div class="contenedorScroll">
+                        <p>Texto de prueba</p>
+                    </div>
+            </div><hr>
+
+            <h2>Tamaño de los elementos</h2>
+            <p>Para definir el tamaño de un objeto en CSS se dispone de dos propiedades: width o ancho en ingles y height o altura. para las imagenes es suficiente con definir una sola propiedad para mantener su ratio. ejemplo:</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>.contenedor{</p>
+                <p> width: 100px;<br>
+                    height: 50px;</p>
+                <p>}</p><hr>
+                <i>en el archivo index.html</i>
+                <p>&lt;div class=contenedorEjemplo></p>
+                <p>&lt;p>width: 100px&lt;/p></p>
+                    &lt;p>heigth: 50px&lt;/p></p>
+                    <p>&lt;/div></p><hr>
+                    <i>Resultado en pantalla</i>    
+                <div class="contenedorEjemplo1">
+                    <p>ancho: 100px<br>alto: 50px</p>    
+                </div>    
+            </div><br>
+
+            <h3>transisiones</h3>
+            <p>transition</p>
+
+            <h2>Prioridades de clases</h2>
+
+            <p>!important(como propiedad CSS ej: color: blue !important) >Style(HTML)>ID> clase > tipo de elemento, en caso de igualdad tiene prelación la última regla definida en el archivo css</p><br>
+
+            <h2>Unidades</h2>
+            <p>
+                px: pixeles<br>
+                em: tamaño de la letra elemento padre <br>
+                rem: tamaño de la letra elemento raiz <br>
+                vw: 1% de la ancho de la ventana <br>
+                vh: 1% de la altura de la ventana <br>
+            </p>
+            <div class="ejemplo">
+                <div class="contenedor px">
+                    <p>ancho 200px</p>
+                </div>
+                <div class="contenedor rem">
+                    <p>ancho 15rem</p>
+                </div>
+                <div class="contenedor vw">
+                    <p>ancho 20vw</p>
+                </div>
+                <div class="contenedor vh">
+                    <p>alto 15vh</p>
+                </div>
+            </div><br>
+
+            <h3>Variables</h3>
+            <p>Permite definir un valor como un propiedad que afecta varias reglas CSS, como principal ventaja tiene que en un solo cambio de variable actualiza los todos los elementos involucrados facilitando el proceso de diseño y mantenimiento de la página. opcionalmente se puede poner un valor de respaldo en las variables. para definir una variable como global se utiliza las pseudoclase :root{--variable:valor}. ejemplo</p>
+            <div class="ejemplo">
+                <i>en el archivo style.css</i>
+                <p>div{<br>
+                --nombre-variable: #00f<br>   
+                }<br>
+                h2 {<br>
+                        color: var(--nombre-variable);<br>
+                    }<br>
+                    p {<br>
+                        color: var(--nombre-variable, blue);<br>
+                    }<br>
+                    <i>en el archivo index.html</i>
+                    <p>&lt;div><br></p>
+                        <p class="blue">&lt;h2>Titulo de prueba&lt;/h2></p>
+                        <p class="blue">&lt;p>Parrafo de prueba&lt;/p></p>
+                        <p>&lt;/div></p>
+                </p>
+            </div>
+
+            <h2 id="media">Diseño Responsivo</h2>
+            <p>@media. permite que las reglas CSS de diseño se adapten segun la resolución del dispositivo que visulaiza el sitio, ejemplo:</p>
+            <div class="ejemplo">
+                <p>@media (max-width: 1199px) and (min-width: 769px) {<br>
+                    *{<br>
+                      color: #2f2;<br>
+                    }</p>
+            </div>
+
+            <p>pendientes: gradient, variables en css, animaciones</p>
+
+        </main>
+        <footer>
+            actualizado septiembre 2022 - derechos reservados
+        </footer>
+
+    </body>
+</html>

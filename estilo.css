@@ -1,0 +1,232 @@
+body {
+    font-family: arial unicode ms,lucida sans unicode;
+    font-size: 13px;
+}
+
+.ejemplo {
+    background-color: #ccc;
+    margin: 0 10%;
+    padding: 0.5rem 2%;
+}
+
+.blue {
+    color: #11f;
+}
+
+.green {
+    color: rgb(9, 161, 9);
+}
+
+.tamaño{
+    font-size: 25px;
+}
+
+span{
+    color: #11f;
+    font-style: bold;
+}
+.fuente{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+table, td, th {
+    border: solid 1px #000;
+}
+
+.googleFont{
+    font-family: 'Ms Madi', cursive;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.puntero{
+    cursor: crosshair;
+}
+
+.logo{
+    width: 200px;
+}
+/*Estilos de cajas contenedores para ejemplos en CSS*/
+
+.contenedorEjemplo1, 
+.contenedorBorde,
+.contenedorRedondeado
+.contenedor{
+    background: rgb(230, 33, 33);
+    color:#fff;
+    font-weight: 700;
+}
+
+.contenedorEjemplo1{
+    width: 100px;
+    height: 50px;
+}
+
+.contenedorBorde{
+    width: 100px;
+    height: 100px;
+    font-weight: 700;
+    border-color: #11f;
+    border-width: 10px;
+    border-style: solid dashed dotted double;
+}
+
+.contenedorRedondeado{
+    width: 100px;
+    height: 100px;
+    border-radius:10px 15px 10% 50%;
+    color:#fff;
+    background: rgb(230, 33, 33);
+    font-weight: 700;
+}
+
+.contenedorP1{
+    background: rgb(230, 33, 33);
+    width: 195px;
+    height: 40px;  
+}
+
+.contenedorP2{
+    padding: 5px 15px 30px 40px;
+    color: #fff;    
+}
+
+.contenedorP3{
+    background: rgb(230, 33, 33);
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    margin: 10px 20px 30px 50px;  
+}
+
+.contenedorScroll{
+    background: rgb(230, 33, 33);
+    font-weight: 700;
+    width: 70px;
+    height: 70px;
+    color: #fff;
+    overflow:scroll;
+    font-size: 18px;
+}
+
+.center{
+    text-align: center;
+}
+
+.overline{
+    text-decoration: overline;
+}
+
+.shadow{
+    text-shadow: 3px 3px 2px #22a;
+}
+
+.enlace:link{
+    color:rgb(50, 25, 195);
+    font-weight: 700;
+}
+
+.enlace:visited{
+    color: rgb(4, 75, 4);
+}
+
+.enlace:hover{
+    color:rgb(221, 228, 12);
+    font-weight: 700;
+}
+
+.enlace:active{
+    color: rgb(191, 21, 106);
+}
+
+.contenedor{
+    padding: 5px;
+    margin: 5px;
+}
+
+.px{
+    background: rgb(230, 33, 33);
+    width: 200px;
+    color:#fff;
+}
+
+.em{
+    width: 15em;
+    background: rgb(230, 33, 33);
+    color:#fff;
+}
+
+.rem{
+    width: 15rem;
+    background: rgb(230, 33, 33);
+    color:#fff;
+}
+
+.vw{
+    width: 20vw;
+    background: rgb(230, 33, 33);
+    color:#fff;
+}
+
+.vh{
+    height: 20vh;
+    width: 50px;
+    background: rgb(230, 33, 33);
+    color:#fff;
+}
+
+main {
+    padding-top: 10px;
+}
+
+
+p {letter-spacing: 1px;
+}
+
+.nav_el:link {color:#fff;}
+
+.nav_el:visited {color:#fff;}
+
+
+nav {
+   background: #22a;
+   padding: 10px;
+   }
+
+
+.elementosMenu {
+    display: inline-block;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    float: inline-start;
+    margin-bottom: 100px ;
+}
+
+h1{
+    padding-top: 10px;
+}
+
+aside{
+    background-color: #22a;
+    width: 7rem;
+    height: 80vh;
+    float: left;
+    margin-top: 50px;
+    padding:1rem 0.4rem;
+}
+
+main{
+    margin-left: 7.2rem;
+}
+
+.logoAside{
+    padding: 0.4rem;
+}
+li{
+    margin-left: 2rem
+}
+

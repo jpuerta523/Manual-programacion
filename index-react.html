@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css"/>
+    <link rel="stylesheet" href="normalize.css">
+    <title>
+        Manual de Programación: React
+    </title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul id="link_nav">
+                <li class="elementosMenu"><a class="nav_el"; href="index.html">Página Principal</a></li>
+                <li class="elementosMenu"><a class="nav_el"; href="index-html.html">HTML</a></li>
+                <li class="elementosMenu"><a class="nav_el"; href="index-css.html">CSS</a></li>
+                <li class="elementosMenu"><a class="nav_el"; href="index-javascript.html">JavaScript</a></li>
+                <li class="elementosMenu"><a class="nav_el"; href="index-bootstrap.html">Bootstrap</a></li> 
+                <li class="elementosMenu"><a class="nav_el"; href="index-git.html">GIT</a></li>
+                <li class="elementosMenu"><a class="nav_el"; href="index-react.html">React</a></li>
+            </ul>
+        </nav>
+
+        <aside>
+            <img src="react-icon.svg.png" class="logoAside">
+            <a class="nav_el" href="#basico">Manejo Básico JS</a>
+            <a class="nav_el" href="#jsx">JSX</a>
+            <a class="nav_el" href="#CreandoApp">Crear una App</a>
+            <a class="nav_el" href="#props">Props</a>
+        </aside>
+
+    </header>
+    <main>
+        <h1>Diccionario Programación: React </h1>
+
+        <h2 id="basico">Conceptos Básicos</h2>
+        <ul>
+            <li>Componente: conjunto de elementos básicos de react, las etiquetas HTML que los definen cominezan con mayusculas</li>
+            <li>props: Los props o propiedades permiten que un componete se comporte de forma dinamica permiteiendo que sean reutilizales</li>
+            <li>Estado</li>
+            <li>Hooks</li>
+            <li>EventListener</li>
+        </ul><br>
+
+        <h3>Instalación de node.js</h3>
+        <p>node.js permite la ejecución de codigo JS fuera de un navegador</p><br>
+
+        <h2 id="jsx">JSX</h2>
+        <p>permite describir en JS como se verian los componetes de una pagina usando una estructura similar al HTML.</p>
+
+        <h3>elementos</h3>
+        <p>Es la unidad mas pequeña definida en react que define lo que se presenta en panatalla, con JSX puedes crear y usar en JS cualquier elemento definido como una etiqueta HTML en letras minusculas</p>
+
+
+        <h3>Atributos</h3>
+        <p>En JSX se pueden cambiar o asignar atributos CSS con un formato similar, a los atributos cuyos nombres contienen mas de 2 palabras separadas por un guión en CSS se les debe aplicar el concepto de camelCase para definirlos en JSX, algunos de sus nombres cambian por ser una palabra reservada . ejemplo:</p>
+       
+            <ul>
+                <li>
+                    <p>
+                        cambio de nombre propiedad con camelCase:
+                        <div class="ejemplo">
+                        &lt; h1 fontFamily = "arial"> &lt;/h1></p>
+                        </div>
+                </li>
+                <li>
+                    <p>
+                        definir atributo Clase:
+                        <div class="ejemplo">
+                        &lt; h1 className = "tituloClase"> &lt;/h1></p>
+                        </div>
+                </li>
+                <li>
+                    <p>
+                        definir atributo for:
+                        <div class="ejemplo">
+                        &lt; label HtmlFor = "tituloLabel"> tituloLabel &lt;/label></p>
+                        </div>
+                </li>
+            </ul><br>
+
+            <h3>Definir un estilo</h3>
+            <p>para definir un estilo que agrupe varias reglas CSS en JSX, primero se defineuna variable const con el nombre del estilo y a continuación se crea un objeto JS donde cada una de sus propiedades corresponde a una propiedade CSS, ejemplo:</p>
+            <div class="ejemplo">
+                <p>
+                    const estilo1 = {
+                        color: "red",
+                        fontFamily: "Arial",
+                        FontSize: 15
+                    }
+                    <i>Para asginar el estilo a un elemento JSX:</i>
+                    &lt;h1 style = {estilo1}>Titulo 1 &lt;/h1>
+                </p>
+            </div><br>
+
+            <h3>Atributos del DOM en react</h3>
+            <a href="https://reactjs.org/docs/dom-elements.html#gatsby-focus-wrapper">DOM elements</a><br>
+            <hr>
+            
+            <h2 id="CreandoApp">Crear una aplicación</h2>
+            <h3>pasos previos</h3>
+            <p>Se necesita realizar una serie de pasos previos para iniciar una apliacion React</p>
+            <ul>
+                <li>
+                    crear una nueva carpeta donde se aloja todo el proyecto y luego en el vsc se abre dicha carpeta con la ruta Archivo -> Abrir Carpeta.
+                </li>
+
+                <li>
+                    Abrir la terminal integrada a VSC, se puede utilizar el atajo ctr + ñ, luego se verifica si la dirrección mostrada corresponde a la carpeta del proyecto, si ser requiere cambar de carpeta se utiliza el commando cd y luego la dirreción requerida.
+                </li>
+
+                <li>
+                   <p>en la terminal se ejecuta el siguiente codigo, donde la ultima palabara corresponde al nombre de la aplicación.</p>
+                   <div class="ejemplo">
+                    npx create-react-app mi-app
+                   </div>
+                   <p>
+                    Este proceso inicia un proceso de instalación de los paquetes de React, usualmente tarda un par de minutos, al finalizar correctamente sale el aviso de Happy hacking!
+                   PS C:\Users\Puerta\Desktop\desarrollo\react bootcamp\carpeta del proyecto>.
+                   </p>
+                </div>
+                </li>
+
+                <li>
+                    <p>
+                        se procede de nuevo a abrir la carpeta que contiene los nuevos archivos del proyecto en VSC, en el explorador de vcs se deben visualizar toda la nueva estructrura.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        En la terminal se ejecuta el codigo npm start, lo que eventualmente en el navegador predertinado abre una página con la dirrección localhost:3000, esto significa que nuestro equipo actua como un servidor local que permite visulizar los archivos react.
+                    </p>
+                </li>
+            </ul><br>
+
+        <h3>Crear un componente</h3>
+        <p>Los companetes son estrucutras básicas de una página los cuales pueden repetirse cuantas veces sea necesario con codigo dinamico</p>
+
+        <div class="ejemplo">
+            <p>
+                import React from "react";<br>
+                import "../estilos/Testimonio.css"
+                <br>
+                    function Testimonio(){<br>
+                        return(<br>
+                            <div className="contenedor-testimonio"><br>
+                                <img<br>
+                                    className = "imagen-testimonio"<br>
+                                    src = {required("../imagenes/testimonio-emma.png")}<br>
+                                    alt = "foto de Emma"/><br>
+                            </div><br>
+                        );<br>
+                    }<br>
+                    export default Testimonio;<br>
+            </p>
+        </div><br>
+
+        <h3>preparacion inicial proyecto</h3>
+        <p>Para Empezar a visualizar los cambios realizados primero se debe preparar el archivo App.js accediendo a el y elimiendado todo el contendo al interior de la etiqueta div y todas las reglas presentes en el archivo App.css, el archivo App.js queda asi</p>
+        <div class="ejemplo">
+            import './App.css';<br>
+            <br>
+            function App() {<br>
+                return (<br>
+                    &ltdiv className="App"><br>
+                    //agrgar aqui todo el contendio<br>
+                    &lt/div><br>
+                );<br>
+            }<br>
+            <br>
+            export default App;<br>
+        </div><br>
+
+        <h3>Mostrar un componente en la aplicación</h3>
+        <p>
+            todo el contendo de se agrgea entonces al interior de la etiqueta div con className app del archivo App.js, para ageragar un componete este va al interior de  &lt;> y su nombre debe comenzar con una letra mayuscula y este debe ser importado con su respectivo comando
+        </p>
+        <div class="ejemplo">
+            import './App.css';<br>
+            import Testimonio from "./componentes/Testimonio";<br>
+            <br>
+            function App() {<br>
+                return (<br>
+                    &ltdiv className="App"><br>
+                        &ltTestimonio /><br>
+                    &lt/div><br>
+                );<br>
+            }<br>
+            <br>
+            export default App;<br>
+        </div><br>
+
+        <h3>Asignar estilos CSS</h3>
+        <p>Los estilos se asignan mediante import"..." a sus respectivos archivos, para la pagina principal se define las reglas CSS en el archivo App.css que viene por defecto en React, para los componenetes se recomienda crear un carpeta de estilos donde cada componete tiene su propio archivo CSS con nombres iguales.</p><br>
+
+        <h2 id="props">prpos </h2>
+        <p>Los props o propiedades permiten que un componete se comporte de forma dinamica permiteiendo que sean reutilizales</p><br>
+
+        <h3>Asignar props a un componente</h3>
+        <p>para poder asignar props a un componente previamente creado se debe primero asignar props como variable en la función y en los compoenetes las propiedades dinamicas se marcan con la notación {props.propiedad}, si se busca un nombre dinamico en las propiedades como por ejemplo en las fotos la dirrección estaria adentro de backticks y la parte dinamica del nombre va al interior de ${}. ejemplo:</p>
+        <div class="ejemplo">
+            <p>
+                import React from "react";<br>
+                import "../estilos/Testimonio.css"<br>
+<br>
+                function Testimonio(props){<br>
+                    return(<br>
+                        &ltdiv className="contenedor-testimonio"><br>
+                        &ltimg<br>
+                                className = "imagen-testimonio"<br>
+                                src = {require(`../imagenes/testimonio-${props.imagen}.png`)}<br>
+                                alt = "foto de Emma"/><br>
+                            &ltdiv className="contenedor-texto-testimoinio"><br>
+                                &ltp className="nombre-testimonio">{props.nombre} en {props.pais}&lt/p><br>
+                                &ltp className="cargo-testimoinio">{props.cargo} en {props.empresa}&lt/p><br>
+                                &ltp className="texto-testimonio">{props.testimonio}&lt/p><br>
+                        &lt/div><br>
+                        <br>
+                        &lt/div><br>
+                    );<br>
+                    }<br>
+                <br>
+            export default Testimonio;<br>
+            </p>
+        </div><br>
+
+        <h3>pasar Props a un componente</h3>
+        <p>En el archivo donde se renderiza el componete se asigna a cada propieda un valor en un formato similar al de un objeto JS, ejemplo</p>
+        <div class="ejemplo">
+            <p>
+                ...<br>
+                &ltTestimonio <br>
+                nombre="Emma"<br>
+                pais="Suecia"<br>
+                empresa="Spotify"<br>
+                cargo="Ingeniera de Software"<br>
+                imagen="emma"<br>
+                testimonio="Siempre he tenido problemas ...."/><br>
+            </p>
+        </div><br>
+
+        <h3>Crear un Evento de click</h3>
+        <p>onClick={funcion}: Este comando permite la asignación de una escucha de evento click sobre el elemento, la variable se declara en el componente y la funcion se definira cuando se renderise el componete en el programa principal</p>
+        <div class="ejemplo">
+            import React from "react";<br>
+            <br>
+            function Boton({ texto, esBotonDeClick, manejarClick }){<br>
+                return(<br>
+                    <button<br>
+                        className={esbotondeclick ? "boton-click" : "boton-reiniciar"}<br>
+                        onClick={manejarClick}><br>
+                        {texto}<br>
+                    </button><br>
+                );<br>
+            }<br>
+        </div><br>
+
+        <h2>Hooks</h2>
+        <h3>escuchas de eventos</h3>
+        <h3>paquete mathjs</h3>
+        <h3>react icons</h3>
+
+    </main>
+</body>
+</html>

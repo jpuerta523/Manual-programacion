@@ -1,0 +1,7 @@
+diccionario de desarrollo web
+
+conceptos de desarrollo web en HTML, CSS y JS medios
+
+novedades de v1.2
+manual de desarrollo web con React
+

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="estilo.css"/>
+        <title>
+            Diccionario Programación: HTML
+        </title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li class="elementosMenu"><a class="nav_el"; href="index.html">Página Principal</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-html.html">HTML</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-css.html">CSS</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-javascript.html">JavaScript</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-bootstrap.html">Bootstrap</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-git.html">GIT</a></li>
+                    
+                </ul>
+            </nav>
+            <aside>
+                <img src="html5logo.png" class="logoAside">
+                <a class="nav_el" href="#html">Inicio html</a>
+                <a class="nav_el" href="#estBas">Estructura básica</a><br>
+                <a class="nav_el" href="#etHead">Etiquetas del Head</a>
+                <a class="nav_el" href="#formularios">Formularios</a>
+                <a class="nav_el" href="#atributos">Atributos</a>
+            </aside>
+        </header>             
+        <main>
+            <h1 id="html">Diccionario Programación: HTML</h1>
+
+            <img src="html5logo.png" class="logo">
+
+            <p>El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para 
+                estructurar y desplegar una página web y sus contenidos, es decir forma la 
+                estructura básica de los objetos que conforman una pagina web. La ultima versión 
+                es el estandar HTML:5 </p>
+                <br><hr>
+
+            <h2 id="estBas">Estructura básica</h2>
+
+                <p>Todas las páginas web pueden tener 4 partes principales en su estructura con 
+                    caracteristicas definidas, a continuación se presenta una representación gráfica 
+                    con sus respectivas etiquetas HTML, se puede crear la estructura báscia en el archivo HTML con el atajo ! + TAB: </p><br> 
+                <div>
+                    <div>&lt;head &gt; Elemento que contiene información util para el navegador pero que no 
+                        es visible para el usuario</div>
+                    <div>&lt;body &gt; Contiene los elementos con los que el usuario puede interactuar en 
+                        la estrucutra principal del sitio. </div>
+                    <div>&lt;aside &gt;</div>
+                    <div>&lt;footer&gt; Muestra información util en el pie de página.</div>
+                    <br>
+                </div> 
+                <p>Ejemplo:</p><br>
+                <div class="ejemplo">
+                    <p>&lt;!DOCTYPE html&gt;<br>
+                        &lt;html lang="es"&gt;<br>
+                        &lt;head&gt;<br>
+                        información util para el navegador como etiquetas meta, titulo y enlaces a otros archivos.<br>
+                        &lt;/head&gt;<br>
+                        &lt;body&gt;<br>
+                        Cuerpo principal del sitio<br>
+                        &lt;/body&gt;<br>
+                        &lt;aside&gt;<br>
+                        barras con información util laterales<br>
+                        &lt;/aside&gt;<br> 
+                        &lt;footer&gt;<br>
+                        Pie de página<br>
+                        &lt;/footer&gt;<br>
+                        &lt;/html&gt;</p>
+                </div>
+                <br><hr>
+
+            <h2 id="etHead">Etiquetas del head</h2>
+
+            <p>Las etiquetas ubicadas antes o al interior del head, también conocidas como metainformación aporta información a los buscadores sin que esta sea visible a los usuarios por pantalla.</p><br>
+
+            <p>&lt; !DOCTYPE html &gt; Debe ser el primer elemento en cualquier proyecto HTML5, su función
+            es  declarar al navegador que es el archivo es de tipo HTML y se ubica en la primera linea. 
+            antes de definir el head, no tiene propiedades disponibles.</p><br>
+
+            <p>&lt; html lang="es" &gt; etiqueta raiz del documento HTML, abre después de la etiqueta &lt; !DOCTYPE html &gt; y cierra en la última línea del documento, tienen la siguiente propiedad: lang="es", ejemplos:</p><br>
+
+                <div class="ejemplo">
+                    <p>define el conjunto de caracteres disponibles en el lenguaje español: &lt;meta charset="utf-8"&gt;<br>
+                    Indicar que es compatible con cualquer resolución de pantalla: &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;<br>
+                    enlaza el archivo de estilo CSS: &lt;link rel="stylesheet" href="estilo.css"/&gt;<br>
+                    &lt;title&gt; Titulo mostrado en el navegador &lt;/title&gt;     
+                </div>
+                <br>
+                
+                <hr>
+
+                <h2>Etiquetas del DOM</h2><br>
+                <p>Estas etiquetas definen la forma de como se le información al usuraio en pantalla ya sea texto, multimedia o hipervinculos.</p><br> 
+
+                <h3>Comentar texto</h3>
+                <p>&lt;!--&gt; Etiqueta usada para comentar un texto en el código, esta información no es visible para el usuario en el navegador y usualmente se utiliza para dejar pista a los desarolladores, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>&lt;!--&gt;Texto Comentado en el interior del código--></p>
+                </div><br>
+
+                <h3>Enlaces</h3>
+                <p>&lt;a&gt; del anchor en íngles se utiliza para crear enlaces ya sea internos a otras secciones o a otras paginas en HTML, el atributo href="" define la ubicación del enlace y target="_blank", ejemplos: </p>
+                <div class="ejemplo">
+                    <p>Link a una parte en la misma pagina con ID de una etiqueta: &lt;a href="#idSeccion">nombre de la sección del sitio &lt;/a&gt;</p>      
+                    <p>Etiqueta de hipervinculo global, tagert blank abre el vinculo en una nueva pestaña: &lt;a href="https://www.google.com/" target="_blank">haz click aqui &lt;/a></p>
+                    <p>Hipervinculo ubicado en una imagen: &lt;a href="dirección hipervinculo">&lt;img src="ubicación de imagen"> &lt;/a></p>
+                    <p>Etiqueta de hipervinculo a un archivo ubicado en una carpeta local: &lt; a href="formulario plantilla.html" target="_blank">haz click aqui para abrir un pagina local &lt;/a></p>
+                    <p></p>Etiqueta para un hipervinculo local en carpetas: &lt; a href="prueba/otra/formulario plantilla.html" target="_blank">haz click aqui para abrir un pagina local &lt;/a><p>
+                    <p>Etiqueta de hipervinculo local para volver a carpeta de orden superior: &lt; a href="../formulario plantilla.html" target="_blank">haz click aqui para abrir un pagina local &lt;/a></p>
+                    <p>para enviar un correo: &lt;a href="mailto:user@gmail.com">Contacto&lt;/a></p>
+                </div><br>
+
+                <h3>articulos</h3>
+                <p>&lt; article &gt permite definir contenido independiente en el sitio.</p><br>
+
+                <h3>Texto en negrita</h3>
+                <p>&lt;b&gt Se usa para poner en negrita un texto, también con la etiqueta &lt; strong &gt se logra el mismo efectro en un texto selecionado, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>&lt;p&gt texto en  &ltb&gt<b>Negrita</b> &lt/b&gt</p>
+                    <p>&lt;p&gttexto en  &ltstrong&gt<strong>Negrita</strong> &lt/strong&gt&lt;/p&gt </p>
+                </div>
+                <br>
+
+                <h3>salto de linea</h3>
+                <p>&lt;br&gt Esta etiqueta inserta un salto de linea entre 2 elementos.</p>
+                <div class="ejemplo">
+                    <p>elemento 1</p>
+                    <br><p>&lt;br&gt</p><br>
+                    <p>elemento 2</p>
+                </div>
+                <br>
+
+                <h3>Script de JS</h3>
+                <p>Permite importar archivos JavaScript a la pagina definiedo el tipo como modulo, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>&ltscript type="module" src="filename.js"></script></p>
+                </div>
+
+                <h3>Div o contenedores</h3>
+                <p>&lt;div&gt Inserta una sección a la que se le define un estilo especifico en CSS, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>&lt;div&gt</p>
+                    <p>     elemento 1</p>
+                    <p>     elemento 2</p>
+                    <p>     elemento 3</p>
+                    <p>&lt;/div&gt</p>
+                </div>
+                <br>
+
+                <h3>Texto en cursiva</h3>
+                <p>&lt;em&gt Se usa para poner un texto selecionado en letra cursiva, también con la etiqueta &lt; i &gt se logra el mismo efectro en un texto selecionado, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>&lt;p&gt texto en  &ltem&gt<em>cursiva</em> &lt/em&gt&lt;/p&gt </p>
+                    <p>&lt;p&gt texto en  &lti&gt<i>cursiva</i> &lt/i&gt&lt;/p&gt </p>
+                </div>
+                <br>
+            
+                <h3>Titulos</h3>
+                <p>&lt;h1&gt hasta &lt; h6 &gt hace referencia a los títulos que se pueden utilizar
+                en las páginas web y la numeración hace referencia a la importancia donde h1 es un
+                título principal, h2 un subtítulo y asi hasta llegar a h6 que es el menos importancia.</p>
+                <div class="ejemplo">
+                    <h1>&lt;h1>Titulo Principal 1&lt;/h1></h1>
+                    <h2>&lt;h2>Subtitulo 2&lt;/h2></h2>
+                    <h3>&lt;h3>Subtitulo 3&lt;/h3></h3>
+                    <h4>&lt;h4>Subtitulo 4&lt;/h4></h4>
+                    <h5>&lt;h5>Subtitulo 5&lt;/h5></h5>
+                    <h6>&lt;h6>Subtitulo 6&lt;/h6></h6>
+                </div>
+                <br>
+
+                <h3>barra separadora</h3>
+                <p>&lt;hr&gt Agrega una barra que puede separar dos secciones diferentes de la página, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>sección 1</p>
+                    <p>&lt;hr&gt</p><hr>
+                    <p>sección 2</p>
+                </div>
+                <br>
+
+                <h3>Imagenes</h3>
+                <p>&lt; img &gt Se usa para mostrar imágenes en el sitio web, estas pueden estar alojadas de forma local o ubicadas en la web en su propia URL, tiene como propiedaes src="" para definir ubicación y alt="" para entregar al usuario una descripción.</p>
+                <div class="ejemplo">
+                    <p>&lt;img src="ubicación de la imagen" alt="descripción de la imagen"></p>
+                </div>
+                <br>
+
+                <h3>Elementos de listas</h3>
+                <p>&lt;li&gt hace referencia a los elementos de las listas sin orden &lt;li&gt; o listas ordenedas &lt;ol&gt;</p><br>
+                
+                <h3>link</h3>
+                <p>&lt;link&gt permite enlazar con archivos y direciones web al docuemnto.</p>
+                <div class="ejemplo">
+                    &lt;link rel="stylesheet" href="estilo.css"/>
+                </div>
+                <br>
+
+                <h3>Grupo principal</h3>
+                <p>&lt;main &gt Agrupa todos el contenido principal del sitio.</p>
+
+                <h3>Barra de navegación</h3>
+                <p>&lt; nav &gt</p>
+                <br>
+
+                <h3>listas ordenada</h3>
+                <p>&lt;ol&gt; Esta etiqueta hace referencia a las ordered list o listas ordenadas, donde esta agrupa varios elementos numerando cada uno de los elementos y etiqueadolos con un listed item &lt;li>, con el atributo value se puede cambiar el valor de la numeracion, las listas se pueden anidar , ejemplo:</p>
+                <div class="ejemplo">
+                    <p>Lista de elementos ordenados:<br>&lt;ol></p>
+                    <ol>
+                        <li>&lt;ol&gt;Primer elemento&lt;/ol&gt;</li>
+                        <li>&lt;ol&gt;Segundo elemento&lt;/ol&gt;</li>
+                        <li value="50">&lt;ol&gt;tercer elemento&lt;/ol&gt;
+                            <ul>
+                                <li>elemento a</li>
+                                <li>elemento b</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p>&lt;/ol></p>                
+                </div>
+                <br>        
+
+                <h3>Parrafos con texto</h3>
+                <p>&lt;p&gt En el interior de este elemento se ubica texto en forma de párrafo, para generar texto de forma automática se usa el lorem ipsum,.</p>
+                <div class="ejemplo">
+                    <p>&lt;p&gt Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus quibusdam, repellat ex architecto, accusantium est nam obcaecati itaque ab class praesentium unde harum laborum recusandae molestiae fugiat! Totam, cupiditate eligendi?&lt;/p&gt</p>
+                </div>
+                <br>
+
+                <h3>Secciones</h3>
+                <p>&lt;section> permite agregar secciones en el sitio.</p><br>
+
+                <h3>Span</h3>
+                <p>&lt;span>Se usa para referenciar y dar propiedades especificas a una porción de texto que esta al interior de un parrafo mas grande</p>
+                <div class="ejemplo">
+                    <p>Lorem ipsum dolor, sit amet <span>&lt;span>consectetur adipisicing elit&lt;/span></span> Minima commodi nihil illo quam, dolore alias voluptates repellendus! Enim debitis eum eos sed libero dignissimos modi. Excepturi facere autem perspiciatis quasi?</p>
+                </div><br>
+
+                <h3>Texto tachado</h3>
+                <p>&lt;s&gt Etiqueta usada para tachar un texto seleccionado, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>&lt;p&gt texto &lts&gt<s>tachado</s> &lt/s&gt&lt;/p&gt</p>
+                </div>
+                <br>
+
+                <h3>Texto pequeño</h3>
+                <p>&lt;small&gt Etiqueta usada para hacer un texto seleccionado mas pequeño, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>&lt;p&gt texto &ltsmall&gt<small>pequeño</small> &lt/small&gt&lt;/p&gt</p>
+                </div>
+                <br>
+                
+                <h3>lista sin orden</h3>
+                <p>&lt;ul>  Esta etiqueta hace referencia a las unordered list o listas sin orden, donde esta agrupa varios elementos sin ningun orden en especifico cada uno etiqueado con un listed item &lt;li>, ejemplo:</p>
+                <div class="ejemplo">
+                    <p>Lista de elementos sin orden:<br>&lt;ul></p>
+                    <ul>
+                        <li>&lt;li&gt;Primer elemento&lt;/li&gt;</li>
+                        <li>&lt;li&gt;Segundo elemento&lt;/li&gt;</li>
+                        <li>&lt;li&gt;tercer elemento&lt;/li&gt;</li>
+                    </ul>
+                    <p>&lt;/ul></p>                
+                </div>
+                <br><hr>
+           
+                <h2 id="formularios">Formularios</h2>
+
+                <p>&lt;button&gt Crea un botón que al ser presionado por el usuario envia los cambios al servidor, en el atributo type tiene 3 opciones: button (para ejecutar codigo JS), submit(envia formulario a servidor) y reset(limpia info en el formulario) </p>
+                <div class="ejemplo">
+                    <p>&lt;button type="submit"&gt Enviar &lt;/button></p>
+                    <button type="submit">nombre boton</button>
+                    </div>
+                <br>
+
+                <p>&lt;form&gt Indica que se va a crear un formulario en el documento HTML, todos los elementos del formulario son hijos de esta etiqueta, es decir estan en su interior tiene como atributo action que indica a donde se envia la información recolectada en el formulario y method indica el protocolo de envio.</p>
+                <div class="ejemplo">
+                    <p>&lt;form action="Destino información formulario" method="post" &gt </p>
+                    <br>
+                    <p>&lt;/form&gt</p>
+                </div>
+                <br>
+
+                <p>&lt;input&gt  Es un elemento que permite que el usuario ingrese una información solicita a el sitio, exiten diferentes clases de input para cada tipo de información requerida, el atributo name es el nombre con el que se le entraga el dato del imput al servidor. ejemplo: </p>
+                <div class="ejemplo">
+                    <p>&lt;label for="texto">texto&lt;input type="text" value="valor por defecto" placeholder="pista de info" id="texto" name="texto" required>&lt;/label> </p>
+                    <label for="texto">texto<input type="text" value="valor por defecto" placeholder="pista de info" id="texto" name="texto" required></label>
+                    <p>&lt;label for="correo">correo&lt;input type="email" placeholder="correo" id="correo1" name="correo" required>&lt;/label> </p>
+                    <label for="correo">correo<input type="email" placeholder="correo" id="correo1" name="correo" required></label>
+                    <p>&lt;label for="contraseña">contraseña&lt;input type="password" placeholder=" ingresa una contraseña" id="contraseña1" name="contraseña" required>&lt;/label> </p>
+                    <label for="contraseña">contraseña<input type="password" placeholder="ingresa una contraseña" id="contraseña1" name="contraseña" required></label>
+                    <p>&lt;label for="archivo">archivo&lt;input type="file" id="archivo1" name="archivo" required>&lt;/label> </p>
+                    <label for="archivo">archivo<input type="file" id="contraseña1" name="contraseña" required></label>
+                    <p>&lt;label for="número">numero&lt;input type="number" placeholder="numero" id="numero1" name="numero" min="10" max="100" required>&lt;/label > </p>
+                    <label for="numero">numero<input type="number" placeholder="numero" id="texto" name="numero1" min="10" max="100" required></label>
+                    <p>&lt;label for="fecha">fecha&lt;input type="date" id="fecha1" name="fecha" required>&lt;/label ></p>
+                    <label for="fecha">fecha<input type="date"  id="fecha" name="fecha1"  required></label>
+                    <p>&lt;label for="color">&lt;/label>&lt;input id="color" name="color" type="color" required =""></p>
+                    <label for="color">color</label><input id="color" name="color" type="color" required ="">
+                    <p> &lt;label for="rango">&lt;/label>&lt;input id="rango" name="rango" type="range" min="10" max="1000"  </p>
+                    <label for="rango">rango</label><input id="rango" name="rango" type="range" min="10" max="1000" required ="">
+                    <p>&lt;label for="hora">&lt;/label>&lt;input id="hora" name="hora" type="time" required =""></p>
+                    <label for="hora">hora</label><input id="hora" name="hora" type="time" required ="">
+                    <p>&lt;input type="button" value="boton"></p>
+                    <input type="button" value="boton">
+
+                    <hr>
+                    <p>botón de opción o radio, el atributo name="" forma un grupo de botones donde solo uno puede ser seleccionado:</p>
+                    <p>&lt;label for="idButton1">&lt;input id=idButton1 type="radio" name="grupoOpciones" value="opcion1"&gt opción 1 &lt;/label></p>
+                    <p>&lt;label for="idButton2">&lt;input id=idButton2 type="radio" name="grupoOpciones" value="opcion2"&gt opción 1 &lt;/label></p>
+                    <label for="idButton1"><input id="idButton1" type="radio" name="grupoOpciones">opción 1</label> 
+                    <label for="idButton2"><input id="idButton2" type="radio" name="grupoOpciones" checked>opción2</label> 
+                    <hr>
+                    <p>checkbox o casilla de verficación, a diferencia de radio button, aqui varias pueden ser selecionadas.</p>
+                    <p>&lt;label for="check1">&lt;input id="check1" type="checkbox" name="grupoChecks" value="check1"&gt Check 1 &lt;/label></p>
+                    <p>&lt;label for="check2">&lt;input id="check2" type="checkbox" name="grupoChecks" value="check2"&gt Check 2 &lt;/label></p>
+                    <p>&lt;label for="check3">&lt;input id="check3" type="checkbox" name="grupoChecks" value="check3"&gt Check 3 &lt;/label></p>
+                    <label><input type="checkbox" input id="check1">Check 1</label>
+                    <label><input type="checkbox" input id="check2" checked>Check 2</label>
+                    <label><input type="checkbox" input id="check3">Check 3</label>
+                    <hr>
+                    <p>casilla para selección multiple</p>
+                    <p> &lt;select>
+                        &lt;option value="">seleccione una opción&lt;/option><br>
+                        &lt;option value="1">opción 1&lt;/option><br>
+                        &lt;option value="2">opción 2&lt;/option><br>
+                        &lt;option value="3">opción 3&lt;/option><br>
+                        &lt;/select>
+                    </p>
+                    <select>
+                        <option value="">seleccione una opción</option>
+                        <option value="1">opción 1</option>
+                        <option value="2">opción 2</option>
+                        <option value="3">opción 3</option>
+                    </select><hr>
+                    <p>&lt;textarea &gt id="comentarios" placeholder="ingrese comentarios" name="comentario">valor por defecto reemplaza el placeholderlt;/textarea></p> 
+                    <label for="comentarios">comentario</label><textarea rows="10" cols="50" id="comentarios" placeholder="ingrese comentarios" name="comentario">valor por defecto reemplaza el placeholder</textarea>                 
+                </div>
+                <br>
+                  
+
+                <div class="ejemplo">
+                    <p>&lt;form&gt</p>
+                    <p>&lt;input&gt</p>
+                    <p>&lt;/form&gt</p>
+                </div>
+                <br><hr>
+
+                <h2 id="atributos">Atributos</h2>
+            
+                <p>Los Atributos son las propiedades que pueden tener las etiquetas HTML</p>
+
+                <h3>ID</h3>
+                <p>Los ID son identificadores de elementos que asigna un nombre único que no debe repetirse en todo el documento</p>
+                <div class="ejemplo">
+                    <p>&lt;p id="Nombre único">Texto de prueba&lt;/p></p>
+                </div><br>
+
+                <h3>Class</h3>
+                <p>Permite agrupar bajo un mismo nombre de clase a varios elementos, muy util para definir reglas de estilo CSS, un elemento puede tener varias clases, solo hay que separarlas con un espacio.</p>
+                <div class="ejemplo">
+                    <p>&lt;p class="clase1 clase2">Texto de prueba&lt;/p></p>
+                </div><br>
+
+               <p>lang: Define el idioma del sitio, usada por la etiqueta &lt; html lang="es" &gt</p>
+               <br><hr>
+               
+               <h2>tablas</h2>
+               <p>&lt;table> crea un tabla que permite mostrar información en formato de celdas &lt;td> ubicadas en un arreglo de filas &lt;tr> y columnas, se puede dar estilo a la tabla con la propiedad border en CSS</p>
+               <p>&lt;thead>: agrupa las celdas de cabezera de la tabla</p>
+               <p>&lt;tbody>: agrupa las celdas del cuerpo de la tabla</p>
+               <div class="ejemplo">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>marca</td>
+                            <td>modelo</td>
+                            <td>año</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </body>
+                    <tr>
+                        <td>vw</td>
+                        <td>golf</td>
+                        <td>2005</td>
+                    </tr>
+                    <tr>
+                        <td>bmw</td>
+                        <td>325i</td>
+                        <td>1992</td>
+                    </tr>
+                    <tr>
+                        <td>suzuki</td>
+                        <td>swift</td>
+                        <td>2019</td>
+                    </tr>
+                    </tbody>
+                </table><br><hr>
+                &lt;table>
+                    &lt;tr>
+                        &lt;td>marca&lt;/td><br>
+                        &lt;td>modelo&lt;/td><br>
+                        &lt;td>año&lt;/td><br>
+                    &lt;/tr><br>
+                &lt;tr>
+                        &lt;td>vw&lt;/td><br>
+                        &lt;td>golf&lt;/td><br>
+                        &lt;td>2005&lt;/td><br>
+                    &lt;/tr><br>
+                    &lt;tr><br>
+                        &lt;td>bmw&lt;/td><br>
+                        &lt;td>325i&lt;/td><br>
+                        &lt;td>1992&lt;/td><br>
+                    &lt;/tr><br>
+                    &lt;tr><br>
+                        &lt;td>suzuki&lt;/td><br>
+                        &lt;td>swift&lt;/td><br>
+                        &lt;td>2019&lt;/td><br>
+                    &lt;/tr><br>
+                &lt;/table>
+               </div>              
+                   
+        </main>
+
+        <footer>
+            actualizado septiembre 2022 - derechos reservados
+        </footer>
+
+    </body>
+</html>
