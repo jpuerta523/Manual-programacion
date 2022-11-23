@@ -74,7 +74,7 @@
             <h3>Guardar cambios en un archivo</h3>
             <p>Si posterior al envio al repositorio, un archivo es modificado y se guarda los cambios, este en la lista de estado aparece de nuevo con una letra "M" en color rojo indicando que el archivo fue modificado, posteriormente se debe enviar a la zona de seguimiento con el comando "git add archivo.extencion" quedando en la lista de estado con la "M" en verde y finalmente se envia al repositorio con el comando "git commit -m "descripción"</p>
             <div class="ejemplo">
-                <p>$ git add index.html
+                <p>$ git add index.html<br>
                     $ git commit -m "Se agrega mas contenido a la página"</p>
             </div><br>
 
@@ -95,7 +95,64 @@
             <div class="ejemplo">
                 <p>$ git reset --hard 76a6140"</p>
             </div><br>
+
+            <h3>Enviar repositorio a GitHub</h3>
+            <p>Para poder enviar el repositorio local de GIT a GitHub primero se debe establecer comunicacion entre los dos destinos con el comando git "push origin master", luego se envia el repositorio a GitHub con el comando "git remote add origin https://github.com/usuariogit/nombre-repositirio.git", esta direccion es suministada por GitHub en su panel.</p>
+            <div class="ejemplo">
+                git push origin master<br>
+                git remote add origin https://github.com/jpuerta523/Manual-programacion.git
+            </div>
+
+            <h3>Modificar archivo desde Github<h3>
+            <p>GitHub permite modificar un archivo directamente desde el repositirio web, simplemente se accede al archivo y se modifica desde el icono con forma de lapiz, finalmente se guardan con el comado "git pull" los cambios en el boton verde del fondo y automaticamente guarda los cambios tanto en el repositorio como en el equipo.</p>
+            <div class="ejemplo">
+                git pull
+            </div><br>
             
+
+            <h3>Manejo de versiones</h3>
+            <p>es posible en git poner Tags (etiquetas) para dar numero de version al repositorio, para ello en la terminal GitBash se pone el codigo "git tag info de version -m "descripción", para caragar los cambios en GitHub usamos el comando "git push --tags" </p>
+            <div class="ejemplo">
+                git tag -m 21/11/2022v1 -m "calculadora version freecodcamp"<br>
+                git push --tags
+            </div><br>
+            
+
+            <h3>Clonar un repositorio</h3>
+            <p>Desde un repositorio en Github se busca el icono verde "code" y se copia la dirreción web que ofrece,luego abrimos una terminal GitBash enlazada a la carpeta local de destino y utilizamos el comado "git clone direccion-web-copiada"</p>
+            <div class="ejemplo">
+                git clone https://github.com/jpuerta523/calculadora.git
+            </div><br>
+            
+            <h2>Ramas o branches</h2>
+            <p>Las ramas son versiones en paralelo que permiten trabajar en el proyecto en paralelo al hacer cambios sin que afecten otras versiones para posteriormente se fusionadas en una sola rama, generalmente en la rama principal conocida como master</p><br>
+
+            <h3>Crear una nueva rama</h3>
+            <p>Para crear una nueva rama del proyecto solo es neceario usar el comando "git branch nombreRama", con esto ya queda creada la nueva rama con el nombre asigando</p>
+            <div class="ejemplo">
+                git branch rama1
+            </div><br>
+
+            <h3>fusionar ramas</h3>
+            <p>En la rama que se actualizara, que generalmente es la master se utiliza el codigo "git merge nombreRama" donde nombreRama es la rama a fusionar con la principal. si hay modificacines en el mismo archivo en las dos ramas el GitBash informa de conflictos que deben ser solucionados en el editor de texto</p>
+            <div class="ejemplo">
+                git merge rama1
+            </div>
+
+            <h3>Cambiar de rama</h3>
+            <p>Primero es posible visualizar la rama que esta activa, para ello se usa el codigo "git branch" que muestra todas las ramas diponibles en el proyecto y en verde con un asterisco señala la rama activa. para activar otra rama se usa el codigo "git checkout nombreRama". en VSC existe un atajo para cambiar de rama accediendo al primer elemento a la izquierda de la barra inferior, al hacer click alli se desplega la lista de ramas disponibles y simplemente se da click en la requerida.</p>
+            <div class="ejemplo">
+                git branch<br>
+                git checkout rama1
+            </div>
+
+            <h3>Elininar rama</h3>
+            <p>Es posible eliminar una rama ya sera por que se aceptaron los cambios en la rama principal con merge o por que sus modificaciones no seran tenidas en cuenta para el proyecto, para ello se utiliza el comando "git branch -d nombreRama". </p>
+            <div class="ejemplo">
+                git branch -d rama1
+            </div>
+               
+
             <h2>Comandos</h2>
 
             <p>pwd
