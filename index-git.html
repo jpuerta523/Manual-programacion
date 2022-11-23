@@ -97,7 +97,7 @@
             </div><br>
 
             <h3>Enviar repositorio a GitHub</h3>
-            <p>Para poder enviar el repositorio local de GIT a GitHub primero se debe establecer comunicacion entre los dos destinos con el comando git "push origin master", luego se envia el repositorio a GitHub con el comando "git remote add origin https://github.com/usuariogit/nombre-repositirio.git", esta direccion es suministada por GitHub en su panel.</p>
+            <p>Para poder enviar el repositorio local de GIT a GitHub primero se debe establecer comunicacion entre los dos destinos con el comando git "push origin master", luego se envia el repositorio a GitHub con el comando "git remote add origin https://github.com/usuariogit/nombre-repositirio.git", esta direccion es suministada por GitHub en su panel. para VSC existe un atajo, primero se crea un respositorio vacio en GitHub y se obtiene la dirrecion que suminstra de forma automatica, luego en VSC en la barra de herramientas se seleciona ver -> paleta de comados y en la paleta de comandos se utiliza el comando "git clone" luego nos solicita la URL del repositorio GitHub y finalmente muestra un explorador donde selecionaremos la carpeta del proyecto, finalmente en el panel git se selecciona ... -> push.</p>
             <div class="ejemplo">
                 git push origin master<br>
                 git remote add origin https://github.com/jpuerta523/Manual-programacion.git
@@ -134,7 +134,7 @@
             </div><br>
 
             <h3>fusionar ramas</h3>
-            <p>En la rama que se actualizara, que generalmente es la master se utiliza el codigo "git merge nombreRama" donde nombreRama es la rama a fusionar con la principal. si hay modificacines en el mismo archivo en las dos ramas el GitBash informa de conflictos que deben ser solucionados en el editor de texto</p>
+            <p>En la rama que se actualizara, que generalmente es la master se utiliza el codigo "git merge nombreRama" donde nombreRama es la rama a fusionar con la principal. si hay modificacines en el mismo archivo en las dos ramas el GitBash informa de conflictos que deben ser solucionados en el editor de texto, VSC nos ofrece un atajo en el campo git -> ... -> merge branch -> selecionar rama</p>
             <div class="ejemplo">
                 git merge rama1
             </div>
@@ -151,6 +151,9 @@
             <div class="ejemplo">
                 git branch -d rama1
             </div>
+
+            <h3>Resolver conflictos entre ramas</h3>
+            <p>Al juntar (merge) dos ramas es posible que conflictos debidos a que para una misma parte del codigo ambas ramas presente versiones diferentes, en este caso VSC al hacer merge nos informa del conflicto y nos opcion de dejar el codigo del master, el codigo de la rama o dejar ambos, adicional permite comparar ambos codigos en paralelo antes de tomar la desición, si se aceptan ambos cambios el documento en el panel de git aparece con una C y la rama master aparece con una "!" al final indicando que tiene conflictos, para resolverlo en donde sale el archivo en el panel de git aparece un "+" que permite enviar el archivo a stage area quedando como modificado con la letra "M" y disponible para hacer un commit </p>
                
 
             <h2>Comandos</h2>
