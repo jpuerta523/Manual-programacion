@@ -13,27 +13,36 @@
         <header>
             <nav>
                 <ul>
-                    <li><a id="nav_el"; href="index.html">Página Principal</a></li>
-                    <li><a id="nav_el"; href="index-html.html">HTML</a></li>
-                    <li><a id="nav_el"; href="index-css.html">CSS</a></li>
-                    <li><a id="nav_el"; href="index-javascript.html">JavaScript</a></li>
-                    <li><a id="nav_el"; href="index-bootstrap.html">Bootstrap</a></li>
-                    <li><a id="nav_el"; href="index-git.html">GIT</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index.html">Página Principal</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-html.html">HTML</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-css.html">CSS</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-javascript.html">JavaScript</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-bootstrap.html">Bootstrap</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-git.html">GIT</a></li>
+                    <li class="elementosMenu"><a class="nav_el"; href="index-react.html">React</a></li>
                 </ul>
             </nav>
+
+            <aside>
+                <img src="csslogo.png" class="logoAside">
+                <a class="nav_el" href="#instalacion">Isntalación GIT</a>
+                <a class="nav_el" href="#config">Configuración Terminal</a>
+                <a class="nav_el" href="#github">GitHub</a>    
+            </aside>
+
         </header>
         <main>
             <h1>Diccionario Programación: GIT</h1>
             <p>GIT es un programa de desarrollo abierto que permite controlar las versiones de
                 control de los proyectos.</p>
 
-            <h2>Instalación</h2>
+            <h2 id="instalacion">Instalación</h2>
 
             <p>Para instalara GIT en tu computadora puedes acceder al </a href="https://git-scm.com/"> 
                 sitio oficial de GIT</a> y escoje la opción de descarga según tu sistema operativo.
                 para windows se descarga GIT Bash que es la consola con la que se trabaja a continuación. </p>                
         
-            <h2>Configuración de la terminal</h2>  
+            <h2 id="config">Configuración de la terminal</h2>  
 
             <h3>configuracion global GIT</h3>
             <p>permite definir un nombre de usuario y correro con "git config --global usermane "nombre"</p>
@@ -101,9 +110,9 @@
             <div class="ejemplo">
                 git push origin master<br>
                 git remote add origin https://github.com/jpuerta523/Manual-programacion.git
-            </div>
+            </div><br>
 
-            <h3>Modificar archivo desde Github<h3>
+            <h2 id="github">Modificar archivo desde Github</h2>
             <p>GitHub permite modificar un archivo directamente desde el repositirio web, simplemente se accede al archivo y se modifica desde el icono con forma de lapiz, finalmente se guardan con el comado "git pull" los cambios en el boton verde del fondo y automaticamente guarda los cambios tanto en el repositorio como en el equipo.</p>
             <div class="ejemplo">
                 git pull
@@ -155,12 +164,10 @@
             <h3>Resolver conflictos entre ramas</h3>
             <p>Al juntar (merge) dos ramas es posible que conflictos debidos a que para una misma parte del codigo ambas ramas presente versiones diferentes, en este caso VSC al hacer merge nos informa del conflicto y nos opcion de dejar el codigo del master, el codigo de la rama o dejar ambos, adicional permite comparar ambos codigos en paralelo antes de tomar la desición, si se aceptan ambos cambios el documento en el panel de git aparece con una C y la rama master aparece con una "!" al final indicando que tiene conflictos, para resolverlo en donde sale el archivo en el panel de git aparece un "+" que permite enviar el archivo a stage area quedando como modificado con la letra "M" y disponible para hacer un commit </p>
         
-        </p>
+            <h2>Fork</h2>
 
             </main>
-        <aside>
-
-        </aside>
+        
         <footer>
             actualizado agosto 2022 - derechos reservados
         </footer>
