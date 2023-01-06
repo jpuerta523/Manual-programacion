@@ -319,6 +319,7 @@
             <p>RGBA: similar a RGB pero añade un cuarto valor alpha que define la transparencia del elemento al que se aplica el color, el valor a de 0 que es totalmente transparente a 1 que es opaco. ejemplo: rgba(120,120,0,0.5)</p><br>
             
             <h3>Fondos</h3>
+
             <p>background: define las propiedades que se muestran como fondo de un elemento ya sea mostrando una imagen, modificando su color y opacidad, ejemplo:</p>
             <div class="ejemplo">
                 <i>en el archivo style.css</i>
@@ -334,7 +335,18 @@
                     <p>&lt;/div></p><hr>
                     <i>Resultado en pantalla</i>    
                 <div class="contenedorEjemplo1">
-                    <p>Elemento de prueba</p>    
+                    <p>Elemento de prueba</p>   
+                    
+                    <p>i se desea que el fondo sea una imagen, la propiedad background tomaria el parametro url(...) y al interior del parentesis va la ubicacion de la imagen.</p>
+                    <p>para modificar la forma que se presenta la imagen de fondo se utiliza los siguientes parametros:
+                        background-position: center;
+                        background-attachment: contain;
+                        background-size: cover;
+                    </p>
+                    <p></p>
+
+
+
                 </div>
                 <p>background-image:asigna una imagen como fondo de un elemento.</p>
                 <p>background-size: modifica el tamaño de la imagen de fondo y puede tener los valores de auto (tamaño original), cover (se ajsuta proporcionamente al contenedor ocupando todo el espacio adaptandose al cambio de tamaño), contain(se adapta al contenedor duplica la imagen si es necesario) o directamente dando las dimensiones.</p>
@@ -552,9 +564,127 @@
                     *{<br>
                       color: #2f2;<br>
                     }</p>
+            </div><br>
+            <hr>
+
+            <h2>flex</h2>
+
+            <h3>en el contendor padre</h3><br>
+
+            <h3>display: flex</h3>
+            <p>activa el flex box en el contenedor padre, si los elementos hijos son de tipo bloque estos se comportaran como lineas ubicandose uno al lado del otro en una misma fila.</p><br>
+
+            <h3>flex-direction</h3>
+            <p>permite definir en que direccion se presentan los elementos hijos, permite los siguientes valores:</p>
+            <p>row: valor por defecto, muestra a los hijo en una fila ubicada en la margen izquierda superior</p>
+            <p>reverse-row: muestra a los hijo en una fila empezando por la margen derecha superior</p>
+            <p>column: muestra a los elementos hijos en formato columna inicando en la margen izquierda superior</p><br>
+
+            <h3>Flex-wrap</h3>
+            <p>si los elementos hijos tienen un tamaño definido que se desea respestar a medida que la pantalla de tamaño entonces se usa el flex-wrap</p>
+            <p>wrap: respeta el tamaño definido a los elementos hijos y al cambiar el tamaño de la pantalla estos se ubicarian en nuevas filas</p>
+            <p>nowarp: fuerza el cambio de tamaño de los elementos hijos al cambiar el tamaño de la panatalla con el objetivo de mantener a todos los elementos en una misma fila</p><br>
+
+            <h3>justify-content</h3>
+            <p>posiciona a los elementos hijos de forma vertical</p>
+            <p>flex-start: valor por defecto, los hijos quedan posicionados a la izquierda </p>
+            <p>flex-end: los hijos quedan posicionados a la derecha pero sin inveritir su orden.</p>
+            <p>center: los elementos hijos quedan centrados en la vertical.</p>
+            <p>space-between: posiciona al primer hijo en la margen superior izquierda del contendor y al ultimo en la margen derecha y el resto se reparte en el escpacio de manera equidistante, es decir todos los elementos hijos ocupan todo el espacio disponible del contendor padre.</p>
+            <p>space-around: similar al space-between pero genera una margen al inicio y al final con respecto a su contenedor padre</p><br>
+
+            <h3>align-items></h3>
+            <p>permite posicionar a los elementos hijos en la vertical</p>
+            <p>flex-start: valor por defecto: ubica a los elementos en la margen superior del elemento contedor</p>
+            <p>flex-end: posiciona a los elementos hijos al final en sentido vertical, es decir ubicado en la margen inferior.</p>
+            <p>center: posiciona en el cento verticalmente a los hijos</p>
+            <p>stretch: hace que los elelemntos hijos ocupen toda la altura disponible de su contenedor padre. </p><br>
+
+            <h3>align-content</h3>
+            <p>funciona en conjunto con flex-wrap indicando la forma como se presenta los elementos hijos cuando forman 2 o mas filas</p>
+            <p>flex-end: la fila nueva y los elementos que cambian de fila se ubican en la parte inferior </p>
+            <p>flex-start: la fila nueva y los elementos que cambian de fila se ubican en la parte superior </p>
+            <p>center: centra las filas </p>
+            <p>space-between: ubica las filas en cada margen dejando un espaciado en el medio</p>
+            <p>space-around: similar al space-between pero genera una margen superior e inferior con respecto a su contenedor padre</p><br>
+
+            <h3>el los elementos hijos</h3>
+            <h3>flex-grow: </h3>
+            <p>define la forma de como los elementos cambian de tamaño si es necesario, si el valor es 1 todos los elementos se distribuyen equitativamente el espacio disponible, si un hijo tiene un valor especifico este asume el espacio disponible tomando ese valor como un factor multiplicador, es decir si tiene un 2 este sera tendra el doble de espacio que sus hermanos.</p><br>
+
+            <h3>flex-shrink: </h3>
+            <p>define como se encogen los hijos, si un hijo tiene un ancho especifcio el shrink es el factor por el cual se reducira con 0 si tiene que mantener su ancho minimo, 1 si sera igual a los otros hermanos y otro numero entero sera el factor por el cual se reducira su tamaño con respectos a sus hermanos, es decir si es 2 sera la mitad que sus hermanos. </p><br>
+
+            <h3>flex</h3>
+            <p>propiedad que abrevia a grow y shrink en una sola donde el primer valor corresponde al factor del grow y el segundo al shrink, acepta un tercer valor que define el flex-basis, usualmente el valor es 0 o auto. </p><br>
+
+            <h3>order</h3>
+            <p>recibe como valor un numero entero que permite ordenar las posiciones de comon se muestran los elementos con respecto a sus hermanos donde el valor menor(que debe ser 1) se mostrara primero y asi susecivamente.</p><br>
+
+            <h3>align-self</h3>
+            <p>permite alinear en vertical a un hijo en especifico</p>
+            <p>flex-start: ubica al elemento en la margen superior</p>
+            <p>flex-end:ubica al elemento en la margen inferior</p>
+            <p>center: uciba al elemento centardo verticalmente. </p>
+            <p>strech: en conjunto con un "height: auto;" permite que solo ese elemento ocupe el 100% de la altura disponible del contenedor padre</p><br>
+
+            <hr>
+            <h2>variables en css</h2>
+            <p>Para simplicar el trabajo de mantener y actualizar los estilos de una pagina web se utiliza el concepto de variables, esto permite definir un valor especifico para un atributo de estilo y que este se aplica a todos los elemento que se requieran, para ello las variables se declaran en la psudoclase ":root" la cual le otorga un alcance global y para ser llamado se utiliza el atributo a modificar de la siguiente forma: "atributo: var(--variableDeclarada);"</p>
+            <div class="ejemplo">
+                <p>
+                    <i>en el archivo CCS</i>
+                    root:{
+                        --variable-color: #555;<br>
+                    }<br>
+                    h1{<br>
+                        color: var(--variable-color);<br>
+                    }<br>
+                    p{<br>
+                        background-color: var(--variable-color);<br>
+                    }<br>
+                </p>
             </div>
 
-            <p>pendientes: gradient, variables en css, animaciones</p>
+            <hr>
+            <h2>CSS Grid</h2>
+            <p>Construle una grilla en la página web que nos permite distribuir cada uno de los elementos asignandoles su posicion ocupando una o varias celdas de la grilla.</p><br>
+
+            <h3>en el contenedor padre</h3><br>
+
+            <h3>display: flex</h3>
+            <p>activa la grilla que permite la distribución de los elementos en el contenedor padre.</p><br>
+
+            <h3>grid-template-columns:</h3>
+            <p>permite definir cuantas columnas va a tener nuestra grilla asi como el ancho de cada una, despues de los puntos va la medida de la primera seguido de la medida del segundo separado por un espacio y asi continua hasta completar la grilla con las columnas requeridas, el siguiente ejemplo genera 3 columnas (grid-template-column: 100px 50% 200px) o (grid-template-column: 1fr 2fr 1fr) donde la medida fr o "fraccion"  reparte el espacio de forma dinámica disponible proporcionalmente multiplicado por el valor, para el ejemplo el 2fr mide el doble que las columnas. tambien si se van a repetir el tamaño de columnas varias veces se puede utilizar el repeat(4, 1fr) donde el primer valor es la cantidad de veces que se genera la columna y la segunda es la medida del ancho</p>
+
+           <h3>grid-template-rows:</h3> 
+            <p>Similar a grid-template-colums pero esta propiedad define la cantidad y tamaño de las filas, al definir las 2 propiedades queda establecida la grilla para distribuir los elementos en la página web.</p><br>
+
+            <h3>gap</h3>
+            <p>Define la separacion entre las grillas, puede tener un solo valor de separación o dos donde el primero indica la separación de la filas y el segundo de las columnas </p><br>
+
+            <h3>grid-auto-rows:</h3>
+            <p>Permite definir de forma automatica que filas que se generen tengan una medida única, si se busca que que la fila se acople al contenido de forma automatica se puede usar minmax(100, auto) donde el primero es el ancho minimo y el segundo el maximo, tambien admite la medida auto si se quiere que se acomede de forma automatica.</p> <br>
+
+            <h3>grid-column:</h3>
+            <p>Permite ubicar en las columnas de forma especifica a un elemento utilizando los numeros de lineas visibles en la herramienta de desarrollo, la forma de definirlo es "grid-column: 1 / 2;" donde el primer valor corresponde a linea donde comienza el elemento y el segundo donde finaliza. </p><br>
+
+            <h3>grid-row:</h3>
+            <p>Similar a grid-column pero definiendo la ubicación del elemento en las filas usando las lineas de la herramienta de desarrollo.</p><br>
+
+            <h3>grid-auto-flow:</h3>
+            <p>permite definir como en que orden se ocupan los espacios definidos por los elementos</p>
+            <p>dense: llena los espacios de forma automatica.</p>
+            <p>column-dense: empieza a ocupar los espacios empenzando por las columnas.</p>
+
+            <h3>grid*area</h3>
+
+            
+            <p>pendientes: fieldset, border-box, text-transform, transform (rotate, skew), transfor-origin,  text-indent, letter-spacing, div:not(#example) {, overflow, clear, gap, linear-gradient, flexbox(https://css-tricks.com/snippets/css/a-guide-to-flexbox/) box-shadow, @keycase,  animaciones, aspect-ratio, legend, vertical-align, object-fit, content, multicolumn, 
+                https://www.youtube.com/watch?v=El0OJ6h_2ZI&ab_channel=CodelyTV-Redescubrelaprogramaci%C3%B3n</p><br>
+
+        
 
         </main>
         <footer>
