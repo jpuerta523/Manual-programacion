@@ -1964,7 +1964,7 @@
         </div><br>
 
         <h3>Acceder a elementos por selector CSS</h3>
-        <p>document.querySelector("SelectorCSS"): Permite acceder a uno o varios elementos de un documento HTML mediante los selectores CSS, si se requiere varios elementos elementos se usa document.queryselectorAll("selector"), aplican tipos de etiquetas, clases, id y psudoclases. ejemplo:</p>
+        <p>document.querySelector("SelectorCSS"): Permite acceder a uno o varios elementos de un documento HTML mediante los selectores CSS, si se requiere varios elementos elementos se usa document.queryselectorAll("selector"), aplican tipos de etiquetas, clases, id y psudoclases, si se usa solo querySelector selecciona el primer elemento HTML que cumpla la condición. ejemplo:</p>
         <div class="ejemplo">
             <p>
                 <i>Para una seleción por Id </i><br>
@@ -2067,6 +2067,16 @@
         <p>Dependiendo de la ubicación al interior del contenedor definido en html con respecto a los otros elementos hijos de dicho contenedor se usa uno de los siguientes métodos para crear el elemento.</p>
         <ul>
             <li>
+                <p>appendChild(elemento hijo)</p>
+                <div class="ejemplo">
+                    const elementoPadre = document.querySelector(div);<br>
+                    const elementoHijo = document.createElement("p");<br>
+                    elementoPadre.appendChild(elementoHijo)
+
+                </div>
+            </li>
+
+            <li>
                 <p>prepend(nombreElemento): primer hijo</p>
                 <div class="ejemplo">
                     const nuevoTitulo = document.create("h1");<br>
@@ -2123,6 +2133,9 @@
                 </div>
             </li>
         </ul><br>
+
+        <h3>Fragment</h3>
+        <p>const fragment = new DocumentFragment() o ;</p>
 
         <h3>preevenir comportamiento por defecto de un elemento </h3>
         <p>e.preventDefault(): en una escucha de evento hace que un elemento HTML con realize la accion predeterminda que se supone que realiza, por ejemplo en un ancla o enlace no permite que el enlace carge la pagina destino.</p>
@@ -2301,7 +2314,7 @@
             </li>
         </ul>
 
-<p>faltantes: for of, funcion anonima, hoisting, json.stringify(), for each, getter, fecth, async, parametro rest (...args),API</p>
+<p>faltantes: for of, funcion anonima, hoisting, propagacion {...arr}, json.stringify(), for each, getter, fecth, async, parametro rest (...args),API, (reflow), event Delegation, stop progagation, clone, localstorage, DOMContentLoaded, defer, flat, split,</p>
         </main>
         <footer>
             actualizado octubre 2022 - derechos reservados
