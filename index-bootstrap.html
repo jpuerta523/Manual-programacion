@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="estilo.css"/>
-        <link rel="stylesheet" href="normalize.css">
+        <!-- link bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <title>
             Diccionario Programación
         </title>
@@ -24,10 +24,154 @@
         </header>
         <main>
             <h1>Diccionario Programación </h1>
-            <p>Este es un proyecto con conceptos utiles para el desarrollo web.</p>            
+            <p>Este es un proyecto con conceptos utiles para el desarrollo web.</p>
+            <p>guia: https://bluuweb.dev/02-s2-b/</p>
+            <p>video largo: https://www.youtube.com/watch?v=ng8ur8KNrpU&ab_channel=jonmircha</p>
+            <p><a href="https://getbootstrap.com/docs/5.2/getting-started/download/">Instalar Bootstrap:</a> para una aplicacion sencilla sin ningun tipo de personalización u optimización es suficiente con tener a bootstrap como un enlace via CDN copiando el link: link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" en el head del documento HTML.<br>
+            Si en cambio se necesita apliaciones mas complejas de bootstrap es necesario instalarlo fisicamente en el proyecto pra ello en la terminal de VSC en la carpeta del proyecto se ejecuta: "npm init -y" que genera package.json en el proyecto, luego se ejecuta en la terminal: "npm install bootstrap@5.2.3".<br>
+            luego en el proyecto se crea una carpeta nueva llamada "sass" y en su interior un archivo llamado "custom.scss" y en su interior se pega el <a href="https://getbootstrap.com/docs/5.2/customize/sass/">import</a> suministrado en la pagina de bootstarp: "@import "../node_modules/bootstrap/scss/bootstrap";", finalmente se compila con el live Sass compiler ubicado en la parte inferior del VSC creando un archivo "custom.css" que contiene todas las clases diponibles de bootstrap. este custom.css es el archivo de estilo que se debe llamar en el head del documento HTML</p><br> 
+            <p>Para modificar o agregar propiedades de las clases de bootstarp, esta se debe buscar en el archivo "custom.css" y copiarla para llevarla al archivo "custom.scss" aqui ya se cambia el valor de la clase por lo requerido en el css, ejemplo:<br>
+            el el archivo custom.scss:<br>
+            $primary: #555;<br>
+            @import "../node_modules/bootstrap/scss/bootstrap";
+            </p>
+            
+            <p>depurar CSS: para generar un archivo de CSS mas liviano que contenga unicamente las clases de bootstrap utilizadas se utiliza <a href="https://purgecss.com/CLI.html">purgecss</a>purgecss el comando: "npm i -g purgecss" luego se sige el proceso del video https://youtu.be/1kNwZbRiVcQ?list=PLPl81lqbj-4IcaAluUlCTmbYz0h9XQ8U1&t=4614</p>
+            <p><a href="https://getbootstrap.com/docs/5.3/layout/breakpoints/"> breakpoints:</a>define los puntos donde cambia la distribución de la pnatalla para hacer contenido responsive con clases sm para menos de 576px hasta xxl para mas de 1400px.  </p><br>
+            <p><a href="https://getbootstrap.com/docs/5.3/layout/containers/">container:</a> todo el contenido del sitio es recomnedable que se ubique al interior de una etiqueta div con class "container", lo cual permitira centrar los contenidos, aplicar la grid y formatos de forma homogenea. puede llevar breakpoints para que ocupe el 100% hasta cierta medida</p>
+            <p><a href="https://getbootstrap.com/docs/5.3/layout/grid/">Grid:</a> El espacio de trabajo cunado se activa el grid en bootstrap se divide en 12 columnas, para activar grid el contenido debe estar al interior de un div con clase "container" y los elementos que van en la misma fila van al interior de otro div con clase de row, para indicar cuantos espacios toma cada elemento lleva la clase "col" si solo toma una columna o "col-#" donde # indica la cantidad de columnas que toma, ejemplo: ...<br>
+            <p>Grid responsiva: para generar una grilla dinamica donde cada columna cambie de ancho que ocupa en la pantalla se define varias clases de "col-#-tamaño" en cada elemento empenzado siempre por el tamaño mas pequeño, ejemplo: class="col-12 col-sm-6 col-md-4" https://youtu.be/1kNwZbRiVcQ?list=PLPl81lqbj-4IcaAluUlCTmbYz0h9XQ8U1&t=2200 </p>
+            <p><a>Flex:</a>Permite utilizar las caracteristicas del flexbox en bootstrap como centrado o ubicacion de los elementos en algun extremo, para activarlo se da la clase "d-flex" en el elemento contenedor y a cada elemento la clase especifica segun la necesidad, para centrar en vertical se debe asignar un tamaño al elemento contenedor</p>
+            </p>
+            <p>offset, helpers: ratio, etiqueta font-family en el body, colores definidos como varibles en :root(https://youtu.be/ng8ur8KNrpU?list=PLvq-jIkSeTUbf3LXzO2QQa3P-oRMcrTAp&t=12043), favicon, api whatsapp https://youtu.be/ng8ur8KNrpU?list=PLvq-jIkSeTUbf3LXzO2QQa3P-oRMcrTAp&t=15729, order, hero image dinamico https://youtu.be/ng8ur8KNrpU?list=PLvq-jIkSeTUbf3LXzO2QQa3P-oRMcrTAp&t=20387, ventana modal</p>  
+            
+            <h2>SASS</h2>
+            <p>definir variables: primero se define la regla enmpezando "$"antes del nombre, ejemplo:</p>
+            <div class="ejemplo">
+                $main-fonts: Arial, sans-serif;<br>
+                luego en las reglas: <br>
+                h1 {<br>
+                    font-family: $main-fonts;<br>
+                  }
+            </div><br>
+            <p>anidar reglas CSS: se pueden anidar las reglas CSS como en una estructura HTML</p>
+            <div class="">
+                h1 {
+                    text-align: center;<br>
+                    color: blue;<br>
+                  }<br>
+                  p {<br>
+                    font-size: 20px;<br>
+                  }
+            </div><br>
+            <p>mixin:</p>
+            <div class="ejemplo">
+                @mixin border-radius($radius){<br>
+                    -webkit-border-radius:$radius;<br>
+                    -moz-border-radius: $radius;<br>
+                    -ms-border-radius: $radius;<br>
+                    border-radius: $radius;<br>
+                    <br>
+                  }<br>
+                  <br>
+                    #awesome {<br>
+                      width: 150px;<br>
+                      height: 150px;<br>
+                      background-color: green;<br>
+                      @include border-radius(15px);<br>
+                  <br>
+                    }<br>
+            </div><br>
+            <p>logica if en SASS</p>
+            <div class="ejemplo">
+                    @mixin border-stroke($val) {<br>
+                      @if $val == light  {<br>
+                        border: 1px solid black;<br>
+                      }<br>
+                    @else if $val == medium {<br>
+                        border: 3px solid black;<br>
+                      }<br>
+                    @else if $val == heavy {<br>
+                        border: 6px solid black;<br>
+                      }<br>
+                    @else {<br>
+                    border: none;<br>
+                      }<br>
+                    }<br>
+                    <br>
+                      #box {<br>
+                        width: 150px;<br>
+                        height: 150px;<br>
+                        background-color: red;<br>
+                        @include border-stroke(medium);<br>
+                      }<br>
+            </div><br>
+
+            <p>ciclo for en SASS:</p>
+            <div class="ejemplo">
+                @for $j from 1 through 5 {<br>
+                    .text-#{$j} { font-size: 15px * $j; }<br>
+                  }<br>
+                  <br>
+                  <p class="text-1">Hello</p><br>
+                  <p class="text-2">Hello</p><br>
+                  <p class="text-3">Hello</p><br>
+                  <p class="text-4">Hello</p><br>
+                  <p class="text-5">Hello</p><br>
+            </div><br>
+                @for $j from 1 through 5 {<br>
+                .text-#{$j} { font-size: 15px * $j; }<br>
+              }<br>
+
+              <p>generar clases con lista de elementos:</p>
+              <div class="ejemplo">
+                @each $color in blue, black, red {<br>
+                    .#{$color}-bg {background-color: $color;}<br>
+                  }<br>
+                    div {<br>
+                      height: 200px;<br>
+                      width: 200px;<br>
+                    }<br>
+                  <div class="blue-bg"></div><br>
+                  <div class="black-bg"></div><br>
+                  <div class="red-bg"></div><br>
+              </div>
+              <p>cliclo while en SASS</p>
+              <div class="ejemplo">
+                $x: 1;<br>
+                @while $x < 6 {<br>
+                  .text-#{$x} { font-size: 15px * $x;}<br>
+                  $x: $x + 1;<br>
+                }<br>
+                <br>
+                <p class="text-1">Hello</p><br>
+                <p class="text-2">Hello</p><br>
+                <p class="text-3">Hello</p><br>
+                <p class="text-4">Hello</p><br>
+                <p class="text-5">Hello</p><br>
+              </div><br>
+
+              <p>importar archivos SASS</p>
+              <div class="ejemplo">
+                los archivos parciales se deben llamar con un "_"al inicio del nombre y con extencions SCSS, ejemplo: _variables.scss<br>
+                para llamar el archivo se copia @import "variables" en el archibo destino
+              </div><br>
+
+              <p>Extend: lleva todas las reglas CSS de un elemento y permite adicionarlas a otro elemento: </p>
+              <div class="ejemplo">
+                .info{<br>
+                    width: 200px;<br>
+                    border: 1px solid black;<br>
+                    margin: 0 auto;<br>
+                  }<br>
+                <br>
+                .info-important{<br>
+                  @extend .info;<br>
+                  background-color: magenta;<br>
+                }<br>
+              </div>
         </main>
         <aside>
-
         </aside>
         <footer>
             actualizado agosto 2022 - derechos reservados

@@ -2314,7 +2314,90 @@
             </li>
         </ul>
 
-<p>faltantes: for of, funcion anonima, hoisting, propagacion {...arr}, json.stringify(), JSON.parse(), for each, getter, fecth, async, parametro rest (...args),API, (reflow), event Delegation, stopProgagation, clone, localstorage, DOMContentLoaded, defer, flat, split, data, formData, callback, settimeOut, fetch, super, trim, find, set /p>
+        <h3>Jquery</h3>
+        <p>Instalacion: se instala mediante un link CDN en el proyecto, el link es una etiqueta script que debe ubicarse al final del body pero antes de los script JS del proyecto</p><br>
+        <p>
+            Codigo jquery en JS: para indicar que un fragmento de codigo utilizara las propiedades de jquey, se debe escribir el codigo adentro de una funcion anonima con el siguiente formato:
+            <div class="ejemplo">
+                $(document).ready(function(){<br>
+                    ... codigo jquery...<br>
+                })
+            </div>
+        </p><br>
+        <p>
+            Selecionar elementos HTML: para seleccionar elementos HTML en el script jquery se llama el elemento al interior del parentesis de la siguiente expresion $("elemento"), el elemento sigue la sintaxis de css y puede ser por etiqueta, clase o id, el $("elemento") es equivalente a querySelector("elemento") enJS ejemplo (el .html permite cambiar el contenido del elemento y es equivalente a .textContent, .innerHTML o similares en JS):<br>
+            <div class="ejemplo">
+                $(document).ready(function(){<br>
+                    $("h1").html("texto desde Etiqueta")<br>
+                    $(".clase").html("texto seleccionado por clase")<br>
+                    $("#idUnico").html("texto seleccionado por id")<br>
+                    $(".container h1").html("texto para elementos anidados")
+                })
+            </div>
+         </p><br>
+         <p>
+            Manipulacion del DOM: jquery permite manipular de forma muy sencilla los elementos de un doumneto HTML mediante el uso de funciones, ejemplos:<br>
+            <div class="ejemplo">
+                $(document).ready(function(){<br>
+                    $("selector").addClass("claseCSS") //adiciona una clase al elemento<br>
+                    $("selector").removeClass("claseCSS") //remueve una clase al elemento<br>
+                    $("elementoPadre").prepend("<p>contenido adicionado al inicio del elemento padre</p>")<br>
+                    $("elementoPadre").append("<p>contenido adicionado al final del elemento padre</p>")<br>
+                    $("elemento").css({color: "blue", background: "green"}) // permite cambiar las propiedades CSS directamente desde jquery siguiendo la sintaxis CSS para sus propiedades. <br>
+                    $("selector").remove() //elimina el elemento del documento HTML<br>
+                    $("selector").hide() //oculta el elemento, similar a aplicar clase display: hidden<br>
+                    $("selector").attr("width","50")// cambia los atributos del elemento
+                    $("selector").toggleClass("clase") //quita y pone una clase al detectar un evento
+                })
+            </div>
+          </p><br>
+
+          <p>
+            Capturar unn valor: para capturar el valor de un elemento (input) se usa el metodo .val(), ejemplo:
+            <div class="ejemplo">
+                let valor = $("#idInput").val()
+            </div>
+          </p>
+
+          <p>
+            Eventos click: permite realizar una accion cuando se detecta un click en el elemento, ejemplo:
+            <div class="ejemplo">
+                $(document).ready(function(){<br>
+                    var parrafo =$(".contenedor p")<br>
+                    $("#boton").click(function(){<br>
+                        parrafo.toggleClass("display-4")<br>
+                    })<br>
+                })
+            </div>
+         </p><br>
+
+         <p>
+            Presionar boton: keyUp()
+            <div class="ejemplo">
+                $(document).ready(function(){<br>
+                    var input = $("#nombre")
+                    var parrafo = $(".contenedor p")<br>
+                    $("#boton").keyUp(function(){<br>
+                        parrafo.html(input.val())<br>
+                    })<br>
+                })
+            </div>
+         </p><br>
+
+         <p>preventDefault y submit: https://youtu.be/DVN8NWppCN0?t=2352</p><br>
+         
+         <p>Animaciones: adentro de los parentesis va tiempo en ms: fadeIn(), fadeOut(), toggle(), animate({propiedades css},velocidad en ms)
+         </p><br>
+
+         <p>callback: permite llamar otra funcion al final de la animacion https://youtu.be/DVN8NWppCN0?t=3242</p>
+         <p>$("#target5").clone().appendTo("#left-well")</p>
+         <p>$("#target1").parent().css("background-color", "red");
+            $("#right-well").children().css("color", "orange")</p>
+        <p>$(".target:nth-child(2)").addClass("animated bounce");</p>
+
+
+
+<p>faltantes: for of, funcion anonima, hoisting, propagacion {...arr}, json.stringify(), JSON.parse(), for each, getter, fecth, async, parametro rest (...args),API, (reflow), event Delegation, stopProgagation, clone, localstorage, DOMContentLoaded, defer, flat, split, data, formData, callback, settimeOut, fetch, super, trim, find, set, Object.values(arguments).slice(1), str.charCodeAt(0), String.fromCharCode(), ?= en regex, isNaN </p>
         </main>
         <footer>
             actualizado octubre 2022 - derechos reservados

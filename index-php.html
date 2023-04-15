@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>XAMMP</h2>
+    <p>Se debe tener el XMAPP para crear un servidor local en el equipo y asi poder ejecutar los archivos PHP. una vez instalado el xmapp se ejecuta Apachen y se espera hasta que este en linea.</p><br>
+
+    <h2>Ejecutar un archivo PHP</h2>
+    <p>para poder vizualizar un proyecto PHP primero el archivo debe llevarse a una carpeta especifica al interior de las carpetas del XAMPP, normalmente en C:\xampp\htdocs luego en la barra de dirreccion de cualquier navegador se ingresa la dirección: localhost, por defecto ejecuta el archivo index.php </p><br>
+
+    <h2>Etiqueta ?PHP</h2>
+    <p>la estrucutra de un documento PHP es similar a la de un HTML con la difrenecia que se intoduce codigo para el servidor al interior de una etiqueta <?php ... ?></p>
+    <div class="ejemplo">
+        <!DOCTYPE html><br>
+        <html lang="en"><br>
+        <head><br>
+            <meta charset="UTF-8"><br>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"><br>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"><br>
+            <title>Document</title><br>
+        </head><br>
+        <body> <br> 
+        <?php <br>
+            print "Mensaje de bienvenida<br>";<br>
+            print "mensaje 2";
+        ?><br>
+        </body><br>
+        </html><br>
+    </div><br>
+
+    <h2>comentarios</h2>
+    <p>Similares a los comentarios en otros lenguajes, </p>
+    <div class="ejemplo">
+        <p>
+            <?php
+            //comentario de linea:
+            /* cometario de <br>
+            bloque*/
+            ?>
+        </p>
+    </div> 
+
+    <h2>Variables</h2>
+    <p>Para definir una variable en php primero se define el nombre empezado siempre con el caracter "$", el segundo no puede ser un numero y solo admite caracteres alfanumerios y "_", luego sigue el signo "=" y el valor que si es una cadena de texto va al interior de comillas, para concatenar cadenas de texto se usa el operador " . " ejemplo:</p>
+    <div class="ejemplo">
+        $var1 = 112;
+        $var2 ="ipsum lorem";
+    </div> 
+
+    <h2>Variables </h2>
+    
+    <h2>print</h2>
+    <p>Muestra una cadena de texto en pantalla</p>
+    <div class="ejemplo">
+        <p>
+            print "Mensaje de bienvenida<br>";<br>
+            $user = "pablo"; <br>
+            //usando concatenar<br>
+            print "hola, bienvenido " . $user;<br>
+            //llamdo la variable en la cadena<br>
+            print "hola, bienvenido $user<br>";
+            //muestra literalmente la info con comillas sencillas
+            print 'hola, bienvenido $user<br>';
+        </p>
+    </div>
+
+    <h2>echo</h2>
+    <p>Tiene todas las caracterisitcas de print pero tiene un fincionamiento mas optimo y permite mostrar multiples variables en pantalla </p>
+    <div class="ejemplo">
+        //multiples variables<br>
+        echo $var1, $user,$var2;
+    </div>
+
+    <h2>Funciones</h2>
+    <p>Para declarar una funcion en PHP simplemente se empieza con "function" seguido del nombre de nuestra funcion, luego se abre paranetesis  y corchetes para el codigo. para llamar la funcion en mas adelante en el codigo solo se copia el nombre de la funcion y los parentesis</p>
+    <div class="ejemplo">
+        function functionName(){<br>
+            //codigo a usar en la funcion, por ejemplo
+            echo "mensanje en funcion local<br>";<br>
+        }<br>
+    <br>
+    //llamando la funcion
+        internalFunction();<br>
+    </div>
+
+    <h2>Ambito de las variables</h2>
+    <p>Las variables globales en php no pueden ser utilizadas directamente en ambito locales como funciones, para poder utilizar funciones globlales en ambitos locales solo hace falta declarar la funcion con la sintaxis "global $nombreVariable" al inicio del ambito local, ejemplo:</p>
+    <div class="ejemplo">
+        <p>...en un bloque PHP..<br>
+        $user = "pablo";<br>
+        function saludar(){<br>
+            global $user;<br>
+            $user  = "mi nombre es " . "$user<br>";<br>
+            echo "$user";<br>
+        }<br>
+        saludar();<br>
+        echo "$user";<br>
+        ...contiuna codigo PHP... 
+        </p>
+    </div><br>
+
+    <h3>Variables superglobales</h3>
+    <p>Permite traer una variable que se encuentre definida en un ambito externo del documento PHP, por ejemplo un valor ingresado en un imput ubicado en el HTML</p>
+    <p>$var1 = $_POST["name_input"]</p>
+
+    <h3>Importar funciones de archivos externos</h3>
+    <p>para importar codigo de archivos difrenetes del index.php se usan los comandos include y require, ambos comandos operan de forma identica excepto en caso de fallo dando como resultado error fatal en require y una advertencia para el include. el archivo externo PHP a a caragar puede no tener contendio HTML, a continuacion se muestra un ejemplo de como llamar una funcion de un archivo externo: </p>
+    <div class="ejemplo">
+        //en el archivo externo funciones.php<br>
+        <?php<br>
+        function externalFunction(){<br>
+        echo "mensanje en funcion externa en funciones.php<br>";<br>
+        }<br>
+        ?><br>
+        //en el archivo index.php<br><br>
+        !DOCTYPE html><br>
+        ...<br>
+        <?php<br>
+        ...<br>
+        include 'funciones.php';<br>
+        externalFunction();<br>
+        ...<br>
+        ?><br>
+        ...<br>
+        /html><br>
+    </div><br>
+
+    <h2>Variables estaticas</h2>
+    <p>En PHP las variables cada vez que inician una funcion son reinicidas, es decir su valor se elimina de la memoria, para indicar a PHP que se desea dejar el valor de la variable en memoria se utiliza la expersion reservada "static" antes de declarar la variable, ejemplo</p>
+    <div class="ejemplo">
+        <p>
+            ...en el codigo php...<br>
+            function incrementar(){<br>
+                static $contador = 0;<br>
+                $contador ++;<br>
+                echo $contador . "<br>";<br>
+            }<br>
+        
+            incrementar();<br>
+            incrementar();<br>
+            ...en pantalla...<br>
+            1<br>
+            2<br>
+            /* si no se declara la variable $contador como estatica en pnatalla siempre imprime 1 cunado se llama la funcion incremetar()*/
+        </p><br>
+    </div>
+
+    <h2>Codigo HTML en php</h2>
+    <p>Es posible tener codigo Html al interior de la zona PHP, solo es necesario tener cuidado con las comillas ya que si iniciamos con comillas dobles las propiedades deberan ir con comillas sencillas.</p>
+    <div class="ejemplo">
+        <p>
+                ...en el codigo php ...<br>
+                echo "<p class='claseCSS'>texto de prueba</p><br>"<br>
+        </p>
+    </div>
+
+        <h2>Comparar cadenas </h2>
+        <p>para comparar cadenas de texto se usa lan expersion strcmp($va1,$var2) donde var1 y var2 son las cadenas a comparat y retorna 0 si son iguales, < 0 si str1 es menor que str2; > 0 si str1 es mayor que str2, si no se quiere tener en cuenta las mayusculas y minusculas se utiliza la expresion strcasecamp() </p>
+        <div>
+            <p>
+                ... en el codigo php ... <br>
+                $comparacion2 = strcmp($var2, $var3); //resultado: 1<br>
+                $comparacion4 = strcasecmp($var2, $var3);//resultado: 0<br>
+            </p>
+        </div><br>
+
+        <h2>operadores de comparacion</h2>
+        <p>En PHP se puede comparar los valores de 2 variables con operadores de comparacion similares a los usados en otros lenguajes como JS, estan disponibles la igualdad, difrenecia, mayor y menor con sus variantes.</p>
+        <div class="ejemplo">
+            <p>
+                $var1 == $var2; igualdad de valor<br>
+                $var1 === $var2; o $var1<>$var2; identico en valor y tipo de dato.<br>
+                $var != $var2; diferente en valor<br>
+                $var1 !==$var2; no identico en valor y tipo de dato<br>
+                $var1 < $var2; menor que<br>
+                $var1 <= $var2; menor igual que<br>
+                $var1 > $var2; mayor que<br>
+                $var1 > $var2; mayor igual que<br>
+            </p>
+        </div><br>
+
+        <h2>Operadores aritmeticos</h2>
+        <p>para PHP estan definidos todas las operaciones aritmetica tradicionales similar a JS</p>
+
+        <h2>Operaciones matematicas</h2>
+        <p>listado de operadores matematicos definidos en PHP: https://www.php.net/manual/es/ref.math.php</p><br>
+
+        <h2>Operadores logicos</h2>
+        <p>operadores logicos en PHP tales como &&, || y ! similares a JS, tambien estan definidos and, or y xor(similar al or pero da falso si ambos valores evaluados son verdaderos) y cumplen con la misma logica pero su precedencia es inferior al operador igual "=", por lo que pueden dar resultados diferentes, https://www.php.net/manual/es/language.operators.logical.php</p>
+
+        <h2>Casting o tipo de datos</h2>
+        <p>En php los tipos de datos (boolean, float, string,...) son detectados automaticamente y actualiza sus tipos segun las operaciones que se le realizen, pero en algunos casos es necesario definir el tipo de la variables de forma imperativa para ello antes del valor entre parentesis va el tipo de variable.<br>
+            (int), (integer) - forzado a integer<br>
+            (bool), (boolean) - forzado a boolean<br>
+            (float), (double), (real) - forzado a float<br>
+            (string) - forzado a string<br>
+            (array) - forzado a array<br>
+            (object) - forzado a object<br>
+            (unset) - forzado a NULL (PHP 5)</p>
+        <div class="ejemplo">
+            $var1 = "true";
+            $var2 = (boolean) $var1;
+        </div>
+
+        <h2>Formularios</h2>
+        <h3>enlazar formulario a codigo PHP</h3>
+        si la etiqueta form y el codigo PHP se encuentran al interior del mismo archivo no es necesario hacer ninguna accion adicional ya que quedan vinculado de forma automatica quedando la propiedad action de la etiqueta form vacia (<form action = "" name="form1" method="post"></form>), pero si el archivo PHP es independiente del HTML es necesario enlazarlos con la propiedad action de la etiqueta form y definir un metodo de envio (<form action="accion.php" method="post" name="form1"></form>)
+
+        <h3>enviar formulario</h3>
+        <p>Recibe datos del formulario al presionar boton, isset($_POST["id_boton"])</p>
+
+        <h2>Condicionales</h2>
+        <h3>IF</h3>
+        <p>condicional if similar a JS</p>
+        <div class="ejemplo">
+            ... en zona PHP ...<br>
+            $var1 = 5;<br>
+            $var2 = 7;<br>
+            if($var1 > $var2){<br>
+                echo "var1 es mayor que var2";<br>
+
+            }esleif ($var1 == $var2){<br>
+                echo "var1 y var2 son iguales";<br>
+            } else{<br>
+                echo "var1 es menor que var2";<br>
+            }  <br>
+            ... continua php ...
+        </div>
+
+    <h3>OPerador ternario</h3>
+    <p>Oerador ternario similar a JS</p>
+    <div class="ejemplo">
+        ... en zona PHP ...<br>
+        $a = 2;<br>
+        $b = 1;<br>
+        $resultado = $a > $b ? true : false;<br>
+        ... continua PHP ...<br>
+        opcion mas breve donde imprime resulatdo en una sola linea <br>
+        ... inicio PHP ... <br>
+        echo ($a > $b ? 'a es mayor que b' : 'a es menor o igual que b');<br>
+        ... continua PHP ...
+    </div> <br>
+
+    <h3>switch</h3>
+    <p>muy similar a JS</p>
+    <div class="ejemplo">
+        .. en zona PHP ...<br>
+        $valor = 5;<br>
+        $valor2 = "casas";<br>
+        switch ( true ){<br>
+            case ($valor >=5 && $valor2 == "casa"):<br>
+                echo "valores correctos";<br>
+                break;<br>
+            case ($valor < 6 && $valor2 == "pollo"):<br>
+                echo "valores 2 correctos";<br>
+                break;<br>
+            default:<br>
+                echo "valores incorrectos";<br>
+        } 
+    </div><br>
+
+    <h2>bucles</h2><br>
+
+    <h3>While</h3>
+    <p>Similar a JS</p>
+    <div class="ejemplo">
+        $i = 1;<br>
+        while($i <= 5){<br>
+            echo "el valor es $i <br>";<br>
+            $i++;<br>
+        }
+    </div><br>
+
+    <h3>for</h3>
+    <p>Similar al ciclo for de JS, tambien acepta el break y el continue</p>
+    <div class="ejemplo">
+        <p>
+            ciclo for sencillo<br>
+            ... en zona php ...<br>
+            //imprime numeros del 0 al 10 <br>
+            for ($i=0; $i<=10; $i++){<br>
+                echo "$i";<br>
+            }<br>
+            ...sigue php ...<br>
+            <hr>
+            ciclo for con break<br>
+            ... en zona php ...<br>
+            //imprime numeros del 0 al 10 pero rompen el codigo en $i == 5 <br>
+            for ($i=0; $i<=10; $i++){<br>
+                if ($i >= 5){<br>
+                    break;<br>
+                }
+                echo "$i";<br<>
+            }<br
+            >
+        </p>
+    </div><br>
+
+    <h2>Funciones</h2>
+    <h3>Funciones propias</h3>
+    <p>Son las funciones propias que trae PHP, listado oficial: https://www.php.net/manual/es/indexes.functions.php</p><br>
+
+    <h3>Funciones del usuario</h3>
+    <p>Son las funciones definidas por el usuario con sintaxis similar a JS, puede o no llevar parametros, ejemplos:</p>
+
+    <div class="ejemplo">
+        funcion sin parametros<br>
+        ...zona php ...<br>
+        function saludar(){<br>
+            global $user;<br>
+            $user  = "mi nombre es " . "$user<br>";<br>
+            echo "$user";<br>
+        }<br>
+        <hr>
+        función con parametros<br>
+        ... zona php ...<br> 
+        //definiendo la funcion<br>
+        function sumar($num1, $num2){<br>
+            $resulatdo = $num1 + $num2;<br>
+            return $resultado<br>
+        }<br>
+        //invocando la funcion<br>
+        echo(sumar(5,7));<br>
+        <hr>
+        parametro implicito
+        function sumar($num1, $num2 = 5){<br>
+            $resulatdo = $num1 + $num2;<br>
+            return $resultado<br>
+        }
+        //si no se define el valor de $num2 al invocar la funcion este toma por defecto el valor de 5
+    </div>
+
+    <h3>Valor por referencia</h3>
+    <p>Se puede pasar una variable por referencia a una función y así hacer que la función pueda modificar la variable, es decir el valor de la variable cambia de forma permanente cuando esta se invoca una funcion que como parametro tiene la variable llamada como refrencia function(&$variable){}</p>
+    <div class="ejemplo">
+        ... zona php ...
+            function foo(&$var)
+            {
+                $var++;
+            }
+
+            $a=5;
+            foo($a);
+            // $a es 6 aquí
+        ... continua php ...
+    </div><br>
+
+    <h2>POO</h2>
+    <h3>Objeto</h3>
+    <p>Se definen similar a JS, el objeto en general es clase y su nombre por convencion empienza con mayuscula, y los objetos en especifico son instancia y se definen como una variable iguadad a new seguido de la clase con parentesis, ejemplo:</p>
+    <div class="">
+        ... en zona PHP ...<br>
+        //definiendo una clase<br> 
+        class Carro{<br>
+
+            public $puertas = 2;//define una variable del objeto Carro<br>
+
+                function __construct(){//define constructor o estado inicial del objeto carro<br>
+                    $this->ruedas = 4;<br>
+                }<br>
+
+                public function start(){//metodo o funcion al interior de un objeto<br>
+                    echo "On<br>";<br>
+                }<br>
+
+                public function dar_color($color_carro){//metodo o funcion al interior de un objeto con parametro<br>
+                    $this -> color = $color_carro;
+                    echo "el color del carro es " . $this->color . "<br>"; 
+                }
+        
+        }<br>
+        //definiendo varias instancias<br>
+        $bmw = new Carro();
+        $suzuki = new Carro();<br>
+        $bmw -> start();//imprime On como resultado del metodo start() de Coche
+        $bmw -> dar_color("negro");//imprime "el color del carro es negro" como resultado del metodo dar_color("negro") con su parametro.<br>
+        echo "#ruedas: " . $bmw->ruedas . "<br>";//imprime "4" por ruedas definida por __construct()<br>
+        echo "#puertas: " . $bmw->puertas . "<br>"// imprime "2" llamando variable $puertas definida directamente en el objeto Carro;<br>
+
+
+        ..sigue zona PHP ...
+    </div><br>
+
+    <h3>Objetos en archivo externo</h3>
+    <p>Ubicar objetos en archivo externos puede ser una buena practica que permite reutilizar el codigo y hacerlo mas legible</p>
+    <div class="ejemplo">
+        ... en zona php ...<br>
+        include("carro.php")//archivo externo que incluye el objeto carro definido en ejemplo anterior<br>
+        $volkswagen = new Carro();// define instancia vw desde objeto en archivo externo<br>
+        $volkswagen -> start();//imprime On con metodo strat desde archivo externo
+    </div>
+
+    <h3>Herencia en objetos</h3>
+    <p>La herencia permite que un objeto pueda usar las variables y metodos definidos para otro objeto que sera conocido como padresobrescritura de metodos</p>
+    <div class="ejemplo">
+        ... en zona php ... <br>
+        ...objeto coche similar al ejemplo anterior ... <br> 
+        class Camion extends Coche{ //extens trae de Coche todas las variables y metodos para ser usado por Camion<br>
+            function __construct(){//define variables iniciales del objeto camion<br>
+                $this->ruedas = 4;<br>
+                $this -> puertas = 2;<br>
+                $this -> color = "gris";<br>
+            }<br>
+<br>
+            public function dar_color($color_camion){// metodo dar_color sobrecargado <br>(reescribido) modificando su codigo<br>
+                $this -> color = $color_camion;<br>
+                echo "el color del camion es " . $this->color . "<br>"; <br>
+            }<br>
+<br>
+            public function start(){//mantiene el metodo similar al definido en la clase padre pero adiciona codigo al final.<br>
+                parent::start();<br>
+                echo "camion cargado";<br>
+            }<br>
+        }<br>
+<br>
+        $iveco = new Camion();//crea nueva insatancia de camion<br>
+        $iveco -> dar_color("rojo");//retorna el color del camion es rojo<br>
+        echo "#ruedas: " . $iveco->ruedas . "<br>";//#ruedas: 6<br>
+        $iveco -> start()//retorna On camion cargado<br>
+    </div><br>
+
+    <h3>encapsulamiento</h3>
+    <p>Define la visivilizadad de las propiedades, constantes y metodos de los objetos, existen 3 definiciones:<br>
+        public: accesible desde cualquier parte del programa.
+        private: solo en la clase que se definio.
+        protected: accesible en la misma clase que se defino asi como en su padre y sus clases heredadas. 
+    </p><br>
+
+    <h3>metodos getters</h3>
+    <p>Si se tiene una propiedad que no se desea que pueda ser modificada (private o protected segun el caso) pero si impresa en pantalla de definirse un metodo que como resultado devuelva el valor de la propiedad</p>
+    <div class="ejemplo">
+        ... en zona php ...<br>
+        ... al interior del objeto coche ...<br>
+        private $motor = 2500<br>
+<br>
+        public function get_motor(){<br>
+            return $this -> motor;<br>
+        }<br>
+        ... afuera del objeto coche ...<br>
+        $bmw = new Coche();<br>
+        echo "el BMW tiene un motor de " . $bmw->get_motor() . " cc<br>"; 
+    </div><br>
+
+    <h3>Metodos Setter</h3>
+    <p>permite que los valores de las propiedades sean dinamicos, es decir modificados en el transcurso del programa. para ello se define un metodo que permita asignar un nuevo valor.</p>
+    <div class="ejemplo">
+        ... en zona php ...<br>
+        ... al interior del objeto coche ...<br>
+        $this -> color = "";<br>
+        public function get_color($color_coche){<br>
+            $this -> color = $color_coche;<br>
+            echo "el color del coche es " . $this->color . "<br>"; <br>
+        }<br>
+        ... afuera del objeto coche ...<br>
+        $bmw = new Coche();<br>
+        $bmw -> get_color("negro");//imprime el color del coche es negro
+    </div><br>
+
+    <h3>Variables estaticas</h3>
+    <p>Declarar propiedades o métodos de clases como estáticos los hacen accesibles sin la necesidad de instanciar la clase. Una propiedad declarada como static no puede ser accedida con un objeto de clase instanciado (aunque un método estático sí lo puede hacer).</p>
+    <div class="ejemplo">
+        private static $variable = "valor"
+        class Foo
+{
+    public static $mi_static = 'foo';
+
+    public function valorStatic() {
+        return self::$mi_static;
+    }
+}
+    </div> 
+
+    <h3>Metodos Estaticos</h3>
+    <p>Debido a que los métodos estáticos se pueden invocar sin tener creada una instancia del objeto, la seudovariable $this no está disponible dentro de los métodos declarados como estáticos.</p>
+    <div class="ejemplo">
+        <?php
+class Foo {
+    public static function unMetodoEstatico() {
+        // ...
+    }
+}
+
+Foo::unMetodoEstatico();
+$nombre_clase = 'Foo';
+$nombre_clase::unMetodoEstatico(); // A partir de PHP 5.3.0
+?>
+    </div><br>
+
+    <h2>Arreglos</h2>
+    <p>Arreglo es una coleccion de datos, similar a js, estos puedes ser:</p>
+    <h3>arreglo indexado</h3>
+    <p>cada dato del arreglo corresponde a un numero indexado donde la primera posicion es 0</p>
+    <div class="ejemplo">
+        ... en zona PHP ... <br>
+        //sintaxis clasica php para arreglos
+        $semana = array("lunes", "martes", "miercoles", "jueves"); <br>
+        echo $semana[2] . "<br>";//imprime mirecoles imprime bmw<br>
+        <hr>
+        //sintaxis moderna similar a js
+        $marcas = ["bmw" , "suzuki", "vw"]; imprime bmw<br>
+        echo $marcas[0];// imprime bmw<br>
+    </div>
+
+    <h3>arreglo asociativo</h3>
+    <p>A cada dato se le da una clave o nombre unico</p>
+    <div class="ejemplo">
+        $user =[<br>
+        "nombre" => "juan",<br>
+        "apellido" => "puerta",<br>
+        "edad" => 36,<br>
+        "pais" => "colombia",<br>
+    ];<br>
+    echo $user["nombre"] . "<br>";//imprime juan
+    </div><br>
+
+    <h3>Comprobar si es una arreglo</h3>
+    <p>is_array permite comprobar si una expresion en memoria corresponde a un arreglo</p>
+    <div class="ejemplo">
+        if (is_array($var))<br>
+            echo "es un arreglo<br>"<br>
+        }else<br>
+            echo "no es una arreglo <br>"<br>
+    </div><br>
+
+    <h3>Recorrer una arreglo asociativo</h3>
+    <p>foreach () permite recorrer un arreglo asociativo realizando la operacion definida a cada uno de sus valores y disponiendo de la clave y valor indistamente.</p>
+    <div class="ejemplo">
+        ... en zona PHP ...<br>
+        //definir arreglo
+        $user =[<br>
+        "nombre" => "juan",<br>
+        "apellido" => "puerta",<br>
+        "edad" => 36,<br>
+        "pais" => "colombia",<br>
+        //recorrer arreglo
+        foreach($user as $key =>$value){<br>
+            echo "el dato $key tiene como valor $value <br>";
+        }<br>
+        //imprime en pantalla<br>
+        el dato nombre tiene como valor juan<br>
+        el dato apellido tiene como valor puerta<br>
+        el dato edad tiene como valor 36<br>
+        el dato pais tiene como valor colombia<br>
+        ... continua zona PHP ...
+    </div><br>
+
+    <h3>recorrer un arreglo indexado</h3>
+    <p>Se puede recorrer mediante un ciclo for o con la instruccion forecah</p>
+    <div class="ejemplo">
+        foreach($semana as $dia){<br>
+            echo $dia . "<br>";
+        }<br>
+        //imprime<br>
+        lunes<br>
+        martes<br>
+        miercoles<br>
+        jueves
+    </div><br>
+
+    <h3>Contar elementos array</h3>
+    <p>count: permite identificar cuantos elementos tiene un determinado array</p>
+    <div class="ejemplo">
+        ... en zona php ...<br>
+        echo "el array user tiene ". count($user) . " valores <br>";
+        // imprime en pantalla: el array user tiene 4 valores
+    </div><br>
+
+    <h3>Agregar elemento a un array</h3>
+    <p>Es posile agreagr elementos a un array previamente definido</p>
+    <div class="ejemplo">
+        $semana[] = "viernes";//para arreglos indexados
+        $user["ciudad"] = "Medellin";//para arreglos asociativos
+    </div>
+
+    <h3>Ordenar un arreglo</h3>
+    <p>sort premite ordenar un arreglo segun el codigo ASCII</p>
+    <div>
+        ... en zona PHP ...<br>
+        sort($semana);//ordena alfanumerico el arreglo<br>
+            foreach($semana as $dia){//imprime el arreglo<br>
+                echo $dia . "<br>";
+            }<br>
+            //imprime en pantalla
+            jueves<br>
+            lunes<br>
+            martes<br>
+            miercoles<br>
+            viernes <br>   
+    </div><br>
+
+    <h3>Arreglos anidados</h3>
+    <p>Los arreglos en su interior pueden a contener ontos arreglos conocidos como anidados o multidimensiones, deben segir la misma sintaxis para ser definidos y llamados sus valores</p>
+    <div class="ejemplo">
+        ...en zona php ...<br>
+        //arreglo anidado indexado<br>
+        $numeros = [[1,2,3] , [4,5,6] , [7,8,9]];<br>
+        echo $numeros[1][1] . "<br>"; /imprime 5 <br>
+
+        //arreglo anidado asociativo<br>
+        $menu =  ["lunes"=> ["proteina"=>"pollo",<br>
+                            "bebida"=>"jugo",<br>
+                            "acompñanate"=>"sopa"],<br>
+                "martes"=>["proteina"=>"pasta",<br>
+                             "bebida"=>"cafe",<br>
+                             "acompñanate"=> "ensalada"],<br>
+                "miercoles"=>["proteina"=>"cerdo", <br>
+                            "bebida"=>"soda",<br>
+                            "acompñanate"=> "arroz"]<br>
+                ];<br>
+
+        echo $menu["miercoles"]["bebida"] . "<br>";//impime soda
+    </div><br>
+
+    <p>Pendientes: var_dump, ordenar arreglos</p>
+</div></body>
+</html>
